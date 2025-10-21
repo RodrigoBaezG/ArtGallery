@@ -1,0 +1,43 @@
+/* -------------------------------------------------- */
+/* 1. VARIABLES CSS (Paleta de Colores) Y RESET */
+/* -------------------------------------------------- */
+
+:root {
+    /* Esmeralda */
+    --color-esmeralda-claro: #a4d4cb;  /* Un tono menta/aguamarina suave */
+    --color-esmeralda-oscuro: #156969; /* Un tono teal o esmeralda profundo */
+    
+    /* Azul Ultramar */
+    --color-ultramar-claro: #B0C4DE; /* Un azul grisáceo suave (Slate Blue) */
+    --color-azul-oscuro: #132c63; /* Un azul marino/ultramar profundo */
+    
+    /* Grises */
+    --color-gris-oscuro: #1A1A1A;     /* Casi negro */
+    --color-gris-claro: #F8F8F8;      /* Casi blanco */
+    
+    /* Colores de Funcionalidad (Basados en la paleta) */
+    --color-texto: var(--color-gris-oscuro);
+    --color-fondo: var(--color-gris-claro);
+    --color-primario: var(--color-esmeralda-oscuro);
+    --color-secundario: var(--color-esmeralda-oscuro);
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Fundamental para layouts responsivos */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-gris-oscuro);
+    min-height: 100vh; /* Para que el fondo cubra toda la altura */
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primario);
+}
