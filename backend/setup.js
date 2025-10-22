@@ -28,6 +28,8 @@ const setupSQL = `
     ('Paisaje Esmeralda', 'https://picsum.photos/800/600?random=4', 'Acrílico', 'pinturas', 'Un paisaje de fantasía con tonos verdes vibrantes.', '2024-05-10', 400.00);
 `;
 
+
+
 async function initializeDatabase() {
     console.log('Iniciando la configuración de la base de datos...');
     try {

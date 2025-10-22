@@ -2,8 +2,6 @@
 const { Pool } = require('pg');
 require('dotenv').config();
 
-const DB_HOST = 'localhost';
-const DB_PORT = 5432; // Asegúrate de que este sea el puerto de tu instalación de PostgreSQL
 const DB_NAME = 'artgallery';
 
 const pool = new Pool({
