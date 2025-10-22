@@ -1,0 +1,73 @@
+/* --- ESTILOS DE LA PÁGINA DE GALERÍA --- */
+
+/* Header de la Galería (Similar al Hero, pero más compacto) */
+.category-hero {
+    /* Mantenemos el margen para evitar superposición */
+    margin-top: 55px; 
+    
+    background-color: var(--color-ultramar-claro); 
+    padding: 3rem 1rem;
+    text-align: center;
+    color: var(--color-primario);
+}
+
+.category-hero .hero-content h1 {
+    font-size: 2rem;
+}
+
+.category-hero .hero-content p {
+    color: var(--color-ultramar-oscuro);
+}
+
+/* Cuadrícula de Obras (Mobile First: 1 columna) */
+.gallery-grid {
+    color: var(--color-ultramar-claro);
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna por defecto en móvil */
+    gap: 1.5rem;
+    padding: 2rem 0;
+}
+
+/* Estilo de la Tarjeta Individual (Obra de Arte) */
+.artwork-card {
+    border: 1px solid var(--color-ultramar-claro);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+
+.artwork-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.artwork-card img {
+    width: 100%;
+    /* Altura fija o aspect-ratio para mantener la consistencia */
+    height: 300px; 
+    object-fit: cover; 
+}
+
+.artwork-info {
+    padding: 1rem;
+}
+
+.artwork-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--color-primario);
+}
+
+.artwork-info p {
+    font-size: 0.9rem;
+    color: var(--color-texto);
+}
+
+
+/* Media Query para Escritorio: Cuadrícula de 3 columnas */
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en escritorio */
+    }
+}

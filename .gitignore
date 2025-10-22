@@ -1,0 +1,9 @@
+# Ignorar dependencias de Node
+/backend/node_modules
+
+# Ignorar archivos sensibles
+/backend/.env
+
+# Ignorar caché y logs comunes
+npm-debug.log*
+.DS_Store
