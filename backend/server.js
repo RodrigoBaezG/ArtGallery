@@ -2,6 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
+const db = require('./config/db');
 
 const app = express();
 // Usa la variable de entorno PORT, o 5000 por defecto
@@ -51,7 +52,7 @@ async function initializeDatabase() {
 initializeDatabase();
 
 // Inicializa la conexión a DB
-require('./config/db'); 
+ 
 
 // Middlewares
 app.use(cors()); 
