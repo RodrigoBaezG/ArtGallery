@@ -1,6 +1,6 @@
 // js/detalle.js
 
-const API_BASE_URL = 'http://localhost:5000/api'; // Asegúrate de cambiar esto para Render
+const API_BASE_URL = 'https://artgallery-h90r.onrender.com/api'; // Asegúrate de cambiar esto para Render
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Obtener el ID de la URL (ej. detalle.html?id=5)

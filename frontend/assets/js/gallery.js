@@ -1,6 +1,6 @@
 // js/galeria.js
 
-const API_BASE_URL = 'http://localhost:5000/api'; // O la URL de Render cuando despliegues
+const API_BASE_URL = 'https://artgallery-h90r.onrender.com/api'; // O la URL de Render cuando despliegues
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Obtener la categoría de la URL
