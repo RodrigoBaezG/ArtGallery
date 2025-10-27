@@ -1,16 +1,15 @@
 // backend/server.js
+
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
-const db = require('./config/db');
 
+const db = require('./config/db'); // Importa la conexión a DB
 const app = express();
-// Usa la variable de entorno PORT, o 5000 por defecto
-const PORT = process.env.PORT || 5000; 
+const PORT = process.env.PORT || 5000;
 
+// SQL de creación de tabla (solo si no existe)
 const setupSQL = `
-
-    -- 2. Crea la tabla
     CREATE TABLE IF NOT EXISTS pinturas (
         id SERIAL PRIMARY KEY,
         titulo VARCHAR(255) NOT NULL,
@@ -22,8 +21,10 @@ const setupSQL = `
         disponible BOOLEAN DEFAULT TRUE,
         precio NUMERIC(10, 2)
     );
+`;
 
-    -- 3. Inserta datos de prueba
+// SQL para insertar datos DE PRUEBA
+const insertDataSQL = `
     INSERT INTO pinturas (titulo, url_imagen, tecnica, categoria, descripcion, fecha_creacion, precio) VALUES
     ('Abstracción Ultramar', 'https://picsum.photos/800/600?random=1', 'Óleo', 'pinturas', 'Estudio de azules profundos y texturas etéreas.', '2024-01-15', 550.00),
     ('Retrato Sombra', 'https://picsum.photos/800/600?random=2', 'Grafito', 'dibujos', 'Detalle hiperrealista con enfoque en la luz.', '2023-11-20', 120.00),
@@ -32,32 +33,39 @@ const setupSQL = `
 `;
 
 
-
 async function initializeDatabase() {
-    console.log('Iniciando la configuración de la base de datos...');
     try {
+        // 1. Aseguramos que la tabla exista (IF NOT EXISTS)
         await db.query(setupSQL);
-        console.log('✅ Base de datos configurada: Tabla "pinturas" creada y datos insertados.');
+        console.log('✅ Verificación de tabla "pinturas" completada.');
+
+        // 2. Comprobamos si la tabla tiene datos
+        const countResult = await db.query('SELECT COUNT(*) FROM pinturas');
+        const rowCount = parseInt(countResult.rows[0].count);
+
+        if (rowCount === 0) {
+            // 3. Insertamos datos SOLO si la tabla está vacía
+            await db.query(insertDataSQL);
+            console.log('🖼️ Datos de prueba insertados exitosamente.');
+        } else {
+            console.log(`Datos encontrados (${rowCount} obras). Omitiendo la inserción.`);
+        }
+
     } catch (error) {
-        console.error('❌ Error al configurar la base de datos:', error.message);
-    } finally {
-        // Necesitas salir del proceso una vez que la operación haya terminado
-        // o el script seguirá esperando conexiones abiertas.
-        process.exit(0);
+        // Si la inicialización falla, no permitimos que el servidor arranque.
+        console.error('❌ Error fatal al inicializar la base de datos:', error.message);
+        process.exit(1);
     }
 }
 
-initializeDatabase();
-
-// Inicializa la conexión a DB
- 
-
-// Middlewares
-app.use(cors()); 
-app.use(express.json()); 
-
 // Rutas
 const pinturaRoutes = require('./routes/pinturaRoutes');
+
+// Middlewares
+app.use(cors()); // Permite que el frontend acceda
+app.use(express.json()); 
+
+// Montar rutas
 app.use('/api', pinturaRoutes);
 
 // Ruta de prueba
@@ -65,8 +73,7 @@ app.get('/', (req, res) => {
     res.send('API de Galería de Arte activa.');
 });
 
-// Iniciar el servidor
-
+// Arrancar el servidor SOLO después de inicializar la DB
 initializeDatabase().then(() => {
     app.listen(PORT, () => {
         console.log(`Servidor corriendo en http://localhost:${PORT}`);
