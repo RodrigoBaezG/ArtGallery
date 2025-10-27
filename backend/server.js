@@ -9,11 +9,9 @@ const app = express();
 const PORT = process.env.PORT || 5000; 
 
 const setupSQL = `
-    -- 1. Elimina la tabla si existe para asegurar una creación limpia
-    DROP TABLE IF EXISTS pinturas CASCADE;
 
     -- 2. Crea la tabla
-    CREATE TABLE pinturas (
+    CREATE TABLE IF NOT EXISTS pinturas (
         id SERIAL PRIMARY KEY,
         titulo VARCHAR(255) NOT NULL,
         url_imagen VARCHAR(500) NOT NULL,
