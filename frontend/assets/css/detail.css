@@ -3,7 +3,7 @@
 .artwork-detail-section {
     padding: 3rem 0;
     margin-top: 55px; /* Empujar hacia abajo del navbar */
-    color: var(--color-esmeralda-claro)
+    color: var(--color-esmeralda-oscuro)
 }
 
 .detail-content {
