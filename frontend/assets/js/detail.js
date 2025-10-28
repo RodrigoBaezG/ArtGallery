@@ -58,7 +58,7 @@ function renderizarDetalle(obra, container) {
             </div>
             <div class="detail-info">
                 <h1>${obra.titulo}</h1>
-                <p><strong>Tecnique:</strong> ${obra.tecnica}</p>
+                <p><strong>Technique:</strong> ${obra.tecnica}</p>
                 <p><strong>Print price:</strong> ${precio}</p>
                 <hr style="margin: 1.5rem 0; border-color: var(--color-ultramar-claro);">
                             </div>

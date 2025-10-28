@@ -59,7 +59,7 @@ function mostrarObras(obras, container) {
                 <img src="${obra.url_imagen}" alt="${obra.titulo}">
                 <div class="artwork-info">
                     <h3>${obra.titulo}</h3>
-                    <p>Técnica: ${obra.tecnica}</p>
+                    <p>Technique: ${obra.tecnica}</p>
                     <p>${obra.fecha_creacion.substring(0, 10)}</p>
                 </div>
             </a>
