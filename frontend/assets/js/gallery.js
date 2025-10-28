@@ -55,7 +55,7 @@ function mostrarObras(obras, container) {
 
     obras.forEach(obra => {
         const cardHTML = `
-            <a href="detalle.html?id=${obra.id}" class="artwork-card">
+            <a href="detail.html?id=${obra.id}" class="artwork-card">
                 <img src="${obra.url_imagen}" alt="${obra.titulo}">
                 <div class="artwork-info">
                     <h3>${obra.titulo}</h3>
