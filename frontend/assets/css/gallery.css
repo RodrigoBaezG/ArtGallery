@@ -3,12 +3,12 @@
 /* Header de la Galería (Similar al Hero, pero más compacto) */
 .category-hero {
     /* Mantenemos el margen para evitar superposición */
-    margin-top: 55px; 
+    margin-top: 40px; 
     
-    background-color: var(--color-ultramar-claro); 
-    padding: 3rem 1rem;
+    background-color: var(--color-negro); 
+    padding: 1rem 1rem;
     text-align: center;
-    color: var(--color-primario);
+    color: var(--color-ultramar-claro);
 }
 
 .category-hero .hero-content h1 {
@@ -16,7 +16,7 @@
 }
 
 .category-hero .hero-content p {
-    color: var(--color-ultramar-oscuro);
+    color: var(--color-ultramar-claro);
 }
 
 /* Cuadrícula de Obras (Mobile First: 1 columna) */
