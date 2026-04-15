@@ -1,0 +1,132 @@
+/* -------------------------------------------------- */
+/* COMMISSIONS PAGE                                    */
+/* -------------------------------------------------- */
+
+.commissions-page {
+    padding-top: 60px;
+    min-height: 100vh;
+    background-color: var(--color-fondo);
+}
+
+/* ---- HEADER ---- */
+
+.commissions-header {
+    padding: 5rem 1.5rem 3rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.commissions-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-acento);
+    margin-bottom: 1rem;
+}
+
+.commissions-header h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.8rem, 8vw, 5rem);
+    font-weight: 600;
+    color: var(--color-texto);
+    letter-spacing: 0.02em;
+}
+
+.commissions-lead {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: #888;
+    letter-spacing: 0.02em;
+}
+
+/* ---- CONTENT ---- */
+
+.commissions-content {
+    max-width: 680px;
+    padding-top: 3.5rem;
+    padding-bottom: 6rem;
+}
+
+.commissions-intro {
+    margin-bottom: 2.5rem;
+}
+
+.commissions-intro p {
+    font-size: 1rem;
+    color: var(--color-texto);
+    line-height: 1.7;
+}
+
+/* ---- LIST ---- */
+
+.commissions-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.commissions-list li {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.commissions-list li:first-child {
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.commissions-number {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.1rem;
+    color: var(--color-acento);
+    letter-spacing: 0.05em;
+    min-width: 2rem;
+    padding-top: 0.2rem;
+    opacity: 0.7;
+}
+
+.commissions-list h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-texto);
+    margin-bottom: 0.35rem;
+}
+
+.commissions-list p {
+    font-size: 0.88rem;
+    color: #777;
+    line-height: 1.7;
+}
+
+/* ---- CTA ---- */
+
+.commissions-cta {
+    margin-top: 3.5rem;
+    text-align: center;
+}
+
+.commissions-cta p {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 0.75rem;
+}
+
+.commissions-email {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    font-weight: 600;
+    color: var(--color-texto);
+    border-bottom: 1px solid var(--color-acento);
+    padding-bottom: 0.1rem;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.commissions-email:hover {
+    color: var(--color-acento);
+}
