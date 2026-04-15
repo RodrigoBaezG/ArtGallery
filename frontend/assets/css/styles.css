@@ -1,43 +1,56 @@
 /* -------------------------------------------------- */
-/* 1. VARIABLES CSS (Paleta de Colores) Y RESET */
+/* 1. GOOGLE FONTS                                     */
+/* -------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+
+/* -------------------------------------------------- */
+/* 2. VARIABLES CSS                                    */
 /* -------------------------------------------------- */
 
 :root {
-    /* Esmeralda */
-    --color-esmeralda-claro: #a4d4cb;  /* Un tono menta/aguamarina suave */
-    --color-esmeralda-oscuro: #156969; /* Un tono teal o esmeralda profundo */
-    
-    /* Azul Ultramar */
-    --color-ultramar-claro: #B0C4DE; /* Un azul grisáceo suave (Slate Blue) */
-    --color-azul-oscuro: #132c63; /* Un azul marino/ultramar profundo */
-    
-    /* Grises */
-    --color-gris-oscuro: #1A1A1A;     /* Casi negro */
-    --color-gris-claro: #F8F8F8;      /* Casi blanco */
-    
-    /* Colores de Funcionalidad (Basados en la paleta) */
-    --color-texto: var(--color-gris-oscuro);
-    --color-fondo: var(--color-gris-claro);
-    --color-primario: var(--color-esmeralda-oscuro);
-    --color-secundario: var(--color-esmeralda-oscuro);
+    /* Paleta principal */
+    --color-fondo: #F5F4F0;
+    --color-texto: #1C1C1A;
+    --color-acento: #156969;
+
+    /* Aliases para compatibilidad */
+    --color-negro: #1C1C1A;
+    --color-gris-oscuro: #1C1C1A;
+    --color-gris-claro: #F5F4F0;
+    --color-esmeralda-oscuro: #156969;
+    --color-esmeralda-claro: #a4d4cb;
+    --color-primario: #156969;
+    --color-secundario: #156969;
+    --color-ultramar-claro: #a4d4cb;
 }
 
-/* Reset Básico */
+/* -------------------------------------------------- */
+/* 3. RESET                                           */
+/* -------------------------------------------------- */
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Fundamental para layouts responsivos */
+    box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
     color: var(--color-texto);
-    background-color: var(--color-gris-oscuro);
-    min-height: 100vh; /* Para que el fondo cubra toda la altura */
+    background-color: var(--color-fondo);
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    line-height: 1.2;
 }
 
 a {
     text-decoration: none;
-    color: var(--color-primario);
+    color: var(--color-acento);
 }

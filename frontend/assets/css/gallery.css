@@ -1,73 +1,144 @@
-/* --- ESTILOS DE LA PÁGINA DE GALERÍA --- */
+/* -------------------------------------------------- */
+/* GALLERY PAGE STYLES                                 */
+/* -------------------------------------------------- */
 
-/* Header de la Galería (Similar al Hero, pero más compacto) */
+/* ---- GALLERY HERO HEADER ---- */
+
 .category-hero {
-    /* Mantenemos el margen para evitar superposición */
-    margin-top: 40px; 
-    
-    background-color: var(--color-negro); 
-    padding: 1rem 1rem;
+    padding: 7rem 1.5rem 3rem;
     text-align: center;
-    color: var(--color-ultramar-claro);
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
 }
 
 .category-hero .hero-content h1 {
-    font-size: 2rem;
-}
-
-.category-hero .hero-content p {
-    color: var(--color-ultramar-claro);
-}
-
-/* Cuadrícula de Obras (Mobile First: 1 columna) */
-.gallery-grid {
-    color: var(--color-ultramar-claro);
-    display: grid;
-    grid-template-columns: 1fr; /* Una columna por defecto en móvil */
-    gap: 1.5rem;
-    padding: 2rem 0;
-}
-
-/* Estilo de la Tarjeta Individual (Obra de Arte) */
-.artwork-card {
-    border: 1px solid var(--color-ultramar-claro);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    transition: transform 0.3s ease;
-}
-
-.artwork-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-}
-
-.artwork-card img {
-    width: 100%;
-    /* Altura fija o aspect-ratio para mantener la consistencia */
-    height: 300px; 
-    object-fit: cover; 
-}
-
-.artwork-info {
-    padding: 1rem;
-}
-
-.artwork-info h3 {
-    margin-bottom: 0.5rem;
-    color: var(--color-primario);
-}
-
-.artwork-info p {
-    font-size: 0.9rem;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 600;
+    letter-spacing: 0.04em;
     color: var(--color-texto);
 }
 
+.category-hero .hero-content p {
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-acento);
+    margin-top: 0.5rem;
+}
 
-/* Media Query para Escritorio: Cuadrícula de 3 columnas */
+/* ---- GALLERY GRID ---- */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 0 5rem;
+}
+
+/* ---- ARTWORK CARD ---- */
+
+.artwork-card {
+    display: block;
+    color: var(--color-texto);
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.artwork-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Image wrapper */
+.artwork-card-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    background-color: #e8e6e1;
+}
+
+.artwork-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.55s ease;
+}
+
+.artwork-card:hover .artwork-card-image img {
+    transform: scale(1.04);
+}
+
+/* Overlay on hover */
+.artwork-card-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.4s ease;
+}
+
+.artwork-card:hover .artwork-card-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.artwork-card-overlay span {
+    color: #fff;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.artwork-card:hover .artwork-card-overlay span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Info below image */
+.artwork-info {
+    padding: 0.75rem 0 0;
+}
+
+.artwork-info h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-texto);
+    margin-bottom: 0.15rem;
+}
+
+.artwork-info p {
+    font-size: 0.75rem;
+    color: #999;
+    letter-spacing: 0.03em;
+}
+
+/* ---- STATUS MESSAGES ---- */
+
+.error-message,
+#loading-message {
+    color: #aaa;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    padding: 4rem 2rem;
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+/* ---- DESKTOP: 2 columns ---- */
+
 @media (min-width: 768px) {
     .gallery-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 columnas en escritorio */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+        padding: 2rem 0 6rem;
     }
 }

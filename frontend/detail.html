@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="detalle-title">Obra de Arte - Detalle</title>
-    <link rel="stylesheet" href="assets/css/gallery.css">
+    <meta name="description" content="Artwork detail — Kuko Báez Art">
+    <title>Kuko Báez Art</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/mobilefirst.css">
     <link rel="stylesheet" href="assets/css/detail.css">
 </head>
+
 <body>
 
-    <nav class="navbar">
-        <div class="logo"></div>
-        <button class="menu-toggle" aria-label="Abrir Menú">☰</button>
+    <nav class="navbar" aria-label="Main navigation">
+        <a href="index.html" class="navbar-logo">Kuko Báez</a>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
         <ul class="nav-menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="gallery.html?cat=paintings">Paintings</a></li>
             <li><a href="gallery.html?cat=drawings">Drawings</a></li>
             <li><a href="gallery.html?cat=digital">Digital</a></li>
-            <li><a href="index.html/#socialmedia">Social media</a></li>
+            <li><a href="index.html#socialmedia">Contact</a></li>
         </ul>
     </nav>
 
     <main class="container">
-        
         <section id="artwork-detail" class="artwork-detail-section">
-            <h2 id="loading-message">Loading details...</h2>
-            </section>
-
+            <p id="loading-message" style="color:#aaa; font-size:0.85rem; letter-spacing:0.06em;">Loading...</p>
+        </section>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2024 Rodrigo Baez. All rights reserved.</p>
+        <p>&copy; 2025 Rodrigo Báez. All rights reserved.</p>
     </footer>
 
+    <script src="assets/js/config.js"></script>
     <script src="assets/js/app.js"></script>
-    <script src="assets/js/detail.js"></script> 
+    <script src="assets/js/detail.js"></script>
 </body>
+
 </html>
