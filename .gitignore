@@ -7,3 +7,6 @@
 # Ignorar caché y logs comunes
 npm-debug.log*
 .DS_Store
+
+# Configuración local de Claude Code
+.claude/
