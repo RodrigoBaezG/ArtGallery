@@ -22,10 +22,10 @@ const setupSQL = `
 
     -- 3. Inserta datos de prueba
     INSERT INTO pinturas (titulo, url_imagen, tecnica, categoria, descripcion, fecha_creacion, precio) VALUES
-    ('Abstracción Ultramar', 'https://picsum.photos/800/600?random=1', 'Óleo', 'pinturas', 'Estudio de azules profundos y texturas etéreas.', '2024-01-15', 550.00),
-    ('Retrato Sombra', 'https://picsum.photos/800/600?random=2', 'Grafito', 'dibujos', 'Detalle hiperrealista con enfoque en la luz.', '2023-11-20', 120.00),
+    ('Abstracción Ultramar', 'https://picsum.photos/800/600?random=1', 'Óleo', 'paintings', 'Estudio de azules profundos y texturas etéreas.', '2024-01-15', 550.00),
+    ('Retrato Sombra', 'https://picsum.photos/800/600?random=2', 'Grafito', 'drawings', 'Detalle hiperrealista con enfoque en la luz.', '2023-11-20', 120.00),
     ('Neón Urbano', 'https://picsum.photos/800/600?random=3', 'Digital', 'digital', 'Ilustración futurista inspirada en la noche de Tokio.', '2024-03-01', 80.00),
-    ('Paisaje Esmeralda', 'https://picsum.photos/800/600?random=4', 'Acrílico', 'pinturas', 'Un paisaje de fantasía con tonos verdes vibrantes.', '2024-05-10', 400.00);
+    ('Paisaje Esmeralda', 'https://picsum.photos/800/600?random=4', 'Acrílico', 'paintings', 'Un paisaje de fantasía con tonos verdes vibrantes.', '2024-05-10', 400.00);
 `;
 
 
