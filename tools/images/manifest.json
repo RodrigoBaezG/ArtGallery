@@ -4,6 +4,9 @@
   "quality": 82,
   "cover": "moonlit-sorceress",
   "notes": "Lista ordenada de obras seleccionadas. 'crop' (px del original, tras rotate) solo para bordes evidentes que no pertenecen a la obra; cada uno lleva 'cropReason'. 'ogFocusY' (0-1) = centro vertical del recorte 1200x630 de la portada.",
+  "site": [
+    { "out": "portrait.webp", "source": "C:/Users/Kbaez/Desktop/KUKO/1760051993090.jpg", "note": "Retrato para About. Tamaño nativo, sin recorte ni ampliación." }
+  ],
   "works": [
     { "id": "moonlit-sorceress",        "source": "1641906518413.jpg",           "featured": true, "ogFocusY": 0.30 },
     { "id": "woman-reading-magazine",   "source": "IMG_20190928_152112.jpg",     "featured": true },

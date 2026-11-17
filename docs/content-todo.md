@@ -25,7 +25,7 @@ Leyenda: **PRIORIDAD ALTA** = lo primero que hay que responder (QA ronda 1: Abou
 12. ¿Algún premio, mención o selección? (solo si existe)
 13. Materiales: ¿qué papel (marca, gramaje, grano), pinturas y pinceles usas? ¿Mezclas con tinta, gouache o lápiz?
 14. ¿El arte final lo escaneas o lo fotografías? ¿A qué resolución?
-15. **PRIORIDAD ALTA (retrato)** ¿Tienes un retrato tuyo para la página? Si no, ¿prefieres foto pintando, foto del estudio o sin retrato? (el `alt` del retrato se revisará cuando exista la foto).
+15. ~~Retrato~~ **HECHO**: ya hay retrato (busto, fondo blanco, camisa negra). `about.portrait.alt` actualizado.
 16. **PRIORIDAD ALTA (CV)** CV en PDF (inglés y español): ¿tienes uno? Si no, ¿quieres que lo redactemos a partir de las respuestas anteriores?
 
 ## Commissions (Encargos)
@@ -51,13 +51,13 @@ Leyenda: **PRIORIDAD ALTA** = lo primero que hay que responder (QA ronda 1: Abou
 
 ## Obras
 
-Todos los títulos de `frontend/data/artworks.json` son propuestas (`[[PROPUESTA]]`): confírmalos o cámbialos. Las descripciones están vacías a propósito; si alguna obra tiene contexto (encargo, publicación, exposición), cuéntalo y se añade una frase. Técnica asignada: "Acuarela sobre papel"; en la serie `carnival-*`, "Tinta y acuarela sobre papel".
+**Títulos: HECHO.** Rodrigo aceptó los 22 títulos propuestos tal cual (sin prefijo `[[PROPUESTA]]` en `artworks.json`). Las descripciones están vacías a propósito; si alguna obra tiene contexto (encargo, publicación, exposición), cuéntalo y se añade una frase. Técnica asignada: "Acuarela sobre papel"; en la serie `carnival-*`, "Tinta y acuarela sobre papel".
 
 Por cada obra hace falta: **año**, **medidas del original** y **estado** (disponible / vendida / colección privada / encargo). Ahora mismo faltan los tres en las 22.
 
 **PRIORIDAD ALTA: las 6 obras destacadas** (salen primero en la home): `moonlit-sorceress`, `woman-reading-magazine`, `flamenco-duo`, `headwrap-profile`, `father-and-child-guitar` y `peacock-headdress`. Indica año, medidas y estado de estas seis antes que el resto. Es lo único que activa el aviso «Original disponible — consultar». Mientras tanto, la página de encargos ya no promete obras marcadas como disponibles.
 
-| id | Título propuesto (EN) | Título propuesto (ES) | Año | Medidas | Estado |
+| id | Título (EN, aceptado) | Título (ES, aceptado) | Año | Medidas | Estado |
 |---|---|---|---|---|---|
 | **moonlit-sorceress** (destacada) | Moon Tide | Marea de luna | **PRIORIDAD ALTA** | **PRIORIDAD ALTA** | **PRIORIDAD ALTA** |
 | **woman-reading-magazine** (destacada) | The Magazine | La revista | **PRIORIDAD ALTA** | **PRIORIDAD ALTA** | **PRIORIDAD ALTA** |

@@ -65,16 +65,17 @@
     </header>
 
     <section class="container container--wide section--tight">
-      <!-- RECURSOS OPCIONALES (retrato y CV): desactivados con data-enabled="false" para no pedir
-           archivos que aún no existen. Para activarlos, cuando estén subidos:
-             1. Retrato: subir assets/img/site/portrait.webp, poner aquí su width/height reales
-                y cambiar a data-enabled="true".
-             2. CV: subir assets/docs/cv-en.pdf y/o cv-es.pdf y cambiar a data-enabled="true"
-                en su <template> (más abajo). La sección CV aparece si existe al menos uno.
-           about.js comprueba con HEAD cada template activado y solo inserta lo que existe. -->
-      <template data-optional-asset="assets/img/site/portrait.webp" data-enabled="false" data-target="#about-intro" data-position="prepend" data-target-class="about__intro">
+      <!-- RECURSOS OPCIONALES: cada <template data-optional-asset> se activa con data-enabled="true".
+           about.js hace un HEAD de cada template activado y solo inserta lo que existe
+           (los desactivados no generan ninguna petición).
+             1. Retrato: ACTIVADO (portrait.webp, 865×1024). Va sin lazy y con fetchpriority="high"
+                porque es la imagen principal de la página.
+             2. CV: desactivado hasta que existan assets/docs/cv-en.pdf y/o cv-es.pdf; entonces,
+                cambiar a data-enabled="true" en su <template> (más abajo). La sección CV aparece
+                si existe al menos uno. -->
+      <template data-optional-asset="assets/img/site/portrait.webp" data-enabled="true" data-target="#about-intro" data-position="prepend" data-target-class="about__intro">
         <figure class="about__portrait">
-          <img src="assets/img/site/portrait.webp" width="1200" height="1500" alt="Portrait of Rodrigo “Kuko” Báez" data-i18n-attr="alt:about.portrait.alt" decoding="async">
+          <img src="assets/img/site/portrait.webp" width="865" height="1024" alt="Portrait of Rodrigo “Kuko” Báez" data-i18n-attr="alt:about.portrait.alt" decoding="async" fetchpriority="high">
         </figure>
       </template>
       <div id="about-intro">

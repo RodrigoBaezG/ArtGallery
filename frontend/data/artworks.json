@@ -4,8 +4,8 @@
     "order": 1,
     "featured": true,
     "title": {
-      "en": "[[PROPUESTA]] Moon Tide",
-      "es": "[[PROPUESTA]] Marea de luna"
+      "en": "Moon Tide",
+      "es": "Marea de luna"
     },
     "description": {
       "en": "",
@@ -39,8 +39,8 @@
     "order": 2,
     "featured": true,
     "title": {
-      "en": "[[PROPUESTA]] The Magazine",
-      "es": "[[PROPUESTA]] La revista"
+      "en": "The Magazine",
+      "es": "La revista"
     },
     "description": {
       "en": "",
@@ -74,8 +74,8 @@
     "order": 3,
     "featured": true,
     "title": {
-      "en": "[[PROPUESTA]] Song and Guitar",
-      "es": "[[PROPUESTA]] Cante y guitarra"
+      "en": "Song and Guitar",
+      "es": "Cante y guitarra"
     },
     "description": {
       "en": "",
@@ -109,8 +109,8 @@
     "order": 4,
     "featured": true,
     "title": {
-      "en": "[[PROPUESTA]] Striped Headwrap",
-      "es": "[[PROPUESTA]] Turbante de rayas"
+      "en": "Striped Headwrap",
+      "es": "Turbante de rayas"
     },
     "description": {
       "en": "",
@@ -144,8 +144,8 @@
     "order": 5,
     "featured": true,
     "title": {
-      "en": "[[PROPUESTA]] First Chords",
-      "es": "[[PROPUESTA]] Primeros acordes"
+      "en": "First Chords",
+      "es": "Primeros acordes"
     },
     "description": {
       "en": "",
@@ -179,8 +179,8 @@
     "order": 6,
     "featured": true,
     "title": {
-      "en": "[[PROPUESTA]] Peacock",
-      "es": "[[PROPUESTA]] Pavo real"
+      "en": "Peacock",
+      "es": "Pavo real"
     },
     "description": {
       "en": "",
@@ -214,8 +214,8 @@
     "order": 7,
     "featured": false,
     "title": {
-      "en": "[[PROPUESTA]] Bird and Carnation",
-      "es": "[[PROPUESTA]] Pájaro y clavel"
+      "en": "Bird and Carnation",
+      "es": "Pájaro y clavel"
     },
     "description": {
       "en": "",
@@ -249,8 +249,8 @@
     "order": 8,
     "featured": false,
     "title": {
-      "en": "[[PROPUESTA]] Valley of Waterfalls",
-      "es": "[[PROPUESTA]] Valle de las cascadas"
+      "en": "Valley of Waterfalls",
+      "es": "Valle de las cascadas"
     },
     "description": {
       "en": "",
@@ -284,8 +284,8 @@
     "order": 9,
     "featured": false,
     "title": {
-      "en": "[[PROPUESTA]] Orange Blouse",
-      "es": "[[PROPUESTA]] Blusa naranja"
+      "en": "Orange Blouse",
+      "es": "Blusa naranja"
     },
     "description": {
       "en": "",
@@ -319,8 +319,8 @@
     "order": 10,
     "featured": false,
     "title": {
-      "en": "[[PROPUESTA]] Wolf",
-      "es": "[[PROPUESTA]] Lobo"
+      "en": "Wolf",
+      "es": "Lobo"
     },
     "description": {
       "en": "",
@@ -354,8 +354,8 @@
     "order": 11,
     "featured": false,
     "title": {
-      "en": "[[PROPUESTA]] Guitarist",
-      "es": "[[PROPUESTA]] Guitarrista"
+      "en": "Guitarist",
+      "es": "Guitarrista"
     },
     "description": {
       "en": "",
@@ -389,8 +389,8 @@
     "order": 12,
     "featured": false,
     "title": {
-      "en": "[[PROPUESTA]] Bandana and Guitar",
-      "es": "[[PROPUESTA]] Bandana y guitarra"
+      "en": "Bandana and Guitar",
+      "es": "Bandana y guitarra"
     },
     "description": {
       "en": "",
@@ -424,8 +424,8 @@
     "order": 13,
     "featured": false,
     "title": {
-      "en": "[[PROPUESTA]] Red Collar",
-      "es": "[[PROPUESTA]] Collar rojo"
+      "en": "Red Collar",
+      "es": "Collar rojo"
     },
     "description": {
       "en": "",
@@ -459,8 +459,8 @@
     "order": 14,
     "featured": false,
     "title": {
-      "en": "[[PROPUESTA]] Two Friends",
-      "es": "[[PROPUESTA]] Dos amigos"
+      "en": "Two Friends",
+      "es": "Dos amigos"
     },
     "description": {
       "en": "",
@@ -494,8 +494,8 @@
     "order": 15,
     "featured": false,
     "title": {
-      "en": "[[PROPUESTA]] Carnival: Open Arms",
-      "es": "[[PROPUESTA]] Carnaval: brazos abiertos"
+      "en": "Carnival: Open Arms",
+      "es": "Carnaval: brazos abiertos"
     },
     "description": {
       "en": "",
@@ -529,8 +529,8 @@
     "order": 16,
     "featured": false,
     "title": {
-      "en": "[[PROPUESTA]] Carnival: The Shout",
-      "es": "[[PROPUESTA]] Carnaval: el grito"
+      "en": "Carnival: The Shout",
+      "es": "Carnaval: el grito"
     },
     "description": {
       "en": "",
@@ -564,8 +564,8 @@
     "order": 17,
     "featured": false,
     "title": {
-      "en": "[[PROPUESTA]] Carnival: Harlequin",
-      "es": "[[PROPUESTA]] Carnaval: arlequín"
+      "en": "Carnival: Harlequin",
+      "es": "Carnaval: arlequín"
     },
     "description": {
       "en": "",
@@ -599,8 +599,8 @@
     "order": 18,
     "featured": false,
     "title": {
-      "en": "[[PROPUESTA]] Carnival: The Singer",
-      "es": "[[PROPUESTA]] Carnaval: el cantante"
+      "en": "Carnival: The Singer",
+      "es": "Carnaval: el cantante"
     },
     "description": {
       "en": "",
@@ -634,8 +634,8 @@
     "order": 19,
     "featured": false,
     "title": {
-      "en": "[[PROPUESTA]] Folded",
-      "es": "[[PROPUESTA]] Recogido"
+      "en": "Folded",
+      "es": "Recogido"
     },
     "description": {
       "en": "",
@@ -669,8 +669,8 @@
     "order": 20,
     "featured": false,
     "title": {
-      "en": "[[PROPUESTA]] Touch",
-      "es": "[[PROPUESTA]] Roce"
+      "en": "Touch",
+      "es": "Roce"
     },
     "description": {
       "en": "",
@@ -704,8 +704,8 @@
     "order": 21,
     "featured": false,
     "title": {
-      "en": "[[PROPUESTA]] Crown of Thorns",
-      "es": "[[PROPUESTA]] Corona de espinas"
+      "en": "Crown of Thorns",
+      "es": "Corona de espinas"
     },
     "description": {
       "en": "",
@@ -739,8 +739,8 @@
     "order": 22,
     "featured": false,
     "title": {
-      "en": "[[PROPUESTA]] The Wine Glass",
-      "es": "[[PROPUESTA]] La copa"
+      "en": "The Wine Glass",
+      "es": "La copa"
     },
     "description": {
       "en": "",

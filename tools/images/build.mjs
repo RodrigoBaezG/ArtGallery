@@ -118,6 +118,24 @@ if (cover) {
   }
 }
 
+// ---------- imágenes del sitio (retrato, etc.): tamaño nativo, sin recorte ni ampliación ----------
+for (const s of manifest.site || []) {
+  if (!/^[a-z0-9-]+\.webp$/.test(s.out)) throw new Error(`site.out no válido: ${s.out}`);
+  if (!fs.existsSync(s.source)) throw new Error(`No existe el original: ${s.source}`);
+  const outPath = path.join(SITE_DIR, s.out);
+  if (!FORCE && mtime(outPath) > Math.max(mtime(s.source), manifestTime)) {
+    console.log(`= site/${s.out} (sin cambios)`);
+    continue;
+  }
+  await sharp(s.source, { limitInputPixels: false })
+    .rotate()
+    .toColourspace('srgb')
+    .webp({ quality: s.quality ?? quality, effort: 5, smartSubsample: true })
+    .toFile(outPath);
+  const m = await sharp(outPath).metadata();
+  console.log(`+ site/${s.out}  ${m.width}x${m.height}`);
+}
+
 // ---------- artworks.json ----------
 const existing = fs.existsSync(DATA_FILE) ? JSON.parse(fs.readFileSync(DATA_FILE, 'utf8')) : [];
 const byId = new Map(existing.map((e) => [e.id, e]));
