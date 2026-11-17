@@ -1,0 +1,28 @@
+/* ==========================================================================
+   pages/contact.css — contact.html: formulario + email + Instagram
+   ========================================================================== */
+
+.contact {
+  display: grid;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.contact__aside {
+  padding-top: var(--space-4);
+  border-top: var(--border-width) solid var(--color-line);
+}
+
+@media (min-width: 60em) {
+  .contact {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: var(--space-10);
+  }
+
+  .contact__aside {
+    padding-top: 0;
+    padding-left: var(--space-5);
+    border-top: 0;
+    border-left: var(--border-width) solid var(--color-line);
+  }
+}

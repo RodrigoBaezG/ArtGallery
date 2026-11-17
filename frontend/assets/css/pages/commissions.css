@@ -1,0 +1,113 @@
+/* ==========================================================================
+   pages/commissions.css — commissions.html: tipos, proceso, plazos, CTA
+   ========================================================================== */
+
+/* Tipos de encargo */
+.commission-types {
+  display: grid;
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+}
+
+.commission-type {
+  padding-top: var(--space-3);
+  border-top: var(--border-width) solid var(--color-line);
+}
+
+.commission-type__title {
+  font-size: var(--font-size-lg);
+}
+
+.commission-type__text {
+  max-width: var(--measure);
+  margin-top: var(--space-1);
+  color: var(--color-ink-soft);
+}
+
+/* Proceso en pasos (numeración automática con contador CSS) */
+.steps {
+  display: grid;
+  gap: var(--space-4);
+  max-width: var(--measure);
+  list-style: none;
+  padding: 0;
+  counter-reset: step;
+}
+
+.steps__item {
+  display: grid;
+  grid-template-columns: var(--space-6) 1fr;
+  gap: var(--space-2);
+  counter-increment: step;
+}
+
+.steps__item::before {
+  content: counter(step, decimal-leading-zero);
+  color: var(--color-accent);
+  font-family: var(--font-serif);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-tight);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.steps__title {
+  font-size: var(--font-size-md);
+}
+
+.steps__text {
+  margin-top: var(--space-half);
+  color: var(--color-ink-soft);
+}
+
+/* Plazos orientativos y datos clave */
+.facts {
+  display: grid;
+  gap: var(--space-2);
+  max-width: var(--measure);
+}
+
+.facts__item {
+  display: grid;
+  gap: var(--space-half);
+  padding-bottom: var(--space-2);
+  border-bottom: var(--border-width) solid var(--color-line);
+}
+
+.facts__term {
+  color: var(--color-ink-soft);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.facts__value {
+  margin: 0;
+  color: var(--color-ink);
+}
+
+/* Lista de "qué información enviar" */
+.checklist {
+  display: grid;
+  gap: var(--space-1);
+  max-width: var(--measure);
+  padding-left: var(--space-3);
+}
+
+.checklist li::marker {
+  color: var(--color-accent);
+}
+
+@media (min-width: 40em) {
+  .commission-types {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-5) var(--space-4);
+  }
+
+  .facts__item {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: var(--space-3);
+    align-items: baseline;
+  }
+}

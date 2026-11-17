@@ -1,0 +1,149 @@
+/* ==========================================================================
+   tokens.css — Design tokens del portfolio de acuarela (Kuko Báez)
+   Única fuente de valores de diseño. Especificación: docs/design.md
+   Ningún otro archivo CSS define colores, tamaños, tiempos ni sombras.
+
+   Excepción técnica: las media queries no aceptan var(). Los breakpoints
+   se documentan aquí y se repiten literalmente en los demás archivos:
+     --bp-sm  40em   (640 px)  tablet vertical / móvil grande
+     --bp-md  60em   (960 px)  tablet horizontal / portátil pequeño
+     --bp-lg  80em   (1280 px) escritorio
+   ========================================================================== */
+
+:root {
+  /* ---- Color: papel ---------------------------------------------------- */
+  --color-paper: #FAF8F4;          /* fondo general */
+  --color-surface: #F3EFE8;        /* superficies secundarias, placeholder de imagen */
+  --color-field: #FFFFFF;          /* fondo de campos de formulario */
+  --color-line: #E3DDD3;           /* bordes 1 px, separadores (decorativo) */
+  --color-line-strong: #958D81;    /* borde de campos (≥ 3:1, WCAG 1.4.11) */
+
+  /* ---- Color: tinta ---------------------------------------------------- */
+  --color-ink: #3A3835;            /* texto principal (11.02:1 sobre papel) */
+  --color-ink-soft: #69635B;       /* texto secundario (5.60:1 sobre papel) */
+
+  /* ---- Color: acento (índigo diluido) ---------------------------------- */
+  --color-accent: #46567A;         /* enlaces, botón primario, foco (6.89:1) */
+  --color-accent-strong: #36435F;  /* hover/active (9.32:1) */
+  --color-accent-tint: #E9EBF1;    /* fondo de estado activo muy sutil */
+  --color-on-accent: #FAF8F4;      /* texto sobre acento */
+
+  /* ---- Color: estados de formulario ------------------------------------ */
+  --color-error: #9A4A3C;          /* terracota apagado (5.79:1) */
+  --color-success: #4F6B52;        /* salvia oscuro (5.57:1) */
+
+  /* ---- Tipografía ------------------------------------------------------ */
+  --font-serif: "Cormorant Garamond", "Cormorant", Garamond, "Times New Roman", serif;
+  --font-sans: "Jost", "Helvetica Neue", Arial, sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+
+  /* Escala fluida: móvil (360 px) → escritorio (1280 px) */
+  --font-size-xs: 0.8125rem;                                   /* 13 px */
+  --font-size-sm: 0.875rem;                                    /* 14 px */
+  --font-size-base: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);   /* 16 → 17 */
+  --font-size-md: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);  /* 18 → 20 */
+  --font-size-lg: clamp(1.5rem, 1.35rem + 0.7vw, 1.875rem);    /* 24 → 30 */
+  --font-size-xl: clamp(2rem, 1.7rem + 1.4vw, 2.75rem);        /* 32 → 44 */
+  --font-size-xxl: clamp(2.5rem, 2rem + 2.4vw, 4rem);          /* 40 → 64 */
+
+  --line-height-tight: 1.15;
+  --line-height-snug: 1.35;
+  --line-height-body: 1.65;
+
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.08em;
+
+  --underline-offset: 0.2em;
+  --underline-offset-loose: 0.35em;
+
+  --measure: 65ch;                 /* ancho máximo de lectura */
+
+  /* ---- Espaciado (base 8 px) ------------------------------------------- */
+  --space-0: 0;
+  --space-half: 0.25rem;  /*   4 px */
+  --space-1: 0.5rem;      /*   8 px */
+  --space-2: 1rem;        /*  16 px */
+  --space-3: 1.5rem;      /*  24 px */
+  --space-4: 2rem;        /*  32 px */
+  --space-5: 2.5rem;      /*  40 px */
+  --space-6: 3rem;        /*  48 px */
+  --space-8: 4rem;        /*  64 px */
+  --space-10: 5rem;       /*  80 px */
+  --space-12: 6rem;       /*  96 px */
+  --space-16: 8rem;       /* 128 px */
+
+  /* Margen lateral de página (se amplía en base.css por breakpoint) */
+  --gutter-sm: var(--space-2);   /* móvil: 16 px */
+  --gutter-md: var(--space-4);   /* ≥ 640 px: 32 px */
+  --gutter-lg: var(--space-6);   /* ≥ 1280 px: 48 px */
+
+  /* Separación vertical entre secciones */
+  --section-gap-sm: var(--space-8);
+  --section-gap-lg: var(--space-12);
+
+  /* ---- Layout ---------------------------------------------------------- */
+  --container-wide: 90rem;     /* 1440 px: galería */
+  --container-base: 72rem;     /* 1152 px: páginas de contenido */
+  --container-narrow: 48rem;   /*  768 px: formularios, textos */
+
+  --header-height: 4rem;       /* 64 px */
+  --main-min-height: 60vh;
+  --body-min-height: 100vh;
+  --tap-target: 2.75rem;       /* 44 px mínimo táctil */
+  --nav-toggle-width: 5rem;    /* 80 px: mismo ancho para Menu/Menú/Close/Cerrar (QA N3) */
+
+  --gallery-gap: var(--space-2);
+  --gallery-gap-lg: var(--space-4);
+  --gallery-row-height: 18rem; /* altura objetivo de fila (variante --rows) */
+  --gallery-row-height-lg: 22rem;
+
+  --work-image-max-height: 85vh;
+  --work-image-max-height-dvh: 85dvh;
+
+  --portrait-max-width: 22rem;
+  --flex-fill: 999;              /* relleno de la última fila en galería --rows */
+
+  /* ---- Bordes y formas ------------------------------------------------- */
+  --border-width: 1px;
+  --border-width-focus: 2px;
+  --radius-none: 0;
+  --radius-sm: 2px;
+  --radius-pill: 999px;
+
+  /* Sombra casi invisible: solo para el panel del menú móvil */
+  --shadow-soft: 0 1px 2px rgba(58, 56, 53, 0.04);
+
+  /* ---- Foco ------------------------------------------------------------ */
+  --focus-ring-color: var(--color-accent);
+  --focus-ring-width: var(--border-width-focus);
+  --focus-ring-offset: 3px;
+
+  /* ---- Movimiento ------------------------------------------------------ */
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --hover-lift: -2px;            /* desplazamiento vertical en hover de obra */
+  --image-hover-opacity: 0.92;
+
+  /* ---- Capas ----------------------------------------------------------- */
+  --z-header: 10;
+  --z-menu: 20;
+  --z-skip: 30;
+
+  /* ---- Opacidades ------------------------------------------------------ */
+  --opacity-disabled: 0.5;
+}
+
+/* Movimiento reducido: se anulan duraciones y desplazamientos */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0.01ms;
+    --duration-base: 0.01ms;
+    --duration-slow: 0.01ms;
+    --hover-lift: 0;
+  }
+}

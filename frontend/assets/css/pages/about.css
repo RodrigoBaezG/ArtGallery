@@ -1,0 +1,91 @@
+/* ==========================================================================
+   pages/about.css — about.html: retrato, bio, experiencia, CV
+   ========================================================================== */
+
+.about__intro {
+  display: grid;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.about__portrait {
+  max-width: var(--portrait-max-width);
+  background-color: var(--color-surface);
+}
+
+.about__portrait img {
+  width: 100%;
+  height: auto;
+}
+
+.about__bio {
+  font-size: var(--font-size-md);
+}
+
+.about__downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.about__section {
+  margin-top: var(--space-8);
+  padding-top: var(--space-5);
+  border-top: var(--border-width) solid var(--color-line);
+}
+
+.about__section-title {
+  margin-bottom: var(--space-3);
+}
+
+/* Lista de experiencia / publicaciones / exposiciones */
+.cv-list {
+  display: grid;
+  gap: var(--space-2);
+  max-width: var(--measure);
+  list-style: none;
+  padding: 0;
+}
+
+.cv-list__item {
+  display: grid;
+  gap: var(--space-half);
+}
+
+.cv-list__year {
+  color: var(--color-ink-soft);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-wide);
+  font-variant-numeric: tabular-nums;
+}
+
+.cv-list__text {
+  color: var(--color-ink);
+}
+
+.cv-list__detail {
+  display: block;
+  color: var(--color-ink-soft);
+  font-size: var(--font-size-sm);
+}
+
+@media (min-width: 40em) {
+  .cv-list__item {
+    grid-template-columns: var(--space-10) 1fr;
+    gap: var(--space-3);
+    align-items: baseline;
+  }
+}
+
+@media (min-width: 60em) {
+  .about__intro {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: var(--space-10);
+  }
+
+  .about__section {
+    margin-top: var(--space-10);
+  }
+}
