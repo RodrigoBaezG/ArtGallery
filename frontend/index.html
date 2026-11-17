@@ -1,91 +1,124 @@
-<!DOCTYPE html>
-<html lang="es">
-
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kuko Báez — Visual artist. Paintings, drawings and digital art.">
-    <meta name="author" content="Rodrigo Báez">
-    <title>Kuko Báez Art</title>
-
-    <link rel="canonical" href="https://kukobaezartgallery.netlify.app/">
-
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Kuko Báez Art">
-    <meta property="og:description" content="Visual artist — paintings, drawings and digital art.">
-    <meta property="og:url" content="https://kukobaezartgallery.netlify.app/">
-    <meta property="og:image" content="https://kukobaezartgallery.netlify.app/assets/img/painting1.jpg">
-    <meta property="og:locale" content="es_ES">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Kuko Báez Art">
-    <meta name="twitter:description" content="Visual artist — paintings, drawings and digital art.">
-    <meta name="twitter:image" content="https://kukobaezartgallery.netlify.app/assets/img/painting1.jpg">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/mobilefirst.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add('js')</script>
+  <title>Kuko Báez — Watercolor Illustrator</title>
+  <meta name="description" content="Watercolor illustration by Kuko Báez for editorial, books and private commissions. See the portfolio and get in touch.">
+  <link rel="canonical" href="https://kukobaezartgallery.netlify.app/">
+  <link rel="alternate" hreflang="en" href="https://kukobaezartgallery.netlify.app/?lang=en">
+  <link rel="alternate" hreflang="es" href="https://kukobaezartgallery.netlify.app/?lang=es">
+  <link rel="alternate" hreflang="x-default" href="https://kukobaezartgallery.netlify.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kuko Báez">
+  <meta property="og:title" content="Kuko Báez — Watercolor Illustrator">
+  <meta property="og:description" content="Watercolor illustration by Kuko Báez for editorial, books and private commissions. See the portfolio and get in touch.">
+  <meta property="og:url" content="https://kukobaezartgallery.netlify.app/">
+  <meta property="og:image" content="https://kukobaezartgallery.netlify.app/assets/img/site/og-moonlit-sorceress.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Woman in a white robe and diadem walks through the sea at night with a twisted staff, under a full moon in deep blue.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kuko Báez — Watercolor Illustrator">
+  <meta name="twitter:description" content="Watercolor illustration by Kuko Báez for editorial, books and private commissions. See the portfolio and get in touch.">
+  <meta name="twitter:image" content="https://kukobaezartgallery.netlify.app/assets/img/site/og-moonlit-sorceress.jpg">
+  <meta name="twitter:image:alt" content="Woman in a white robe and diadem walks through the sea at night with a twisted staff, under a full moon in deep blue.">
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/home.css">
+  <link rel="preload" href="data/artworks.json" as="fetch" crossorigin>
+  <!-- Primera obra de la galería (LCP): actualizar si cambia el orden de artworks.json -->
+  <link rel="preload" as="image" href="assets/img/works/moonlit-sorceress-640.webp" imagesrcset="assets/img/works/moonlit-sorceress-640.webp 490w, assets/img/works/moonlit-sorceress-1280.webp 980w, assets/img/works/moonlit-sorceress-2000.webp 1532w" imagesizes="(min-width: 80em) 377px, (min-width: 40em) 309px, calc(100vw - 2rem)" fetchpriority="high">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kuko Báez",
+    "alternateName": "Rodrigo Báez",
+    "jobTitle": "Watercolor illustrator",
+    "url": "https://kukobaezartgallery.netlify.app/",
+    "image": "https://kukobaezartgallery.netlify.app/assets/img/site/og-moonlit-sorceress.jpg",
+    "email": "mailto:rkbaezgarcia@gmail.com",
+    "sameAs": [
+      "https://www.instagram.com/kuko.baez/"
+    ]
+  }
+  </script>
 </head>
-
-<body>
-
-    <nav class="navbar" aria-label="Main navigation">
-        <a href="index.html" class="navbar-logo">Kuko Báez</a>
-        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-        <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="gallery.html?cat=paintings">Paintings</a></li>
-            <li><a href="gallery.html?cat=drawings">Drawings</a></li>
-            <li><a href="gallery.html?cat=digital">Digital</a></li>
-            <li><a href="commissions.html">Commissions</a></li>
-            <li><a href="#socialmedia">Contact</a></li>
-        </ul>
-    </nav>
-
-    <header class="hero">
-        <img src="assets/img/Purple Existence Etsy Banner (1).png" alt="Kuko Báez Art" class="hero-image">
-        <div class="hero-content">
-            <p>Visual artist</p>
+<body data-page="home">
+  <a class="skip-link" href="#main" data-i18n="common.nav.skipToContent">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header__inner container container--wide">
+      <a class="site-header__brand" href="index.html" aria-label="Kuko Báez — home" data-i18n-attr="aria-label:common.brand.homeLabel">Kuko Báez</a>
+      <div class="site-header__tools">
+        <div class="lang-switch" role="group" aria-label="Language" data-i18n-attr="aria-label:common.lang.label">
+          <button class="lang-switch__option" type="button" lang="en" data-lang="en" aria-pressed="true">EN</button>
+          <span class="lang-switch__sep" aria-hidden="true">/</span>
+          <button class="lang-switch__option" type="button" lang="es" data-lang="es" aria-pressed="false">ES</button>
         </div>
-    </header>
+        <nav class="nav" aria-label="Main navigation" data-i18n-attr="aria-label:common.nav.label">
+          <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">Menu</button>
+          <ul class="nav__menu" id="nav-menu" role="list">
+          <li><a class="nav__link" href="index.html" aria-current="page" data-i18n="common.nav.work">Work</a></li>
+          <li><a class="nav__link" href="about.html" data-i18n="common.nav.about">About</a></li>
+          <li><a class="nav__link" href="commissions.html" data-i18n="common.nav.commissions">Commissions</a></li>
+          <li><a class="nav__link nav__link--cta" href="contact.html" data-i18n="common.nav.contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-    <main class="container">
-
-        <section class="category-grid">
-            <a href="gallery.html?cat=paintings" class="category-card" id="card-pinturas">
-                <h4>Paintings</h4>
-            </a>
-            <a href="gallery.html?cat=drawings" class="category-card" id="card-dibujos">
-                <h4>Drawings</h4>
-            </a>
-            <a href="gallery.html?cat=digital" class="category-card" id="card-digital">
-                <h4>Digital</h4>
-            </a>
-        </section>
-
-    </main>
-
-    <section id="socialmedia" class="section-redes">
-        <h4>Interested in my work?</h4>
-        <div class="social-links">
-            <a href="https://www.instagram.com/kuko.baez/" target="_blank" rel="noopener noreferrer">
-                <img src="assets/icons/instagram.svg" alt="Instagram">
-                <span>kuko.baez</span>
-            </a>
-            <a href="mailto:rkbaezgarcia@gmail.com">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                <span>rkbaezgarcia@gmail.com</span>
-            </a>
-        </div>
+  <main id="main" class="site-main">
+    <section class="hero container container--wide">
+      <h1 class="hero__name" data-i18n="home.hero.name">Kuko Báez</h1>
+      <p class="hero__tagline" data-i18n="home.hero.tagline">Watercolor illustrator — editorial, books &amp; commissions</p>
+      <div class="hero__actions">
+        <a class="button button--primary" href="contact.html" data-i18n="home.hero.cta">Get in touch</a>
+        <a class="button button--secondary" href="commissions.html" data-i18n="common.nav.commissions">Commissions</a>
+      </div>
     </section>
 
-    <footer class="footer">
-        <p>&copy; 2025 Rodrigo Báez. All rights reserved.</p>
-    </footer>
+    <section class="gallery container container--wide" id="gallery" aria-labelledby="gallery-title" data-gallery>
+      <h2 class="visually-hidden" data-i18n="home.gallery.heading" id="gallery-title">Selected work</h2>
+      <p class="notice" role="status" data-gallery-status hidden></p>
+      <noscript>
+        <p>I take on editorial and book illustration, as well as private commissions. <a href="contact.html">Get in touch</a> · <a href="https://www.instagram.com/kuko.baez/" rel="me noopener">Instagram</a></p>
+      </noscript>
+      <ul class="gallery__grid gallery__grid--rows" role="list"></ul>
+    </section>
 
-    <script src="assets/js/app.js"></script>
+    <section class="cta container container--wide">
+      <h2 class="cta__title" data-i18n="home.closing.heading">Have a project in mind?</h2>
+      <p class="cta__text" data-i18n="home.closing.text">I take on editorial and book illustration, as well as private commissions.</p>
+      <div class="cta__actions">
+        <a class="button button--primary" href="contact.html" data-i18n="home.closing.cta">Get in touch</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner container container--wide">
+      <p class="site-footer__name" data-i18n="common.brand.name">Kuko Báez</p>
+      <ul class="site-footer__links" role="list">
+        <li><a class="site-footer__link" href="mailto:rkbaezgarcia@gmail.com" data-i18n="common.footer.emailLabel">Email</a></li>
+        <li><a class="site-footer__link" href="https://www.instagram.com/kuko.baez/" rel="me noopener" data-i18n="common.footer.instagramLabel">Instagram</a></li>
+        <li><a class="site-footer__link" href="contact.html" data-i18n="common.nav.contact">Contact</a></li>
+      </ul>
+      <p class="site-footer__copy"><span data-i18n="common.footer.copyright">© 2026 Kuko Báez (Rodrigo Báez). All rights reserved.</span></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/gallery.js" defer></script>
 </body>
-
 </html>

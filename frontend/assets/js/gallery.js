@@ -1,99 +1,167 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const categoria = urlParams.get('cat');
+/* ==========================================================================
+   gallery.js — catálogo (data/artworks.json) y galería de la home
+   - window.Artworks: carga, orden (featured → order) y atributos de imagen;
+     lo reutiliza work.js.
+   - Si existe [data-gallery], pinta la galería en filas (gallery__grid--rows).
+   Nota de imágenes: el número de {base}-{n}.webp es el LADO LARGO. El ancho
+   real de cada variante = round(n * width / max(width, height)), con
+   image.width / image.height de la variante de 2000.
+   ========================================================================== */
+(function () {
+  'use strict';
 
-    if (!categoria) {
-        const grid = document.getElementById('gallery-grid');
-        if (grid) grid.innerHTML = '<p class="error-message">No category specified.</p>';
-        return;
+  var BASE = new URL('../../', document.currentScript ? document.currentScript.src : location.href);
+  var dataPromise = null;
+
+  function load() {
+    if (!dataPromise) {
+      dataPromise = fetch(new URL('data/artworks.json', BASE))
+        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+        .then(sort);
     }
+    return dataPromise;
+  }
 
-    const categoryTitle = document.getElementById('category-title');
-    const categorySubtitle = document.getElementById('category-subtitle');
-
-    if (categoryTitle) {
-        categoryTitle.textContent = categoria.charAt(0).toUpperCase() + categoria.slice(1);
-        document.title = `${categoryTitle.textContent} — Kuko Báez`;
-    }
-    if (categorySubtitle) {
-        categorySubtitle.textContent = 'Explore the collection.';
-    }
-
-    cargarObras(categoria);
-});
-
-async function cargarObras(categoria) {
-    const gridContainer = document.getElementById('gallery-grid');
-    if (!gridContainer) return;
-
-    gridContainer.innerHTML = '<p id="loading-message">Loading...</p>';
-
-    try {
-        const response = await fetch(`${API_BASE_URL}/categoria/${categoria}`);
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const obras = await response.json();
-        mostrarObras(obras, gridContainer);
-    } catch (error) {
-        console.error('Error fetching artworks:', error);
-        gridContainer.innerHTML = '<p class="error-message">Could not load artworks. Please try again later.</p>';
-    }
-}
-
-function mostrarObras(obras, container) {
-    container.innerHTML = '';
-
-    if (obras.length === 0) {
-        container.innerHTML = '<p class="error-message">No artworks in this category yet.</p>';
-        return;
-    }
-
-    obras.forEach(obra => {
-        const card = document.createElement('a');
-        card.href = `detail.html?id=${obra.id}`;
-        card.className = 'artwork-card';
-
-        const imageWrapper = document.createElement('div');
-        imageWrapper.className = 'artwork-card-image';
-
-        const img = document.createElement('img');
-        img.src = obra.url_imagen;
-        img.alt = obra.titulo;
-        img.loading = 'lazy';
-
-        const overlay = document.createElement('div');
-        overlay.className = 'artwork-card-overlay';
-        const overlayLabel = document.createElement('span');
-        overlayLabel.textContent = 'View work';
-        overlay.appendChild(overlayLabel);
-
-        imageWrapper.appendChild(img);
-        imageWrapper.appendChild(overlay);
-
-        const info = document.createElement('div');
-        info.className = 'artwork-info';
-
-        const title = document.createElement('h3');
-        title.textContent = obra.titulo;
-
-        const technique = document.createElement('p');
-        technique.textContent = obra.tecnica;
-
-        info.appendChild(title);
-        info.appendChild(technique);
-        card.appendChild(imageWrapper);
-        card.appendChild(info);
-        container.appendChild(card);
+  function sort(list) {
+    return list.slice().sort(function (a, b) {
+      if (!!a.featured !== !!b.featured) return a.featured ? -1 : 1;
+      return (a.order || 0) - (b.order || 0);
     });
+  }
 
-    // Fade-in with IntersectionObserver
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => entry.target.classList.add('visible'), i * 80);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.08 });
+  function variantWidth(image, n) {
+    return Math.round(n * image.width / Math.max(image.width, image.height));
+  }
 
-    container.querySelectorAll('.artwork-card').forEach(card => observer.observe(card));
-}
+  function file(image, n) {
+    return image.base + '-' + n + '.webp';
+  }
+
+  function srcset(image) {
+    return image.widths.map(function (n) {
+      return file(image, n) + ' ' + variantWidth(image, n) + 'w';
+    }).join(', ');
+  }
+
+  /* Valor válido de un campo simple (year/dimensions/status) o '' si es TODO. */
+  function field(value) {
+    if (value === null || value === undefined) return '';
+    value = String(value);
+    return window.I18n.isTodo(value) ? '' : window.I18n.clean(value);
+  }
+
+  window.Artworks = {
+    load: load,
+    file: file,
+    srcset: srcset,
+    variantWidth: variantWidth,
+    field: field,
+    url: function (art) { return 'work.html?id=' + encodeURIComponent(art.id); }
+  };
+
+  /* ---- Galería de la home ---------------------------------------------- */
+  var section = document.querySelector('[data-gallery]');
+  if (!section) return;
+
+  var grid = section.querySelector('.gallery__grid');
+  var status = section.querySelector('[data-gallery-status]');
+  var EAGER = 4; // primeras obras visibles sin lazy
+  var ROW = 288; // --gallery-row-height (18rem) en px
+  var ROW_LG = 352; // --gallery-row-height-lg (22rem) en px
+  var GROW = 1.4; // margen por el crecimiento flex de cada fila
+  var items = [];
+
+  function sizes(image) {
+    var ratio = image.width / image.height;
+    var lg = Math.min(Math.round(ROW_LG * ratio * GROW), 1344);
+    // Apaisadas: entre 40em y 80em suelen llenar la fila entera.
+    var md = ratio > 1.3 ? 'calc(100vw - 4rem)' : Math.min(Math.round(ROW * ratio * GROW), 900) + 'px';
+    return '(min-width: 80em) ' + lg + 'px, (min-width: 40em) ' + md + ', calc(100vw - 2rem)';
+  }
+
+  // El aviso de estado no usa data-i18n: su clave cambia (cargando/vacío/error).
+  var statusKey = 'home.gallery.loading'; // el HTML lo trae vacío: sin JS no se anuncia una carga eterna
+  function setStatus(key) {
+    statusKey = key;
+    if (!status) return;
+    if (key) status.textContent = window.I18n.t(key);
+    status.classList.toggle('notice--error', key === 'home.gallery.error');
+    status.hidden = !key; // [hidden] ya gana a cualquier display (base.css)
+  }
+  window.I18n.ready.then(function () { if (statusKey) setStatus(statusKey); });
+  document.addEventListener('i18n:change', function () { if (statusKey) setStatus(statusKey); });
+
+  function build(art, index) {
+    var img = art.image;
+    var li = document.createElement('li');
+    li.className = 'gallery__item';
+    li.setAttribute('style', '--w:' + img.width + ';--h:' + img.height);
+
+    var a = document.createElement('a');
+    a.className = 'gallery__link';
+    a.href = window.Artworks.url(art);
+
+    var figure = document.createElement('figure');
+    figure.className = 'gallery__figure';
+
+    var media = document.createElement('div');
+    media.className = 'gallery__media';
+
+    var image = document.createElement('img');
+    image.className = 'gallery__image';
+    // Orden importante: src SIEMPRE al final. Si se asigna antes, la descarga
+    // empieza sin lazy/srcset (descargas dobles y lazy loading roto).
+    image.decoding = 'async';
+    if (index >= EAGER) image.loading = 'lazy';
+    if (index === 0) image.setAttribute('fetchpriority', 'high');
+    image.width = img.width;
+    image.height = img.height;
+    image.sizes = sizes(img);
+    image.srcset = srcset(img);
+    image.src = file(img, img.widths[0]);
+
+    var caption = document.createElement('figcaption');
+    caption.className = 'gallery__caption';
+    var title = document.createElement('span');
+    title.className = 'gallery__title';
+    caption.appendChild(title);
+
+    var year = field(art.year);
+    if (year) {
+      var meta = document.createElement('span');
+      meta.className = 'gallery__meta';
+      meta.textContent = year;
+      caption.appendChild(meta);
+    }
+
+    media.appendChild(image);
+    figure.appendChild(media);
+    figure.appendChild(caption);
+    a.appendChild(figure);
+    li.appendChild(a);
+
+    items.push({ art: art, img: image, title: title });
+    return li;
+  }
+
+  function translate() {
+    items.forEach(function (item) {
+      item.title.textContent = window.I18n.artworkText(item.art.title);
+      item.img.alt = window.I18n.artworkText(item.art.image.alt);
+    });
+  }
+
+  Promise.all([window.I18n.ready, load()]).then(function (res) {
+    var list = res[1];
+    if (!list.length) { setStatus('home.gallery.empty'); return; }
+    var frag = document.createDocumentFragment();
+    list.forEach(function (art, i) { frag.appendChild(build(art, i)); });
+    grid.appendChild(frag);
+    translate();
+    setStatus('');
+    document.addEventListener('i18n:change', translate);
+  }).catch(function (err) {
+    console.error('[gallery]', err);
+    setStatus('home.gallery.error');
+  });
+})();

@@ -1,0 +1,10 @@
+# Sitio estático: sin build step; se publica la carpeta frontend/.
+[build]
+  publish = "frontend"
+
+# Cualquier ruta inexistente → página 404 propia (con estado 404).
+# Netlify solo aplica esta regla cuando no hay un archivo que coincida.
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
