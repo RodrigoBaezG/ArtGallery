@@ -93,6 +93,8 @@
   --main-min-height: 60vh;
   --body-min-height: 100vh;
   --tap-target: 2.75rem;       /* 44 px mínimo táctil */
+  --icon-size: 1.25rem;        /* 20 px: iconos de línea monocromos (pie) */
+  --icon-gap: var(--space-1);  /* 8 px entre icono y texto */
   --nav-toggle-width: 5rem;    /* 80 px: mismo ancho para Menu/Menú/Close/Cerrar (QA N3) */
 
   --gallery-gap: var(--space-2);

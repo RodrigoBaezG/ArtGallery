@@ -463,13 +463,20 @@ Sin iconos decorativos: etiqueta en versalitas + enlace.
 
 ### 7.13 Footer
 
+El enlace de Instagram lleva un icono de línea **monocromo** (excepción a "sin iconos decorativos", decidida por Rodrigo). `site-footer__link--icon`: inline-flex, icono y texto centrados, separados por `--icon-gap` (8 px). `site-footer__icon`: 20 px (`--icon-size`), trazo 1.5 en `currentColor`, así que hereda la tinta suave y pasa a índigo en hover. El SVG va inline con `aria-hidden="true"` y el texto visible da el nombre accesible. El área táctil sigue en 44 px y el cambio de color dura 150 ms (0 con `prefers-reduced-motion`). No usar `assets/icons/instagram.svg` (a color).
+
 ```html
 <footer class="site-footer">
   <div class="site-footer__inner container container--wide">
     <p class="site-footer__name">Kuko Báez</p>
     <ul class="site-footer__links" role="list">
       <li><a class="site-footer__link" href="mailto:[[TODO: email]]" data-i18n="common.footer.email">Email</a></li>
-      <li><a class="site-footer__link" href="https://instagram.com/[[TODO]]" rel="me noopener">Instagram</a></li>
+      <li>
+        <a class="site-footer__link site-footer__link--icon" href="https://www.instagram.com/kuko.baez/" rel="me noopener">
+          <svg class="site-footer__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          <span data-i18n="common.footer.instagramLabel">Instagram</span>
+        </a>
+      </li>
       <li><a class="site-footer__link" href="contact.html" data-i18n="common.nav.contact">Contact</a></li>
     </ul>
     <p class="site-footer__copy">© <span data-year>2026</span> Kuko Báez. <span data-i18n="common.footer.rights">All artworks © the artist.</span></p>
@@ -584,7 +591,7 @@ Escritorio: formulario 3/5, datos de contacto 2/5 separados por una línea verti
 - CTA: `cta`, `cta__title`, `cta__text`, `cta__actions`
 - Formulario: `form`, `form__field`, `form__label`, `form__optional`, `form__hint`, `form__input`, `form__select`, `form__textarea`, `form__error`, `form__actions`, `form__status`, `form__status--success`, `form__status--error`, `form__honeypot`
 - Contacto/descarga: `contact-list`, `contact-list__label`, `contact-list__link`, `download-link`, `download-link__label`, `download-link__meta`
-- Pie: `site-footer`, `site-footer__inner`, `site-footer__name`, `site-footer__links`, `site-footer__link`, `site-footer__copy`
+- Pie: `site-footer`, `site-footer__inner`, `site-footer__name`, `site-footer__links`, `site-footer__link`, `site-footer__link--icon`, `site-footer__icon`, `site-footer__copy`
 
 **Páginas**:
 - `home.css`: `hero`, `hero__name`, `hero__tagline`, `hero__actions`, `gallery`

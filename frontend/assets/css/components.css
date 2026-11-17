@@ -789,6 +789,20 @@
   text-decoration-line: underline;
 }
 
+/* Enlace con icono monocromo (Instagram). El icono usa currentColor:
+   hereda tinta suave y pasa a índigo en hover junto con el texto. */
+.site-footer__link--icon {
+  gap: var(--icon-gap);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.site-footer__icon {
+  flex-shrink: 0;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  color: inherit;
+}
+
 .site-footer__copy {
   color: var(--color-ink-soft);
   font-size: var(--font-size-xs);
