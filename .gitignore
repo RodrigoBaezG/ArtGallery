@@ -8,5 +8,8 @@
 npm-debug.log*
 .DS_Store
 
-# Configuración local de Claude Code
-.claude/
+# Configuración local de Claude Code (los agentes en .claude/agents sí se versionan)
+.claude/settings.local.json
+
+# Pipeline de imágenes
+/tools/images/node_modules
