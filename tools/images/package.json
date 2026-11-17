@@ -1,0 +1,13 @@
+{
+  "name": "artgallery-image-tools",
+  "private": true,
+  "type": "module",
+  "description": "Pipeline local de imágenes del portfolio (sharp). Genera derivados WebP y og:image.",
+  "scripts": {
+    "build": "node build.mjs",
+    "verify": "node verify.mjs"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}
