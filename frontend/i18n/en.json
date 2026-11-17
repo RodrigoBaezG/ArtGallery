@@ -1,0 +1,329 @@
+{
+  "common": {
+    "brand": {
+      "name": "Kuko Báez",
+      "homeLabel": "Kuko Báez — home"
+    },
+    "nav": {
+      "label": "Main navigation",
+      "work": "Work",
+      "about": "About",
+      "commissions": "Commissions",
+      "contact": "Contact",
+      "menuOpen": "Menu",
+      "menuClose": "Close",
+      "menuOpenLabel": "Open menu",
+      "menuCloseLabel": "Close menu",
+      "skipToContent": "Skip to content"
+    },
+    "lang": {
+      "label": "Language",
+      "en": "English",
+      "es": "Español",
+      "switchTo": "Ver en español"
+    },
+    "footer": {
+      "copyright": "© {year} Kuko Báez (Rodrigo Báez). All rights reserved.",
+      "emailLabel": "Email",
+      "instagramLabel": "Instagram"
+    },
+    "contactInfo": {
+      "email": "rkbaezgarcia@gmail.com",
+      "instagramHandle": "@kuko.baez",
+      "instagramUrl": "https://www.instagram.com/kuko.baez/"
+    },
+    "cta": {
+      "contact": "Get in touch",
+      "commission": "Start a commission",
+      "emailMe": "Email me"
+    },
+    "status": {
+      "available": "Original available — inquire",
+      "sold": "Sold",
+      "private": "Private collection",
+      "commissioned": "Commissioned work"
+    },
+    "actions": {
+      "previous": "Previous",
+      "next": "Next",
+      "back": "Back",
+      "close": "Close"
+    },
+    "a11y": {
+      "opensNewTab": "(opens in a new tab)",
+      "loading": "Loading…"
+    }
+  },
+  "home": {
+    "hero": {
+      "name": "Kuko Báez",
+      "tagline": "Watercolor illustrator — editorial, books & commissions",
+      "intro": "Watercolor illustrations for publishers, authors and private clients.",
+      "cta": "Get in touch"
+    },
+    "gallery": {
+      "heading": "Selected work",
+      "itemLabel": "View “{title}”",
+      "loading": "Loading work…",
+      "error": "The gallery couldn't be loaded. Please refresh the page.",
+      "empty": "New work coming soon."
+    },
+    "closing": {
+      "heading": "Have a project in mind?",
+      "text": "I take on editorial and book illustration, as well as private commissions.",
+      "cta": "Get in touch"
+    }
+  },
+  "work": {
+    "meta": {
+      "year": "Year",
+      "medium": "Medium",
+      "dimensions": "Size",
+      "status": "Availability"
+    },
+    "actions": {
+      "commissionSimilar": "Commission something similar",
+      "inquire": "Ask about this piece"
+    },
+    "nav": {
+      "previous": "Previous artwork",
+      "next": "Next artwork",
+      "back": "Back to all work",
+      "position": "{current} of {total}",
+      "keyboardHint": "Use ← → to browse and Esc to go back.",
+      "label": "Artwork navigation"
+    },
+    "notFound": {
+      "heading": "Artwork not found",
+      "text": "This piece may have been moved or removed.",
+      "cta": "See all work"
+    }
+  },
+  "about": {
+    "header": {
+      "heading": "About"
+    },
+    "portrait": {
+      "alt": "Portrait of Rodrigo “Kuko” Báez"
+    },
+    "bio": {
+      "heading": "Hi, I'm Kuko",
+      "p1": "I'm Kuko Báez (Rodrigo Báez), a watercolor illustrator. I illustrate for editorial projects and books, and paint commissioned pieces for private clients. My work ranges from portraits and figures to animals, landscapes and carnival scenes.",
+      "p2": "[[TODO: where you're based, how you came to watercolor, your training, and what you like to paint]]"
+    },
+    "experience": {
+      "heading": "Experience",
+      "clients": {
+        "heading": "Selected clients",
+        "text": "[[TODO: clients or publishers you've worked with]]"
+      },
+      "publications": {
+        "heading": "Publications",
+        "text": "[[TODO: books, magazines or media where your illustrations have appeared]]"
+      },
+      "exhibitions": {
+        "heading": "Exhibitions",
+        "text": "[[TODO: exhibitions, with year and place]]"
+      },
+      "education": {
+        "heading": "Education",
+        "text": "[[TODO: training, courses or studies]]"
+      }
+    },
+    "technique": {
+      "heading": "Technique & materials",
+      "text": "I work in watercolor on paper, sometimes combined with ink.",
+      "materials": "[[TODO: paper, paints and brushes you usually use; whether you add ink, gouache or pencil; whether final art is scanned or photographed]]"
+    },
+    "cv": {
+      "heading": "CV",
+      "text": "Download my CV for a full list of projects.",
+      "downloadEn": "Download CV (PDF, English)",
+      "downloadEs": "Descargar CV (PDF, español)"
+    },
+    "cta": {
+      "heading": "Let's work together",
+      "text": "Tell me about your project.",
+      "button": "Get in touch"
+    }
+  },
+  "commissions": {
+    "header": {
+      "eyebrow": "Custom watercolor",
+      "heading": "Commissions",
+      "lead": "Watercolor illustrations made for your project, from first idea to finished piece."
+    },
+    "types": {
+      "heading": "What I take on",
+      "editorial": {
+        "title": "Editorial illustration",
+        "text": "Illustrations for magazines, newspapers and online publications."
+      },
+      "books": {
+        "title": "Book illustration",
+        "text": "Covers and interior illustrations for books."
+      },
+      "personal": {
+        "title": "Personal commissions",
+        "text": "A watercolor painted from your references: a portrait, a place, an object or a moment you want to keep."
+      },
+      "originals": {
+        "title": "Original artwork",
+        "text": "Interested in an original from the gallery? Ask me about its availability."
+      }
+    },
+    "process": {
+      "heading": "How it works",
+      "step1": {
+        "title": "Tell me about your project",
+        "text": "Send a short message with what you have in mind, your references and your deadline."
+      },
+      "step2": {
+        "title": "Quote and timeline",
+        "text": "I reply with a quote and an estimated timeline. Work starts once we've agreed on both. [[TODO: deposit or payment terms, if any]]"
+      },
+      "step3": {
+        "title": "Sketch",
+        "text": "I send you a sketch to review before I start painting. [[TODO: number of revision rounds included]]"
+      },
+      "step4": {
+        "title": "Painting",
+        "text": "Once the sketch is approved, I paint the final watercolor."
+      },
+      "step5": {
+        "title": "Delivery",
+        "text": "I deliver the finished illustration in the format agreed in the quote. [[TODO: what is delivered — high-resolution scan, file format, the original artwork — and how originals are shipped]]"
+      }
+    },
+    "timing": {
+      "heading": "Timelines",
+      "text": "Timelines depend on size and complexity. I'll give you an estimate with every quote.",
+      "editorial": "Editorial illustration: [[TODO: approximate time]]",
+      "books": "Book projects: [[TODO: approximate time]]",
+      "personal": "Personal commissions: [[TODO: approximate time]]",
+      "deadline": "Working to a fixed date? Mention it in your first message."
+    },
+    "brief": {
+      "heading": "What to send",
+      "intro": "To give you an accurate quote, include:",
+      "reference": {
+        "title": "References",
+        "text": "Photos or any images that capture the idea."
+      },
+      "size": {
+        "title": "Size",
+        "text": "The final dimensions (e.g. A4 or 30 × 40 cm), or the print or screen format."
+      },
+      "use": {
+        "title": "Use",
+        "text": "Where the illustration will appear: a book, a magazine, a website, a gift…"
+      },
+      "deadline": {
+        "title": "Deadline",
+        "text": "The date you need it by."
+      },
+      "budget": {
+        "title": "Budget",
+        "text": "If you have one in mind, it helps me suggest the best option."
+      },
+      "notes": {
+        "title": "Extra notes",
+        "text": "Palette, mood, style or any other detail that helps."
+      }
+    },
+    "pricing": {
+      "text": "Every project is quoted individually, based on size, complexity and how the illustration will be used."
+    },
+    "cta": {
+      "heading": "Ready to start?",
+      "text": "Tell me what you have in mind and I'll get back to you with the next steps.",
+      "button": "Request a commission",
+      "orEmail": "Or write directly to"
+    }
+  },
+  "contact": {
+    "header": {
+      "heading": "Contact",
+      "lead": "For editorial work, book projects, commissions or questions about a piece, write to me here.",
+      "responseTime": "[[TODO: usual response time, e.g. \"I usually reply within X days.\"]]"
+    },
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "projectType": {
+        "label": "Type of project",
+        "placeholder": "Choose one",
+        "editorial": "Editorial illustration",
+        "book": "Book illustration",
+        "personal": "Personal commission",
+        "original": "Buying an original",
+        "other": "Other"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your project: what you need, the size and your deadline.",
+      "required": "Required",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "honeypot": "Leave this field empty"
+    },
+    "validation": {
+      "required": "Please fill in this field.",
+      "email": "Please enter a valid email address."
+    },
+    "success": {
+      "heading": "Message sent",
+      "text": "Thank you for writing. I'll get back to you soon.",
+      "back": "Back to the gallery"
+    },
+    "error": {
+      "heading": "Something went wrong",
+      "text": "Your message couldn't be sent. Please try again, or email me at {email}."
+    },
+    "privacy": {
+      "text": "I'll only use your details to reply to your message. No mailing lists, no sharing."
+    },
+    "direct": {
+      "heading": "Prefer email?",
+      "emailLabel": "Email",
+      "instagramLabel": "Instagram",
+      "instagramText": "Follow my work on Instagram"
+    }
+  },
+  "notFound": {
+    "code": "404",
+    "heading": "Page not found",
+    "text": "The page you're looking for doesn't exist or has moved.",
+    "cta": "Back to the gallery"
+  },
+  "meta": {
+    "siteName": "Kuko Báez",
+    "person": {
+      "jobTitle": "Watercolor illustrator"
+    },
+    "home": {
+      "title": "Kuko Báez — Watercolor Illustrator",
+      "description": "Watercolor illustration by Kuko Báez for editorial, books and private commissions. See the portfolio and get in touch."
+    },
+    "work": {
+      "title": "{title} — Kuko Báez",
+      "description": "“{title}”, a watercolor by Kuko Báez. See the full portfolio or commission something similar.",
+      "notFoundTitle": "Artwork not found — Kuko Báez"
+    },
+    "about": {
+      "title": "About — Kuko Báez, Watercolor Illustrator",
+      "description": "About Kuko Báez, watercolor illustrator for editorial, books and private commissions: who I am, how I work and how to get in touch."
+    },
+    "commissions": {
+      "title": "Watercolor Commissions — Kuko Báez",
+      "description": "Commission a watercolor illustration from Kuko Báez: editorial, book and personal projects. How it works and what to send."
+    },
+    "contact": {
+      "title": "Contact — Kuko Báez",
+      "description": "Get in touch with Kuko Báez about editorial illustration, book projects, watercolor commissions or original artwork."
+    },
+    "notFound": {
+      "title": "Page not found — Kuko Báez",
+      "description": "This page doesn't exist. Visit the watercolor portfolio of Kuko Báez."
+    }
+  }
+}

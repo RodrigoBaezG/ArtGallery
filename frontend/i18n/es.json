@@ -1,0 +1,329 @@
+{
+  "common": {
+    "brand": {
+      "name": "Kuko Báez",
+      "homeLabel": "Kuko Báez — inicio"
+    },
+    "nav": {
+      "label": "Navegación principal",
+      "work": "Obra",
+      "about": "Sobre mí",
+      "commissions": "Encargos",
+      "contact": "Contacto",
+      "menuOpen": "Menú",
+      "menuClose": "Cerrar",
+      "menuOpenLabel": "Abrir menú",
+      "menuCloseLabel": "Cerrar menú",
+      "skipToContent": "Saltar al contenido"
+    },
+    "lang": {
+      "label": "Idioma",
+      "en": "English",
+      "es": "Español",
+      "switchTo": "View in English"
+    },
+    "footer": {
+      "copyright": "© {year} Kuko Báez (Rodrigo Báez). Todos los derechos reservados.",
+      "emailLabel": "Correo",
+      "instagramLabel": "Instagram"
+    },
+    "contactInfo": {
+      "email": "rkbaezgarcia@gmail.com",
+      "instagramHandle": "@kuko.baez",
+      "instagramUrl": "https://www.instagram.com/kuko.baez/"
+    },
+    "cta": {
+      "contact": "Escríbeme",
+      "commission": "Pedir un encargo",
+      "emailMe": "Envíame un correo"
+    },
+    "status": {
+      "available": "Original disponible — consultar",
+      "sold": "Vendida",
+      "private": "Colección privada",
+      "commissioned": "Obra por encargo"
+    },
+    "actions": {
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "back": "Volver",
+      "close": "Cerrar"
+    },
+    "a11y": {
+      "opensNewTab": "(se abre en una pestaña nueva)",
+      "loading": "Cargando…"
+    }
+  },
+  "home": {
+    "hero": {
+      "name": "Kuko Báez",
+      "tagline": "Ilustrador en acuarela — editorial, libros y encargos",
+      "intro": "Ilustraciones en acuarela para editoriales, autores y particulares.",
+      "cta": "Escríbeme"
+    },
+    "gallery": {
+      "heading": "Obra seleccionada",
+      "itemLabel": "Ver «{title}»",
+      "loading": "Cargando obras…",
+      "error": "No se pudo cargar la galería. Vuelve a cargar la página.",
+      "empty": "Pronto habrá obra nueva."
+    },
+    "closing": {
+      "heading": "¿Tienes un proyecto en mente?",
+      "text": "Hago ilustración editorial y de libros, y también encargos particulares.",
+      "cta": "Escríbeme"
+    }
+  },
+  "work": {
+    "meta": {
+      "year": "Año",
+      "medium": "Técnica",
+      "dimensions": "Medidas",
+      "status": "Disponibilidad"
+    },
+    "actions": {
+      "commissionSimilar": "Encargar algo similar",
+      "inquire": "Consultar por esta obra"
+    },
+    "nav": {
+      "previous": "Obra anterior",
+      "next": "Obra siguiente",
+      "back": "Volver a la galería",
+      "position": "{current} de {total}",
+      "keyboardHint": "Usa ← → para navegar y Esc para volver.",
+      "label": "Navegación entre obras"
+    },
+    "notFound": {
+      "heading": "Obra no encontrada",
+      "text": "Puede que esta obra se haya movido o retirado.",
+      "cta": "Ver toda la obra"
+    }
+  },
+  "about": {
+    "header": {
+      "heading": "Sobre mí"
+    },
+    "portrait": {
+      "alt": "Retrato de Rodrigo «Kuko» Báez"
+    },
+    "bio": {
+      "heading": "Hola, soy Kuko",
+      "p1": "Soy Kuko Báez (Rodrigo Báez), ilustrador en acuarela. Hago ilustraciones para proyectos editoriales y libros, y pinto obras por encargo para particulares. Mi trabajo va del retrato y la figura a los animales, el paisaje y las escenas de carnaval.",
+      "p2": "[[TODO: dónde vives, cómo llegaste a la acuarela, tu formación y qué te gusta pintar]]"
+    },
+    "experience": {
+      "heading": "Experiencia",
+      "clients": {
+        "heading": "Clientes",
+        "text": "[[TODO: clientes o editoriales con los que has trabajado]]"
+      },
+      "publications": {
+        "heading": "Publicaciones",
+        "text": "[[TODO: libros, revistas o medios donde se han publicado tus ilustraciones]]"
+      },
+      "exhibitions": {
+        "heading": "Exposiciones",
+        "text": "[[TODO: exposiciones, con año y lugar]]"
+      },
+      "education": {
+        "heading": "Formación",
+        "text": "[[TODO: estudios, cursos o formación]]"
+      }
+    },
+    "technique": {
+      "heading": "Técnica y materiales",
+      "text": "Trabajo con acuarela sobre papel, a veces combinada con tinta.",
+      "materials": "[[TODO: papel, pinturas y pinceles que sueles usar; si añades tinta, gouache o lápiz; si el arte final se escanea o se fotografía]]"
+    },
+    "cv": {
+      "heading": "CV",
+      "text": "Descarga mi CV para ver la lista completa de proyectos.",
+      "downloadEn": "Download CV (PDF, English)",
+      "downloadEs": "Descargar CV (PDF, español)"
+    },
+    "cta": {
+      "heading": "Trabajemos juntos",
+      "text": "Cuéntame tu proyecto.",
+      "button": "Escríbeme"
+    }
+  },
+  "commissions": {
+    "header": {
+      "eyebrow": "Acuarela por encargo",
+      "heading": "Encargos",
+      "lead": "Ilustraciones en acuarela hechas para tu proyecto, desde la primera idea hasta la pieza terminada."
+    },
+    "types": {
+      "heading": "Qué encargos acepto",
+      "editorial": {
+        "title": "Ilustración editorial",
+        "text": "Ilustraciones para revistas, periódicos y publicaciones digitales."
+      },
+      "books": {
+        "title": "Ilustración de libros",
+        "text": "Portadas e ilustraciones interiores para libros."
+      },
+      "personal": {
+        "title": "Encargos personales",
+        "text": "Una acuarela pintada a partir de tus referencias: un retrato, un lugar, un objeto o un momento que quieras conservar."
+      },
+      "originals": {
+        "title": "Obra original",
+        "text": "¿Te interesa un original de la galería? Pregúntame por su disponibilidad."
+      }
+    },
+    "process": {
+      "heading": "Cómo funciona",
+      "step1": {
+        "title": "Cuéntame tu proyecto",
+        "text": "Envíame un mensaje breve con lo que tienes en mente, tus referencias y tu fecha límite."
+      },
+      "step2": {
+        "title": "Presupuesto y plazo",
+        "text": "Te respondo con un presupuesto y un plazo estimado. Empiezo cuando estamos de acuerdo en ambos. [[TODO: anticipo o condiciones de pago, si las hay]]"
+      },
+      "step3": {
+        "title": "Boceto",
+        "text": "Te envío un boceto para que lo revises antes de empezar a pintar. [[TODO: número de rondas de cambios incluidas]]"
+      },
+      "step4": {
+        "title": "Pintura",
+        "text": "Con el boceto aprobado, pinto la acuarela final."
+      },
+      "step5": {
+        "title": "Entrega",
+        "text": "Te entrego la ilustración terminada en el formato acordado en el presupuesto. [[TODO: qué se entrega — escaneo en alta resolución, formato de archivo, la obra original — y cómo se envían los originales]]"
+      }
+    },
+    "timing": {
+      "heading": "Plazos",
+      "text": "Los plazos dependen del tamaño y la complejidad. Te daré una estimación con cada presupuesto.",
+      "editorial": "Ilustración editorial: [[TODO: plazo aproximado]]",
+      "books": "Proyectos de libro: [[TODO: plazo aproximado]]",
+      "personal": "Encargos personales: [[TODO: plazo aproximado]]",
+      "deadline": "¿Tienes una fecha fija? Indícala en tu primer mensaje."
+    },
+    "brief": {
+      "heading": "Qué información enviar",
+      "intro": "Para darte un presupuesto ajustado, incluye:",
+      "reference": {
+        "title": "Referencias",
+        "text": "Fotos o cualquier imagen que muestre la idea."
+      },
+      "size": {
+        "title": "Tamaño",
+        "text": "Las medidas finales (por ejemplo, A4 o 30 × 40 cm), o el formato para impresión o pantalla."
+      },
+      "use": {
+        "title": "Uso",
+        "text": "Dónde aparecerá la ilustración: un libro, una revista, una web, un regalo…"
+      },
+      "deadline": {
+        "title": "Fecha límite",
+        "text": "Para cuándo la necesitas."
+      },
+      "budget": {
+        "title": "Presupuesto",
+        "text": "Si tienes uno en mente, me ayuda a proponerte la mejor opción."
+      },
+      "notes": {
+        "title": "Notas adicionales",
+        "text": "Paleta, ambiente, estilo o cualquier otro detalle que ayude."
+      }
+    },
+    "pricing": {
+      "text": "Cada proyecto se presupuesta por separado, según el tamaño, la complejidad y el uso que tendrá la ilustración."
+    },
+    "cta": {
+      "heading": "¿Empezamos?",
+      "text": "Cuéntame qué tienes en mente y te responderé con los siguientes pasos.",
+      "button": "Solicitar un encargo",
+      "orEmail": "O escribe directamente a"
+    }
+  },
+  "contact": {
+    "header": {
+      "heading": "Contacto",
+      "lead": "Para trabajos editoriales, proyectos de libro, encargos o preguntas sobre una obra, escríbeme aquí.",
+      "responseTime": "[[TODO: tiempo habitual de respuesta, p. ej. \"Suelo responder en X días.\"]]"
+    },
+    "form": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "projectType": {
+        "label": "Tipo de proyecto",
+        "placeholder": "Elige una opción",
+        "editorial": "Ilustración editorial",
+        "book": "Ilustración de libro",
+        "personal": "Encargo personal",
+        "original": "Compra de un original",
+        "other": "Otro"
+      },
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntame tu proyecto: qué necesitas, el tamaño y la fecha límite.",
+      "required": "Obligatorio",
+      "submit": "Enviar mensaje",
+      "sending": "Enviando…",
+      "honeypot": "Deja este campo vacío"
+    },
+    "validation": {
+      "required": "Completa este campo.",
+      "email": "Introduce un correo electrónico válido."
+    },
+    "success": {
+      "heading": "Mensaje enviado",
+      "text": "Gracias por escribir. Te responderé pronto.",
+      "back": "Volver a la galería"
+    },
+    "error": {
+      "heading": "Algo salió mal",
+      "text": "No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme a {email}."
+    },
+    "privacy": {
+      "text": "Solo usaré tus datos para responder a tu mensaje. Sin listas de correo y sin compartirlos con nadie."
+    },
+    "direct": {
+      "heading": "¿Prefieres el correo?",
+      "emailLabel": "Correo",
+      "instagramLabel": "Instagram",
+      "instagramText": "Sigue mi trabajo en Instagram"
+    }
+  },
+  "notFound": {
+    "code": "404",
+    "heading": "Página no encontrada",
+    "text": "La página que buscas no existe o ha cambiado de dirección.",
+    "cta": "Volver a la galería"
+  },
+  "meta": {
+    "siteName": "Kuko Báez",
+    "person": {
+      "jobTitle": "Ilustrador en acuarela"
+    },
+    "home": {
+      "title": "Kuko Báez — Ilustrador en acuarela",
+      "description": "Ilustración en acuarela de Kuko Báez para editorial, libros y encargos particulares. Mira el portfolio y escríbeme."
+    },
+    "work": {
+      "title": "{title} — Kuko Báez",
+      "description": "«{title}», una acuarela de Kuko Báez. Mira el portfolio completo o encarga algo similar.",
+      "notFoundTitle": "Obra no encontrada — Kuko Báez"
+    },
+    "about": {
+      "title": "Sobre mí — Kuko Báez, ilustrador en acuarela",
+      "description": "Sobre Kuko Báez, ilustrador en acuarela para editorial, libros y encargos particulares: quién soy, cómo trabajo y cómo contactar."
+    },
+    "commissions": {
+      "title": "Encargos de acuarela — Kuko Báez",
+      "description": "Encarga una ilustración en acuarela a Kuko Báez: proyectos editoriales, de libro y personales. Cómo funciona y qué enviar."
+    },
+    "contact": {
+      "title": "Contacto — Kuko Báez",
+      "description": "Escribe a Kuko Báez sobre ilustración editorial, proyectos de libro, encargos en acuarela u obra original."
+    },
+    "notFound": {
+      "title": "Página no encontrada — Kuko Báez",
+      "description": "Esta página no existe. Visita el portfolio de acuarela de Kuko Báez."
+    }
+  }
+}

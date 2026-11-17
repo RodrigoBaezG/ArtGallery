@@ -1,0 +1,772 @@
+[
+  {
+    "id": "moonlit-sorceress",
+    "order": 1,
+    "featured": true,
+    "title": {
+      "en": "[[PROPUESTA]] Moon Tide",
+      "es": "[[PROPUESTA]] Marea de luna"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Watercolor on paper",
+      "es": "Acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/moonlit-sorceress",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1532,
+      "height": 2000,
+      "alt": {
+        "en": "Woman in a white robe and diadem walks through the sea at night with a twisted staff, under a full moon in deep blue.",
+        "es": "Mujer con túnica blanca y diadema camina por el mar de noche con un báculo retorcido, bajo la luna llena en azul intenso."
+      }
+    },
+    "source": "1641906518413.jpg"
+  },
+  {
+    "id": "woman-reading-magazine",
+    "order": 2,
+    "featured": true,
+    "title": {
+      "en": "[[PROPUESTA]] The Magazine",
+      "es": "[[PROPUESTA]] La revista"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Watercolor on paper",
+      "es": "Acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/woman-reading-magazine",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1766,
+      "height": 2000,
+      "alt": {
+        "en": "Dark-haired woman in a black dress reads a magazine on a sofa; behind her, a fair-haired man in a brown suit and red tie.",
+        "es": "Mujer morena con vestido negro lee una revista en un sofá; detrás, un hombre rubio con traje marrón y corbata roja."
+      }
+    },
+    "source": "IMG_20190928_152112.jpg"
+  },
+  {
+    "id": "flamenco-duo",
+    "order": 3,
+    "featured": true,
+    "title": {
+      "en": "[[PROPUESTA]] Song and Guitar",
+      "es": "[[PROPUESTA]] Cante y guitarra"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Watercolor on paper",
+      "es": "Acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/flamenco-duo",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1340,
+      "alt": {
+        "en": "Two young men in 1970s style: one sings in a white shirt, the other holds a Spanish guitar; violet and red background.",
+        "es": "Dos jóvenes setenteros: uno canta con camisa blanca y el otro sostiene una guitarra española; fondo violeta y rojo."
+      }
+    },
+    "source": "pacoycama.jpg"
+  },
+  {
+    "id": "headwrap-profile",
+    "order": 4,
+    "featured": true,
+    "title": {
+      "en": "[[PROPUESTA]] Striped Headwrap",
+      "es": "[[PROPUESTA]] Turbante de rayas"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Watercolor on paper",
+      "es": "Acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/headwrap-profile",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1566,
+      "height": 2000,
+      "alt": {
+        "en": "Profile of a Black woman in a multicolored striped headwrap, hand under her chin, against dripping maroon and violet.",
+        "es": "Perfil de mujer negra con turbante de rayas multicolores y la mano bajo la barbilla, sobre fondo granate y violeta."
+      }
+    },
+    "source": "kuko1.jpg"
+  },
+  {
+    "id": "father-and-child-guitar",
+    "order": 5,
+    "featured": true,
+    "title": {
+      "en": "[[PROPUESTA]] First Chords",
+      "es": "[[PROPUESTA]] Primeros acordes"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Watercolor on paper",
+      "es": "Acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/father-and-child-guitar",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1399,
+      "height": 2000,
+      "alt": {
+        "en": "Man in a green polo shirt leans over a guitar while a toddler reaches out to play it, with soft blue washes.",
+        "es": "Hombre con polo verde inclinado sobre una guitarra mientras un bebé la toca, entre manchas azuladas."
+      }
+    },
+    "source": "pacodisco2.jpg"
+  },
+  {
+    "id": "peacock-headdress",
+    "order": 6,
+    "featured": true,
+    "title": {
+      "en": "[[PROPUESTA]] Peacock",
+      "es": "[[PROPUESTA]] Pavo real"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Watercolor on paper",
+      "es": "Acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/peacock-headdress",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1403,
+      "height": 2000,
+      "alt": {
+        "en": "Woman looking up in a large peacock-feather headdress and blue skirt, amid ochre, orange and blue splashes.",
+        "es": "Mujer que mira arriba con gran tocado de plumas de pavo real y falda azul, entre salpicaduras ocres, naranjas y azules."
+      }
+    },
+    "source": "PXL_20230912_075254599.jpg"
+  },
+  {
+    "id": "bird-and-red-carnation",
+    "order": 7,
+    "featured": false,
+    "title": {
+      "en": "[[PROPUESTA]] Bird and Carnation",
+      "es": "[[PROPUESTA]] Pájaro y clavel"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Watercolor on paper",
+      "es": "Acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/bird-and-red-carnation",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1354,
+      "height": 2000,
+      "alt": {
+        "en": "Figure seen from above in a white shawl holding a red flower, a green bird perched on a red hat; violets and turquoises.",
+        "es": "Figura vista desde arriba con mantón blanco y una flor roja, y un pájaro verde sobre su tocado rojo; violetas y turquesas."
+      }
+    },
+    "source": "lamina.png"
+  },
+  {
+    "id": "elven-valley",
+    "order": 8,
+    "featured": false,
+    "title": {
+      "en": "[[PROPUESTA]] Valley of Waterfalls",
+      "es": "[[PROPUESTA]] Valle de las cascadas"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Watercolor on paper",
+      "es": "Acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/elven-valley",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1477,
+      "alt": {
+        "en": "City of arches and pavilions between cliffs and waterfalls, with autumn trees and a small pavilion in the foreground.",
+        "es": "Ciudad de arcos y pabellones entre acantilados y cascadas, con árboles otoñales y un templete en primer plano."
+      }
+    },
+    "source": "IMG_20180913_102421-01.jpeg"
+  },
+  {
+    "id": "woman-orange-blouse",
+    "order": 9,
+    "featured": false,
+    "title": {
+      "en": "[[PROPUESTA]] Orange Blouse",
+      "es": "[[PROPUESTA]] Blusa naranja"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Watercolor on paper",
+      "es": "Acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/woman-orange-blouse",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1527,
+      "height": 2000,
+      "alt": {
+        "en": "Portrait of a woman with short curly hair and a steady gaze, wearing an orange blouse, with turquoise splashes.",
+        "es": "Retrato de mujer de pelo corto rizado y mirada firme, con blusa naranja y salpicaduras turquesa."
+      }
+    },
+    "source": "PXL_20230910_092207889.jpg"
+  },
+  {
+    "id": "wolf-portrait",
+    "order": 10,
+    "featured": false,
+    "title": {
+      "en": "[[PROPUESTA]] Wolf",
+      "es": "[[PROPUESTA]] Lobo"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Watercolor on paper",
+      "es": "Acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/wolf-portrait",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1387,
+      "height": 2000,
+      "alt": {
+        "en": "Front-facing wolf's head in near-white, dissolving into blue and yellow washes, with a red drip.",
+        "es": "Cabeza de lobo de frente, casi blanca, que se disuelve en manchas azules y amarillas, con un chorreón rojo."
+      }
+    },
+    "source": "DSCF5825.JPG"
+  },
+  {
+    "id": "guitarist-profile",
+    "order": 11,
+    "featured": false,
+    "title": {
+      "en": "[[PROPUESTA]] Guitarist",
+      "es": "[[PROPUESTA]] Guitarrista"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Watercolor on paper",
+      "es": "Acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/guitarist-profile",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1513,
+      "alt": {
+        "en": "Curly-haired man playing a Spanish guitar in profile, among violet and blue-green washes.",
+        "es": "Hombre de pelo rizado toca una guitarra española de perfil, entre manchas violetas y verdeazuladas."
+      }
+    },
+    "source": "pacodisco1-2.jpg"
+  },
+  {
+    "id": "bandana-guitarist",
+    "order": 12,
+    "featured": false,
+    "title": {
+      "en": "[[PROPUESTA]] Bandana and Guitar",
+      "es": "[[PROPUESTA]] Bandana y guitarra"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Watercolor on paper",
+      "es": "Acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/bandana-guitarist",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1425,
+      "height": 2000,
+      "alt": {
+        "en": "Young man in a bandana and white T-shirt sitting with a guitar, in fuchsia, violet and blue.",
+        "es": "Joven con bandana y camiseta blanca sentado con una guitarra, en fucsia, violeta y azul."
+      }
+    },
+    "source": "JC acuarela.jpg"
+  },
+  {
+    "id": "dog-red-collar",
+    "order": 13,
+    "featured": false,
+    "title": {
+      "en": "[[PROPUESTA]] Red Collar",
+      "es": "[[PROPUESTA]] Collar rojo"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Watercolor on paper",
+      "es": "Acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/dog-red-collar",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1409,
+      "height": 2000,
+      "alt": {
+        "en": "Dark brown pointer-type dog with its mouth open and a red collar, against violet washes.",
+        "es": "Perro marrón oscuro tipo braco con la boca abierta y collar rojo, sobre manchas violáceas."
+      }
+    },
+    "source": "PXL_20231224_111459280.jpg"
+  },
+  {
+    "id": "two-dogs",
+    "order": 14,
+    "featured": false,
+    "title": {
+      "en": "[[PROPUESTA]] Two Friends",
+      "es": "[[PROPUESTA]] Dos amigos"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Watercolor on paper",
+      "es": "Acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/two-dogs",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1443,
+      "alt": {
+        "en": "Two long-haired dogs, one tricolor and one black and white, against a grey-blue background.",
+        "es": "Dos perros de pelo largo, uno tricolor y otro blanco y negro, sobre fondo azul grisáceo."
+      }
+    },
+    "source": "perrosaltuna.jpg"
+  },
+  {
+    "id": "carnival-masked-performer",
+    "order": 15,
+    "featured": false,
+    "title": {
+      "en": "[[PROPUESTA]] Carnival: Open Arms",
+      "es": "[[PROPUESTA]] Carnaval: brazos abiertos"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/carnival-masked-performer",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1469,
+      "alt": {
+        "en": "Carnival performer in an eye mask, purple hat and ruff, arms spread wide.",
+        "es": "Personaje de carnaval con antifaz, sombrero morado y gorguera, con los brazos abiertos."
+      }
+    },
+    "source": "img006.jpg"
+  },
+  {
+    "id": "carnival-umbrella-performer",
+    "order": 16,
+    "featured": false,
+    "title": {
+      "en": "[[PROPUESTA]] Carnival: The Shout",
+      "es": "[[PROPUESTA]] Carnaval: el grito"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/carnival-umbrella-performer",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1469,
+      "height": 2000,
+      "alt": {
+        "en": "Carnival performer in a red cape and green costume shouts, fist raised, holding a ribboned umbrella, masks at his waist.",
+        "es": "Personaje de carnaval con capa roja y traje verde grita con el puño alzado; lleva un paraguas de cintas y caretas colgadas."
+      }
+    },
+    "source": "img007.jpg"
+  },
+  {
+    "id": "carnival-harlequin",
+    "order": 17,
+    "featured": false,
+    "title": {
+      "en": "[[PROPUESTA]] Carnival: Harlequin",
+      "es": "[[PROPUESTA]] Carnaval: arlequín"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/carnival-harlequin",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1469,
+      "height": 2000,
+      "alt": {
+        "en": "Pierrot-style painted face under a large diamond-patterned bicorne, in a harlequin costume; blues and violets.",
+        "es": "Rostro maquillado de pierrot bajo un gran bicornio de rombos, con traje de arlequín; azules y violetas."
+      }
+    },
+    "source": "img011.jpg"
+  },
+  {
+    "id": "carnival-singer-scarf",
+    "order": 18,
+    "featured": false,
+    "title": {
+      "en": "[[PROPUESTA]] Carnival: The Singer",
+      "es": "[[PROPUESTA]] Carnaval: el cantante"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/carnival-singer-scarf",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1469,
+      "alt": {
+        "en": "Bearded singer in dark glasses, a star bandana, maroon scarf and waistcoat, gesturing as he sings.",
+        "es": "Cantante con barba, gafas oscuras, bandana con estrella, bufanda granate y chaleco, gesticulando mientras canta."
+      }
+    },
+    "source": "img015.jpg"
+  },
+  {
+    "id": "embrace-study",
+    "order": 19,
+    "featured": false,
+    "title": {
+      "en": "[[PROPUESTA]] Folded",
+      "es": "[[PROPUESTA]] Recogido"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Watercolor on paper",
+      "es": "Acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/embrace-study",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1401,
+      "height": 2000,
+      "alt": {
+        "en": "Close view of a nude figure curled up, arms and hands interlaced over the knees, in greys, violets and blue.",
+        "es": "Figura desnuda encogida en plano cerrado, con brazos y manos entrelazados sobre las rodillas, en grises, violetas y azul."
+      }
+    },
+    "source": "IMG_20200311_165915.jpg"
+  },
+  {
+    "id": "touching-hands",
+    "order": 20,
+    "featured": false,
+    "title": {
+      "en": "[[PROPUESTA]] Touch",
+      "es": "[[PROPUESTA]] Roce"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Watercolor on paper",
+      "es": "Acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/touching-hands",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1400,
+      "alt": {
+        "en": "Close-up of two hands touching over a body, in greys, violets and magenta.",
+        "es": "Primer plano de dos manos que se rozan sobre un cuerpo, en grises, violetas y magenta."
+      }
+    },
+    "source": "cuadro2.jpg"
+  },
+  {
+    "id": "crown-of-thorns",
+    "order": 21,
+    "featured": false,
+    "title": {
+      "en": "[[PROPUESTA]] Crown of Thorns",
+      "es": "[[PROPUESTA]] Corona de espinas"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Watercolor on paper",
+      "es": "Acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/crown-of-thorns",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1459,
+      "alt": {
+        "en": "Face of Christ wearing a crown of thorns, against violet and ochre with a beam of golden light.",
+        "es": "Rostro de Cristo con corona de espinas, sobre fondo violeta y ocre con un haz de luz dorada."
+      }
+    },
+    "source": "IMG_20181018_122114.jpg"
+  },
+  {
+    "id": "lord-with-wine-glass",
+    "order": 22,
+    "featured": false,
+    "title": {
+      "en": "[[PROPUESTA]] The Wine Glass",
+      "es": "[[PROPUESTA]] La copa"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Watercolor on paper",
+      "es": "Acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/lord-with-wine-glass",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1707,
+      "height": 2000,
+      "alt": {
+        "en": "Fair-haired man in a maroon doublet seated in a carved chair, holding a glass of red wine.",
+        "es": "Hombre rubio con jubón granate sentado en un sillón labrado, con una copa de vino tinto en la mano."
+      }
+    },
+    "source": "IMG_20180909_105944-012.jpg"
+  }
+]
