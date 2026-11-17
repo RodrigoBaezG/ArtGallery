@@ -1,150 +1,59 @@
-# ArtGallery — Kuko Báez
+# Kuko Báez — Watercolor Portfolio
 
-Sitio web personal del artista visual Kuko Báez (Rodrigo Báez) para mostrar y catalogar su obra: pinturas, dibujos e ilustración digital. Incluye un frontend estático y una API REST que sirve el catálogo desde PostgreSQL.
+Portfolio de acuarela de Kuko Báez (Rodrigo Báez), orientado a ilustración editorial, libros y encargos. Sitio estático y bilingüe (EN/ES).
 
-API en producción: `https://artgallery-h90r.onrender.com/api`
+**Web:** https://kukobaezartgallery.netlify.app/
 
 ## Stack
 
-- **Frontend:** HTML, CSS y JavaScript vanilla. Sin frameworks ni build step.
-- **Backend:** Node.js + Express 5.
-- **Base de datos:** PostgreSQL (driver `pg`).
-- **Otros:** `cors`, `dotenv`.
+HTML, CSS y JavaScript vanilla, sin frameworks ni build step. Desplegado en Netlify (formulario con Netlify Forms). Las imágenes se procesan en local con Node + `sharp`.
 
-## Estructura del proyecto
+## Estructura
 
 ```
-ArtGallery/
-├── frontend/
-│   ├── index.html              # Home con categorías
-│   ├── gallery.html            # Listado por categoría (?cat=paintings|drawings|digital)
-│   ├── detail.html             # Detalle de una obra (?id=...)
-│   ├── commissions.html        # Página de encargos
-│   └── assets/
-│       ├── css/                # styles, mobilefirst, gallery, detail, commissions
-│       ├── js/                 # app, config, gallery, detail
-│       ├── img/                # imágenes
-│       └── icons/
-└── backend/
-    ├── server.js               # Punto de entrada Express + bootstrap de la DB
-    ├── setup.js                # Reset destructivo + seed (DROP TABLE)
-    ├── config/db.js            # Pool de conexiones a PostgreSQL
-    ├── controllers/pinturaController.js
-    └── routes/pinturaRoutes.js
+frontend/          # sitio publicado
+├── *.html         # index (galería), work, about, commissions, contact, 404
+├── data/artworks.json   # catálogo de obras
+├── i18n/{en,es}.json    # textos
+└── assets/        # css, js, img/works (generadas), img/site
+tools/images/      # pipeline de imágenes
+docs/              # diseño, datos pendientes y QA
 ```
 
-## Modelo de datos
-
-Tabla `pinturas`:
-
-| Columna          | Tipo            | Notas                                          |
-|------------------|-----------------|------------------------------------------------|
-| `id`             | SERIAL PK       |                                                |
-| `titulo`         | VARCHAR(255)    | NOT NULL                                       |
-| `url_imagen`     | VARCHAR(500)    | NOT NULL                                       |
-| `tecnica`        | VARCHAR(100)    | Óleo, Acrílico, Grafito, Digital, etc.         |
-| `categoria`      | VARCHAR(50)     | `paintings`, `drawings`, `digital`             |
-| `descripcion`    | TEXT            |                                                |
-| `fecha_creacion` | DATE            |                                                |
-| `disponible`     | BOOLEAN         | DEFAULT TRUE                                   |
-| `precio`         | NUMERIC(10, 2)  |                                                |
-
-Al arrancar, `server.js` crea la tabla si no existe y siembra datos de prueba solo si está vacía.
-
-## API
-
-Base path: `/api`
-
-| Método | Ruta                          | Descripción                                            |
-|--------|-------------------------------|--------------------------------------------------------|
-| GET    | `/api/categoria/:categoria`   | Lista las obras de una categoría, ordenadas por fecha. |
-| GET    | `/api/pintura/:id`            | Devuelve una obra por su `id`.                         |
-| GET    | `/`                           | Healthcheck (`API de Galería de Arte activa.`).        |
-
-Ejemplo:
+## Desarrollo local
 
 ```bash
-curl https://artgallery-h90r.onrender.com/api/categoria/paintings
-curl https://artgallery-h90r.onrender.com/api/pintura/1
+npx serve frontend
 ```
 
-## Puesta en marcha local
+Abre `http://localhost:3000/index.html`. No funciona abriendo el HTML directamente (`file://`), porque los datos se cargan con `fetch`.
 
-### Requisitos
+## Añadir o cambiar obras
 
-- Node.js 18+
-- PostgreSQL en local (o una `DATABASE_URL` remota)
+1. Añade el original a `tools/images/manifest.json` (`source` → `id`).
+2. Genera las imágenes y verifica que no lleven metadatos:
 
-### 1. Backend
+   ```bash
+   cd tools/images
+   npm install
+   npm run build
+   npm run verify
+   ```
 
-```bash
-cd backend
-npm install
-```
+3. Completa título, alt, año, medidas y estado en `frontend/data/artworks.json` (EN y ES).
 
-Crea `backend/.env` con las credenciales de la base de datos. Acepta variables sueltas o una `DATABASE_URL`:
-
-```env
-DB_USER=postgres
-DB_HOST=localhost
-DB_NAME=artgallery
-DB_PASSWORD=tu_password
-DB_PORT=5432
-PORT=5000
-# o, alternativamente:
-# DATABASE_URL=postgres://user:password@host:5432/artgallery
-# NODE_ENV=production    # activa SSL contra la DB
-```
-
-Asegúrate de que la base de datos `artgallery` exista en tu PostgreSQL antes de arrancar:
-
-```sql
-CREATE DATABASE artgallery;
-```
-
-Arranca el servidor (creará la tabla y la sembrará automáticamente si está vacía):
-
-```bash
-npm start
-```
-
-> ⚠️ `node setup.js` hace un **DROP TABLE** y vuelve a sembrar. Solo úsalo si quieres resetear los datos.
-
-### Tests
-
-Tests de integración del API (mockean la base de datos, no requieren PostgreSQL):
-
-```bash
-cd backend
-npm test
-```
-
-### 2. Frontend
-
-`frontend/assets/js/config.js` detecta el entorno automáticamente:
-
-- En `localhost` / `127.0.0.1` apunta a `http://localhost:5000/api`.
-- En cualquier otro host apunta al backend de producción (`https://artgallery-h90r.onrender.com/api`).
-
-Si necesitas un backend distinto, edita la constante `API_BASE_URL` en ese archivo.
-
-Sirve la carpeta `frontend/` con cualquier servidor estático, por ejemplo:
-
-```bash
-cd frontend
-npx serve .
-```
-
-Y abre `http://localhost:3000` (o el puerto que indique tu servidor).
+Los originales viven fuera del repo y nunca se suben.
 
 ## Despliegue
 
-- **Backend:** desplegado en Render. La conexión a Postgres usa SSL cuando `NODE_ENV=production`.
-- **Frontend:** se puede servir como sitio estático (Netlify, Vercel, GitHub Pages, etc.). Recuerda actualizar `API_BASE_URL` para que apunte al backend correcto.
+Netlify publica la carpeta `frontend/` según `netlify.toml`, sin paso de build.
+
+## Historial
+
+La versión anterior (galería general con API Express + PostgreSQL en Render) se conserva en el tag `v1-api`.
 
 ## Contacto
 
-- Email: [rkbaezgarcia@gmail.com](mailto:rkbaezgarcia@gmail.com)
-- Instagram: [@kuko.baez](https://www.instagram.com/kuko.baez/)
+[Instagram @kuko.baez](https://www.instagram.com/kuko.baez/) · rkbaezgarcia@gmail.com
 
-© 2025 Rodrigo Báez. All rights reserved.
+© 2026 Rodrigo Báez. All rights reserved.

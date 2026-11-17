@@ -149,11 +149,11 @@ El hilo principal (Claude) coordina, resuelve conflictos entre agentes y es el �
 
 ## 9. Plan de migración
 
-- [ ] Fase 1 — Diseño, imágenes y textos (agentes en paralelo).
-- [ ] Fase 2 — Reescritura del frontend estático y bilingüe.
-- [ ] Fase 3 — QA y correcciones.
-- [ ] Fase 4 — Limpieza: borrar imágenes antiguas (`painting*`, `drawing*`, `digital*`, banner), `serve.json` si deja de usarse. Etiquetar `v1-api` en git y eliminar `backend/` **solo con confirmación de Rodrigo**. Después, Rodrigo apaga el servicio en Render.
-- [ ] Fase 5 — Actualizar `README.md` y desplegar.
+- [x] Fase 1 — Diseño, imágenes y textos (agentes en paralelo).
+- [x] Fase 2 — Reescritura del frontend estático y bilingüe.
+- [x] Fase 3 — QA y correcciones (2 rondas, ver `docs/qa/`).
+- [x] Fase 4 — Limpieza: imágenes y CSS antiguos borrados; `backend/` eliminado (conservado en el tag `v1-api`). Pendiente: Rodrigo apaga el servicio en Render.
+- [ ] Fase 5 — `README.md` actualizado. Pendiente: desplegar y verificar el formulario de Netlify en producción.
 
 ### Datos pendientes de Rodrigo
 Se centralizan en `docs/content-todo.md`: títulos/años/medidas/estado de cada obra, bio, experiencia y clientes, condiciones de encargo, retrato, dominio propio (si lo hay).
