@@ -15,10 +15,10 @@ Leyenda: **PRIORIDAD ALTA** = lo primero que hay que responder (QA ronda 1: Abou
 
 ## About (Sobre mí)
 
-5. **PRIORIDAD ALTA (bio)** ¿Dónde vives o trabajas (ciudad / país)? ¿Lo quieres mostrar?
-6. **PRIORIDAD ALTA (bio)** ¿Cómo empezaste con la acuarela y desde cuándo pintas? (2–3 frases bastan)
+5. **RESPONDIDA**: nacido en Jerez de la Frontera, asentado en Oxford (UK). Ya está en la bio.
+6. **RESPONDIDA en parte**: lleva más de 15 años pintando (ya en la bio). Queda abierto, opcional: ¿cómo empezaste con la acuarela? (1–2 frases)
 7. **PRIORIDAD ALTA (bio)** ¿Qué formación tienes (estudios, cursos, talleres, autodidacta)? Con año si lo recuerdas.
-8. ¿Qué temas te gusta pintar o te definen (retrato, paisaje, animales, escenas urbanas…)?
+8. **RESPONDIDA**: retratos, historias y paisajes. Ya está en la bio.
 9. **PRIORIDAD ALTA (experiencia)** ¿Con qué clientes, editoriales o marcas has trabajado? Si todavía ninguno, lo dejamos fuera y no pasa nada.
 10. **PRIORIDAD ALTA (experiencia)** ¿Se han publicado ilustraciones tuyas en algún libro, revista o medio? Título, medio y año.
 11. **PRIORIDAD ALTA (experiencia)** ¿Has expuesto obra? Nombre de la exposición, lugar y año.
