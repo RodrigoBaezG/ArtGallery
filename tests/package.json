@@ -1,0 +1,21 @@
+{
+  "name": "artgallery-tests",
+  "private": true,
+  "type": "module",
+  "description": "Tests del portfolio (fuera de frontend/, nunca se publican). Ver CLAUDE.md §12.",
+  "scripts": {
+    "test": "node helpers/run-all.mjs",
+    "test:unit": "node --test \"unit/*.test.mjs\"",
+    "test:security": "node helpers/run-all.mjs security",
+    "test:e2e": "playwright test --project=chromium --project=webkit",
+    "test:perf": "playwright test --project=perf-chromium --project=perf-webkit --workers=1",
+    "test:prod": "node --test security/prod-headers.prod.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.1",
+    "jsdom": "^29.1.1",
+    "serve": "^14.2.8",
+    "smol-toml": "^1.9.1"
+  }
+}
