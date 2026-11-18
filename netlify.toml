@@ -8,3 +8,41 @@
   from = "/*"
   to = "/404.html"
   status = 404
+
+# Cabeceras de seguridad (CLAUDE.md §12.4). Sin 'unsafe-inline': no hay <script>
+# ni atributos style="" inline; la clase "js" se añade desde assets/js/js-class.js y
+# gallery.js fija --w/--h vía CSSOM (element.style.setProperty), que la CSP permite.
+# Orígenes externos: solo Google Fonts (CSS en fonts.googleapis.com, fuentes en
+# fonts.gstatic.com). Instagram es solo un enlace, no un embed.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    Cross-Origin-Opener-Policy = "same-origin"
+
+# Caché: derivados de imagen con nombre estable y contenido inmutable.
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML, catálogo y textos: siempre revalidar.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/i18n/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
