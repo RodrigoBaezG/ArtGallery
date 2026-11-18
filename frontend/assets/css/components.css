@@ -94,11 +94,17 @@
   padding: 0;
 }
 
+/* Área táctil ≥ 44 × 44 (QA I2): «Work»/«Obra» miden ~31 px de texto.
+   El relleno lateral se compensa con margen negativo, así el texto y el
+   espacio visible entre enlaces no cambian; solo crece la zona pulsable. */
 .nav__link {
-  position: relative;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-width: var(--tap-target);
   min-height: var(--tap-target);
+  padding-inline: var(--tap-bleed);
+  margin-inline: calc(var(--tap-bleed) * -1);
   color: var(--color-ink-soft);
   font-size: var(--font-size-sm);
   letter-spacing: var(--tracking-normal);
@@ -111,14 +117,12 @@
   color: var(--color-ink);
 }
 
-/* Subrayado fino bajo la página actual */
-.nav__link[aria-current="page"]::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: var(--space-1);
-  border-bottom: var(--border-width) solid var(--color-ink);
+/* Subrayado fino bajo la página actual: va en el texto (no en la caja,
+   que puede ser más ancha que la palabra por el min-width táctil). */
+.nav__link[aria-current="page"] {
+  text-decoration-line: underline;
+  text-decoration-thickness: var(--border-width);
+  text-underline-offset: var(--underline-offset-loose);
 }
 
 /* Enlace de contacto destacado (siempre a un clic) */
@@ -169,7 +173,10 @@
 
   .js .nav__menu .nav__link {
     display: flex;
+    justify-content: flex-start;
     width: 100%;
+    padding-inline: 0;
+    margin-inline: 0;
     font-size: var(--font-size-md);
     border-bottom: var(--border-width) solid var(--color-line);
   }
@@ -178,16 +185,9 @@
     border-bottom: 0;
   }
 
-  /* Página actual en el panel: peso medio + subrayado fino bajo el texto */
+  /* Página actual en el panel: peso medio (el subrayado fino es el general) */
   .js .nav__menu .nav__link[aria-current="page"] {
     font-weight: var(--font-weight-medium);
-    text-decoration-line: underline;
-    text-decoration-thickness: var(--border-width);
-    text-underline-offset: var(--underline-offset-loose);
-  }
-
-  .js .nav__menu .nav__link[aria-current="page"]::after {
-    display: none;
   }
 
   /* Sin JS: el menú se muestra en una segunda línea de la cabecera */
@@ -524,8 +524,12 @@
   width: 100%;
 }
 
-/* Enlace discreto: tinta con subrayado tono papel, acento en hover */
+/* Enlace discreto: tinta con subrayado tono papel, acento en hover.
+   Se usa suelto (no dentro de una frase): altura táctil de 44 px. */
 .quiet-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-target);
   color: var(--color-ink);
   text-decoration-color: var(--color-line-strong);
 }
@@ -776,10 +780,17 @@
   padding: 0;
 }
 
+/* Área táctil ≥ 44 × 44 (QA I2: «Email» medía 32 px de ancho).
+   Mismo recurso que .nav__link: relleno lateral compensado con margen
+   negativo; el texto sigue alineado con el nombre y el espaciado no cambia. */
 .site-footer__link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-width: var(--tap-target);
   min-height: var(--tap-target);
+  padding-inline: var(--tap-bleed);
+  margin-inline: calc(var(--tap-bleed) * -1);
   color: var(--color-ink-soft);
   text-decoration: none;
 }

@@ -136,7 +136,7 @@ Excepciones técnicas a "solo tokens" (aceptadas): `0`, `100%`, `auto`, `1fr`, `
 
 **Alineación de contenedores (QA M10)**: todas las secciones de primer nivel de **todas** las páginas usan `container container--wide`, igual que la cabecera y el footer, para que la marca y los `h1` arranquen en el mismo borde izquierdo. El ancho del texto ya lo limitan `--measure`, `.prose` y los grids de cada página. `.container` (72rem) solo se mantiene para bloques que deban centrarse a propósito. Excepción: si un `.page-header` va **dentro** de un contenedor (p. ej. en `work.html`, obra no encontrada), no lleva la clase `container` (QA M4).
 
-**Otros**: cabecera 64 px (`--header-height`), objetivos táctiles 44 px (`--tap-target`), separación entre secciones 64 → 96 px.
+**Otros**: cabecera 64 px (`--header-height`), objetivos táctiles 44 × 44 px (`--tap-target`; `--tap-bleed` 8 px de relleno lateral compensado para enlaces de texto sueltos), separación entre secciones 64 → 96 px.
 
 ---
 
@@ -185,7 +185,8 @@ Los textos del ejemplo son el fallback en inglés; en el HTML real llevan `data-
 - Contacto: `nav__link--cta` (en índigo) — contacto a un clic desde cualquier página.
 - Idioma activo: `aria-pressed="true"` en el botón (subrayado + tinta). Los botones llevan `lang` propio.
 - La cabecera es `sticky` **solo con `html.js`**. Sin JS es estática, porque el menú ocupa una segunda línea y una cabecera fija taparía demasiado contenido en móvil (QA M3). Fondo papel y borde inferior de 1 px.
-- En el panel móvil, la página actual va en peso 500 con subrayado fino bajo el texto (QA M7). En escritorio lleva una línea fina de tinta bajo el enlace.
+- En el panel móvil, la página actual va en peso 500 con subrayado fino bajo el texto (QA M7). En escritorio, el mismo subrayado fino de tinta (`text-decoration`, offset `--underline-offset-loose`), que sigue el ancho de la palabra.
+- Área táctil (QA I2): `nav__link` mide ≥ 44 × 44 px (`min-width`/`min-height: var(--tap-target)`, texto centrado). Para no mover el texto ni cambiar el espacio visible entre enlaces, lleva relleno lateral `--tap-bleed` (8 px) compensado con el mismo margen negativo. En el panel móvil el enlace ocupa todo el ancho, alineado a la izquierda, sin relleno ni margen lateral. La misma regla se aplica a `site-footer__link` (§7.13).
 
 ```html
 <header class="site-header">
@@ -338,7 +339,7 @@ Breve: en móvil la primera obra debe asomar en la primera pantalla. Nombre en s
 | `.button--block` | Ancho completo | Envío del formulario en móvil (opcional) |
 | `[disabled]` / `aria-disabled="true"` | Opacidad 0.5 | Envío en curso |
 | `a` (por defecto) | Índigo subrayado 1 px | Enlaces en texto |
-| `.quiet-link` | Tinta con subrayado tono papel; índigo en hover | Enlaces secundarios en texto |
+| `.quiet-link` | Tinta con subrayado tono papel; índigo en hover; `inline-flex` con alto mínimo 44 px | Enlaces secundarios sueltos (p. ej. «consultar» en el detalle); no usar dentro de una frase |
 
 Botones: mayúsculas pequeñas (14 px, +0.08 em), alto mínimo 44 px, radio 2 px.
 
@@ -464,6 +465,8 @@ Sin iconos decorativos: etiqueta en versalitas + enlace.
 ### 7.13 Footer
 
 El enlace de Instagram lleva un icono de línea **monocromo** (excepción a "sin iconos decorativos", decidida por Rodrigo). `site-footer__link--icon`: inline-flex, icono y texto centrados, separados por `--icon-gap` (8 px). `site-footer__icon`: 20 px (`--icon-size`), trazo 1.5 en `currentColor`, así que hereda la tinta suave y pasa a índigo en hover. El SVG va inline con `aria-hidden="true"` y el texto visible da el nombre accesible. El área táctil sigue en 44 px y el cambio de color dura 150 ms (0 con `prefers-reduced-motion`). No usar `assets/icons/instagram.svg` (a color).
+
+Área táctil (QA I2): cada `site-footer__link` mide ≥ 44 × 44 px (`min-width`/`min-height: var(--tap-target)`, texto centrado), con relleno lateral `--tap-bleed` (8 px) compensado con margen negativo: «Email»/«Correo» siguen alineados con el nombre y el hueco de 24 px entre enlaces no cambia.
 
 ```html
 <footer class="site-footer">
