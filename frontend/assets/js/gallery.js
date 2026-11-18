@@ -56,8 +56,19 @@
     srcset: srcset,
     variantWidth: variantWidth,
     field: field,
-    url: function (art) { return 'work.html?id=' + encodeURIComponent(art.id); }
+    url: url
   };
+
+  /* Enlace al detalle. Conserva el idioma si la página lo lleva en ?lang
+     (con localStorage bloqueado es lo único que lo mantiene al navegar).
+     bare = true: sin lang (base para canonical/hreflang en work.js). */
+  function url(art, bare) {
+    var href = 'work.html?id=' + encodeURIComponent(art.id);
+    if (!bare && window.I18n && new URLSearchParams(location.search).has('lang')) {
+      href += '&lang=' + encodeURIComponent(window.I18n.lang);
+    }
+    return href;
+  }
 
   /* ---- Galería de la home ---------------------------------------------- */
   var section = document.querySelector('[data-gallery]');
@@ -65,10 +76,15 @@
 
   var grid = section.querySelector('.gallery__grid');
   var status = section.querySelector('[data-gallery-status]');
-  var EAGER = 4; // primeras obras visibles sin lazy
+  // Primeras obras sin lazy. Fijo en 4: tests/e2e/perf.spec.mjs exige que las
+  // 4 primeras se descarguen también en móvil (WebKit apenas precarga lazy).
+  var EAGER = 4;
   var ROW = 288; // --gallery-row-height (18rem) en px
   var ROW_LG = 352; // --gallery-row-height-lg (22rem) en px
-  var GROW = 1.4; // margen por el crecimiento flex de cada fila
+  // Margen por el crecimiento flex de cada fila (medido: huecos ~1,16× la
+  // base). Con 1.4 se pedía la variante 1280 para huecos de ~610 px en DPR 1.
+  // sizes va en px CSS: el navegador ya multiplica por el DPR.
+  var GROW = 1.15;
   var items = [];
 
   function sizes(image) {
@@ -95,7 +111,9 @@
     var img = art.image;
     var li = document.createElement('li');
     li.className = 'gallery__item';
-    li.setAttribute('style', '--w:' + img.width + ';--h:' + img.height);
+    // CSSOM (no atributo style): la CSP sin 'unsafe-inline' bloquearía setAttribute('style').
+    li.style.setProperty('--w', String(img.width));
+    li.style.setProperty('--h', String(img.height));
 
     var a = document.createElement('a');
     a.className = 'gallery__link';
@@ -140,12 +158,13 @@
     a.appendChild(figure);
     li.appendChild(a);
 
-    items.push({ art: art, img: image, title: title });
+    items.push({ art: art, link: a, img: image, title: title });
     return li;
   }
 
   function translate() {
     items.forEach(function (item) {
+      item.link.href = window.Artworks.url(item.art); // ?lang puede haber cambiado
       item.title.textContent = window.I18n.artworkText(item.art.title);
       item.img.alt = window.I18n.artworkText(item.art.image.alt);
     });

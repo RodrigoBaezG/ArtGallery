@@ -77,7 +77,7 @@
 
     if (!art) return;
 
-    pageUrl = absolute(Artworks.url(art));
+    pageUrl = absolute(Artworks.url(art, true));
     var hasLang = new URLSearchParams(location.search).has('lang');
     var canonical = hasLang ? pageUrl + '&lang=' + I18n.lang : pageUrl;
     setLink('link[rel="canonical"]', canonical);
