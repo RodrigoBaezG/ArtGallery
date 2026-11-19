@@ -9,7 +9,7 @@
     "test:security": "node helpers/run-all.mjs security",
     "test:e2e": "playwright test --project=chromium --project=webkit",
     "test:perf": "playwright test --project=perf-chromium --project=perf-webkit --workers=1",
-    "test:prod": "node --test security/prod-headers.prod.mjs"
+    "test:prod": "node --env-file-if-exists=.env --test security/prod-headers.prod.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.14.0",

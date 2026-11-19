@@ -1,13 +1,13 @@
 // §12.4 test:prod — cabeceras HTTP, redirección HTTPS, 404 reales y honeypot contra
 // el sitio desplegado. NO forma parte de `npm test`.
-//   npm run test:prod                          (https://kukobaezartgallery.netlify.app)
+//   npm run test:prod                          (https://kukobaezgallery.netlify.app)
 //   BASE_URL=https://deploy-preview-1--….netlify.app npm run test:prod
 // Honeypot (opcional): NETLIFY_TOKEN y NETLIFY_SITE_ID para consultar la API de envíos.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { REQUIRED_HEADERS, cspMap } from '../helpers/headers.mjs';
 
-const BASE = (process.env.BASE_URL || 'https://kukobaezartgallery.netlify.app').replace(/\/$/, '');
+const BASE = (process.env.BASE_URL || 'https://kukobaezgallery.netlify.app').replace(/\/$/, '');
 const get = (p, init = {}) => fetch(BASE + p, { redirect: 'manual', ...init });
 
 for (const p of ['/', '/index.html', '/work.html?id=moonlit-sorceress', '/contact.html', '/data/artworks.json', '/i18n/en.json', '/assets/img/works/moonlit-sorceress-640.webp']) {
@@ -20,6 +20,10 @@ for (const p of ['/', '/index.html', '/work.html?id=moonlit-sorceress', '/contac
       if (!v) { problems.push(`falta ${name}`); continue; }
       if (name === 'Content-Security-Policy') {
         if (JSON.stringify(cspMap(v)) !== JSON.stringify(cspMap(expected))) problems.push(`CSP distinta: ${v}`);
+      } else if (name === 'Strict-Transport-Security') {
+        // Netlify impone su propio HSTS en *.netlify.app (con `preload`): se acepta si es igual o más estricto.
+        const maxAge = Number((/max-age=(\d+)/i.exec(v) || [])[1] || 0);
+        if (maxAge < 31536000 || !/includeSubDomains/i.test(v)) problems.push(`${name}: "${v}"`);
       } else if (v !== expected) problems.push(`${name}: "${v}"`);
     }
     assert.deepEqual(problems, []);

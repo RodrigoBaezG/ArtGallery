@@ -61,7 +61,7 @@ test('setLang actualiza <html lang>, <title>, meta description y canonical', asy
   assert.equal(document.documentElement.lang, 'es');
   assert.equal(document.title, clean(es['meta.about.title']));
   assert.equal(document.querySelector('meta[name="description"]').content, clean(es['meta.about.description']));
-  assert.equal(document.querySelector('link[rel="canonical"]').href, 'https://kukobaezartgallery.netlify.app/about.html?lang=es');
+  assert.equal(document.querySelector('link[rel="canonical"]').href, 'https://kukobaezgallery.netlify.app/about.html?lang=es');
   assert.equal(new URL(window.location.href).searchParams.get('lang'), 'es');
   assert.equal(window.localStorage.getItem('lang'), 'es');
   // Los textos data-i18n cambian

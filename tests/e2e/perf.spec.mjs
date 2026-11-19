@@ -25,13 +25,16 @@ test.describe('lazy loading (375 px, contexto nuevo)', () => {
     // menos de un umbral bajo la ventana (Chromium: 1250–2500 px según la red;
     // WebKit: similar). Se exige: (a) nada fuera de eager + ese margen, y
     // (b) que las obras lejanas NO se descarguen (el lazy funciona).
+    // + LAYOUT_SLACK: el navegador decide con el layout inicial y aquí se mide tras cargar
+    // fuentes (font-display: swap); el hero puede desplazar la galería unas decenas de px.
     const MARGIN = 2500;
+    const LAYOUT_SLACK = 64;
     const positions = await page.evaluate(() => [...document.querySelectorAll('.gallery__image')].map((i) => ({
       base: new URL(i.currentSrc || i.src).pathname.split('/').pop().replace(/-\d+\.webp$/, ''),
       top: i.getBoundingClientRect().top + scrollY, lazy: i.loading === 'lazy'
     })));
     const vh = page.viewportSize().height;
-    const outside = positions.filter((p) => initial.has(p.base) && p.lazy && p.top > vh + MARGIN).map((p) => `${p.base}@${Math.round(p.top)}`);
+    const outside = positions.filter((p) => initial.has(p.base) && p.lazy && p.top > vh + MARGIN + LAYOUT_SLACK).map((p) => `${p.base}@${Math.round(p.top)}`);
     expect.soft(outside, 'lazy descargadas fuera del margen del navegador').toEqual([]);
     const far = positions.filter((p) => p.top > vh + MARGIN);
     if (far.length) expect.soft(far.some((p) => !initial.has(p.base)), 'ninguna obra lejana quedó sin descargar: lazy inefectivo').toBe(true);

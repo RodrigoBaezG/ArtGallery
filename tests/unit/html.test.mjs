@@ -6,7 +6,7 @@ import path from 'node:path';
 import { JSDOM } from 'jsdom';
 import { FRONTEND, PAGES, artworks, readText } from '../helpers/paths.mjs';
 
-const SITE = 'https://kukobaezartgallery.netlify.app/';
+const SITE = 'https://kukobaezgallery.netlify.app/';
 const parse = (page) => new JSDOM(readText(`frontend/${page}`)).window.document;
 const docs = Object.fromEntries(PAGES.map((p) => [p, parse(p)]));
 const INDEXABLE = PAGES.filter((p) => p !== '404.html');

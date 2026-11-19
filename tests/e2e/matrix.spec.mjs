@@ -71,7 +71,7 @@ test.describe('consola limpia también 5 s después de cargar', () => {
     test(qa.name, async ({ page }) => {
       const log = collect(page);
       const requests = [];
-      page.on('request', (r) => requests.push(new URL(r.url()).pathname));
+      page.on('request', (r) => { const u = new URL(r.url()); requests.push(u.origin === new URL(page.url() || 'http://x').origin ? u.pathname + u.search : u.href); });
       await page.goto(qa.path);
       await ready(page);
       await page.waitForTimeout(5000);

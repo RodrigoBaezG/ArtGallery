@@ -8,7 +8,7 @@ import { JSDOM } from 'jsdom';
 import { FRONTEND, PAGES, ROOT, SOURCE_DIR, TESTS, artworks, readJSON, readText, walk } from '../helpers/paths.mjs';
 
 const rel = (f) => path.relative(ROOT, f).replace(/\\/g, '/');
-const SITE_HOST = 'kukobaezartgallery.netlify.app';
+const SITE_HOST = 'kukobaezgallery.netlify.app';
 const THIRD_PARTY_OK = ['fonts.googleapis.com', 'fonts.gstatic.com'];
 const isWin = process.platform === 'win32';
 const npm = isWin ? 'npm.cmd' : 'npm';
@@ -140,7 +140,9 @@ const ALLOW = [
   /password\s*=\s*['"]?(\*+|x+|changeme|example|your[_-]?password|<[^>]+>)\b/i,
   /process\.env\./,
   // backend/.env.example (commit 6e0d167): línea comentada con placeholder genérico user/host, revisada el 2026-11-18.
-  /^\+?\s*#\s*DATABASE_URL=postgres:\/\/user:[^@\s]+@host:5432\/artgallery\s*$/
+  /^\+?\s*#\s*DATABASE_URL=postgres:\/\/user:[^@\s]+@host:5432\/artgallery\s*$/,
+  // docs/qa/2026-11-18-tests.md describe ese hallazgo con un URI parafraseado (usuario:contraseña@…), no es un secreto.
+  /URI de base de datos con credenciales/
 ];
 
 function scan(text, where, hits) {
