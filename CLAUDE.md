@@ -18,7 +18,7 @@ Este repositorio es el **portfolio profesional de acuarela** de Rodrigo "Kuko" B
 ## 2. Stack y arquitectura
 
 - **Sitio 100 % estático**: HTML + CSS + JavaScript vanilla, sin frameworks ni build step para el sitio.
-- **Despliegue**: Netlify, carpeta publicada `frontend/`. URL actual: `https://kukobaezartgallery.netlify.app/`.
+- **Despliegue**: Netlify, carpeta publicada `frontend/`. URL actual: `https://kukobaezgallery.netlify.app/`.
 - **Datos**: `frontend/data/artworks.json` (catálogo) — sustituye a la API.
 - **Textos**: `frontend/i18n/en.json` y `frontend/i18n/es.json`.
 - **Formulario de contacto**: Netlify Forms (`data-netlify="true"`), sin backend propio.
@@ -101,6 +101,7 @@ El detalle vive en `docs/design.md` (lo mantiene el agente `art-director`). Base
 - **Tokens**: todos los colores, tamaños y tiempos como variables en `assets/css/tokens.css`. Prohibido usar valores sueltos fuera de ese archivo.
 - **Mobile-first**. Sin scroll horizontal. Áreas táctiles ≥ 44 px.
 - Modo oscuro: **no** en esta versión (las acuarelas se diseñaron para verse sobre blanco/papel).
+- **Excepción — banner de la home** (decisión de Rodrigo, 2026-11-19): la franja superior de la home usa el banner de su marca del proyecto original (azul marino con la firma KB, 1200×300). Solo en la home, con un máximo de 1200 px (no se amplía) y sin efectos. El `<h1>` sigue en el HTML, pero oculto a la vista (`visually-hidden`). Detalle en `docs/design.md`.
 
 ## 6. Imágenes
 
@@ -116,7 +117,7 @@ El detalle vive en `docs/design.md` (lo mantiene el agente `art-director`). Base
 
 ## 7. Enfoque portfolio (lo que busca quien contrata)
 
-- **Home**: nombre, una línea de posicionamiento (p. ej. “Watercolor illustrator — editorial, books & commissions”) y la obra justo debajo. Sin banners grandes.
+- **Home**: banner de marca (ver §5), una línea de posicionamiento (p. ej. “Watercolor illustrator — editorial, books & commissions”) y la obra justo debajo. Sin banners grandes.
 - **About**: retrato, bio corta (≤ 120 palabras), experiencia/clientes/publicaciones/exposiciones, herramientas y técnica, **CV en PDF descargable** (EN y ES).
 - **Commissions**: tipos de encargo (editorial, libro, retrato de mascota, obra personalizada…), proceso en pasos, plazos orientativos, qué información enviar, CTA a contacto.
 - **Contact**: formulario corto (nombre, email, tipo de proyecto, mensaje), email visible e Instagram.
@@ -208,7 +209,7 @@ npm run test:unit
 npm run test:e2e
 npm run test:security
 npm run test:perf       # rendimiento, aparte y en serie (el paralelo falsea el LCP)
-npm run test:prod       # BASE_URL=https://kukobaezartgallery.netlify.app — cabeceras y formulario reales
+npm run test:prod       # BASE_URL=https://kukobaezgallery.netlify.app — cabeceras y formulario reales
 ```
 
 ### 12.2 Tests unitarios

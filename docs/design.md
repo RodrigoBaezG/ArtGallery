@@ -60,6 +60,7 @@ Contrastes calculados con la fórmula WCAG 2.x (luminancia relativa).
 | `--color-on-accent` | `#FAF8F4` | Texto sobre acento |
 | `--color-error` | `#9A4A3C` | Terracota apagado: errores de formulario |
 | `--color-success` | `#4F6B52` | Salvia oscuro: envío correcto |
+| `--color-banner` | `#1C2231` | Azul marino del banner de la home: fondo mientras carga la imagen. **Solo** en `.hero__banner` (ver §7.3) |
 
 ### Contrastes comprobados
 
@@ -101,7 +102,6 @@ Dos familias (Google Fonts, `display=swap`):
 | `--font-size-md` | 18 px | 20 px | Título de obra en grid, h3, leads |
 | `--font-size-lg` | 24 px | 30 px | h2, tagline del hero |
 | `--font-size-xl` | 32 px | 44 px | h1 de página, título de obra |
-| `--font-size-xxl` | 40 px | 64 px | Nombre en el hero |
 
 - Interlineado: `--line-height-tight` 1.15 (títulos), `--line-height-snug` 1.35 (títulos pequeños, botones), `--line-height-body` 1.65 (texto).
 - Tracking: títulos −0.01 em; etiquetas en mayúsculas +0.08 em (`--tracking-wide`).
@@ -216,11 +216,24 @@ El botón "Menu" debe cambiar su texto a "Close"/"Cerrar" al abrirse (clave i18n
 
 ### 7.3 Hero (home)
 
-Breve: en móvil la primera obra debe asomar en la primera pantalla. Nombre en serif xxl, tagline en serif itálica, ink-soft.
+Breve: en móvil la primera obra debe asomar en la primera pantalla. Banner de marca, tagline en serif itálica (ink-soft) y botones, todo centrado (la firma del banner también lo está). El `<h1>` con el nombre sigue en el HTML pero oculto a la vista (`visually-hidden`): la firma del banner hace de nombre visible.
+
+**Excepción a la paleta papel — banner de la home** (decisión de Rodrigo, 2026-11-19). Imagen 1200 × 300 (4:1) de su proyecto original: fondo azul marino (~`#1C2231`), firma "KUKO KB. BÁEZ" en blanco y una mancha de acuarela azul a la derecha. Reglas:
+
+- **Solo en la home**, en `.hero__banner`. No se reutiliza el azul (`--color-banner`) en ningún otro componente ni página.
+- Ancho 100 % del contenedor hasta **máx. 1200 px** (`--banner-max-width`); nunca se amplía por encima de su tamaño nativo. Centrado. `height: auto` con `aspect-ratio: 4 / 1` (`--banner-aspect`), sin recorte.
+- **Sin efectos**: sin sombra, borde, hover, animación, parallax ni superposición de texto. Radio `--radius-sm` (2 px).
+- Fondo `--color-banner` mientras carga, para que no aparezca un hueco blanco.
+- Imagen decorativa (`alt=""`): el nombre accesible lo da el `<h1>` oculto. Es el LCP de la home: `fetchpriority="high"`, sin `loading="lazy"`.
+- Espaciado: 24 px sobre el banner y hasta el tagline en móvil; 48 px arriba y 32 px hasta el tagline desde 960 px.
+- Tamaño resultante: ~72 px de alto a 320 px y ~86 px a 375 px (ancho − 2 × 16 px de margen, ÷ 4); 300 px de alto a partir de 1296 px de viewport.
+- Ancho renderizado para `sizes` (márgenes laterales efectivos 16 / 32 / 48 px):
+  `sizes="(min-width: 81em) 1200px, (min-width: 80em) calc(100vw - 6rem), (min-width: 40em) calc(100vw - 4rem), calc(100vw - 2rem)"`.
 
 ```html
 <section class="hero container container--wide">
-  <h1 class="hero__name">Kuko Báez</h1>
+  <img class="hero__banner" src="assets/img/site/banner-1200.webp" srcset="assets/img/site/banner-640.webp 640w, assets/img/site/banner-1200.webp 1200w" sizes="…ver arriba…" width="1200" height="300" alt="" fetchpriority="high" decoding="async">
+  <h1 class="visually-hidden" data-i18n="home.hero.name">Kuko Báez</h1>
   <p class="hero__tagline" data-i18n="home.hero.tagline">Watercolor illustrator — editorial, books &amp; commissions</p>
   <div class="hero__actions">
     <a class="button button--primary" href="contact.html" data-i18n="home.hero.cta">Get in touch</a>
@@ -597,7 +610,7 @@ Escritorio: formulario 3/5, datos de contacto 2/5 separados por una línea verti
 - Pie: `site-footer`, `site-footer__inner`, `site-footer__name`, `site-footer__links`, `site-footer__link`, `site-footer__link--icon`, `site-footer__icon`, `site-footer__copy`
 
 **Páginas**:
-- `home.css`: `hero`, `hero__name`, `hero__tagline`, `hero__actions`, `gallery`
+- `home.css`: `hero`, `hero__banner`, `hero__tagline`, `hero__actions`, `gallery`
 - `work.css`: `work`, `work__position`, `work__figure`, `work__image`, `work__body`, `work__title`, `work__meta`, `work__meta-row`, `work__meta-term`, `work__meta-value`, `work__status`, `work__description`, `work__cta`, `work-nav`, `work-nav__link`, `work-nav__link--prev`, `work-nav__link--next`, `work-nav__label`, `work-nav__title`, `work-nav__back`
 - `about.css`: `about__intro`, `about__portrait`, `about__bio`, `about__downloads`, `about__section`, `about__section-title`, `cv-list`, `cv-list__item`, `cv-list__year`, `cv-list__text`, `cv-list__detail`
 - `commissions.css`: `commission-types`, `commission-type`, `commission-type__title`, `commission-type__text`, `steps`, `steps__item`, `steps__title`, `steps__text`, `facts`, `facts__item`, `facts__term`, `facts__value`, `checklist`

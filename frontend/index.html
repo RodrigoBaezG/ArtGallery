@@ -6,16 +6,16 @@
   <script src="assets/js/js-class.js"></script>
   <title>Kuko Báez — Watercolor Illustrator</title>
   <meta name="description" content="Watercolor illustration by Kuko Báez for editorial, books and private commissions. See the portfolio and get in touch.">
-  <link rel="canonical" href="https://kukobaezartgallery.netlify.app/">
-  <link rel="alternate" hreflang="en" href="https://kukobaezartgallery.netlify.app/?lang=en">
-  <link rel="alternate" hreflang="es" href="https://kukobaezartgallery.netlify.app/?lang=es">
-  <link rel="alternate" hreflang="x-default" href="https://kukobaezartgallery.netlify.app/">
+  <link rel="canonical" href="https://kukobaezgallery.netlify.app/">
+  <link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/?lang=en">
+  <link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/?lang=es">
+  <link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Kuko Báez">
   <meta property="og:title" content="Kuko Báez — Watercolor Illustrator">
   <meta property="og:description" content="Watercolor illustration by Kuko Báez for editorial, books and private commissions. See the portfolio and get in touch.">
-  <meta property="og:url" content="https://kukobaezartgallery.netlify.app/">
-  <meta property="og:image" content="https://kukobaezartgallery.netlify.app/assets/img/site/og-moonlit-sorceress.jpg">
+  <meta property="og:url" content="https://kukobaezgallery.netlify.app/">
+  <meta property="og:image" content="https://kukobaezgallery.netlify.app/assets/img/site/og-moonlit-sorceress.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Woman in a white robe and diadem walks through the sea at night with a twisted staff, under a full moon in deep blue.">
@@ -24,7 +24,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Kuko Báez — Watercolor Illustrator">
   <meta name="twitter:description" content="Watercolor illustration by Kuko Báez for editorial, books and private commissions. See the portfolio and get in touch.">
-  <meta name="twitter:image" content="https://kukobaezartgallery.netlify.app/assets/img/site/og-moonlit-sorceress.jpg">
+  <meta name="twitter:image" content="https://kukobaezgallery.netlify.app/assets/img/site/og-moonlit-sorceress.jpg">
   <meta name="twitter:image:alt" content="Woman in a white robe and diadem walks through the sea at night with a twisted staff, under a full moon in deep blue.">
   <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +34,9 @@
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/pages/home.css">
-  <!-- Primera obra de la galería (LCP): actualizar si cambia el orden de artworks.json -->
+  <!-- Banner de la home (LCP en escritorio). sizes = min(1200px, ancho del .container--wide menos gutter: 16/32/48 px en <40em / 40–80em / ≥80em) -->
+  <link rel="preload" as="image" href="assets/img/site/banner-1200.webp" imagesrcset="assets/img/site/banner-640.webp 640w, assets/img/site/banner-1200.webp 1200w" imagesizes="(min-width: 81em) 1200px, (min-width: 80em) calc(100vw - 6rem), (min-width: 40em) calc(100vw - 4rem), calc(100vw - 2rem)" fetchpriority="high">
+  <!-- Primera obra de la galería (LCP en móvil): actualizar si cambia el orden de artworks.json -->
   <link rel="preload" as="image" href="assets/img/works/moonlit-sorceress-640.webp" imagesrcset="assets/img/works/moonlit-sorceress-640.webp 490w, assets/img/works/moonlit-sorceress-1280.webp 980w, assets/img/works/moonlit-sorceress-2000.webp 1532w" imagesizes="(min-width: 80em) 310px, (min-width: 40em) 254px, calc(100vw - 2rem)" fetchpriority="high">
   <script type="application/ld+json">
   {
@@ -43,8 +45,8 @@
     "name": "Kuko Báez",
     "alternateName": "Rodrigo Báez",
     "jobTitle": "Watercolor illustrator",
-    "url": "https://kukobaezartgallery.netlify.app/",
-    "image": "https://kukobaezartgallery.netlify.app/assets/img/site/og-moonlit-sorceress.jpg",
+    "url": "https://kukobaezgallery.netlify.app/",
+    "image": "https://kukobaezgallery.netlify.app/assets/img/site/og-moonlit-sorceress.jpg",
     "email": "mailto:rkbaezgarcia@gmail.com",
     "sameAs": [
       "https://www.instagram.com/kuko.baez/"
@@ -78,7 +80,8 @@
 
   <main id="main" class="site-main">
     <section class="hero container container--wide">
-      <h1 class="hero__name" data-i18n="home.hero.name">Kuko Báez</h1>
+      <img class="hero__banner" src="assets/img/site/banner-1200.webp" srcset="assets/img/site/banner-640.webp 640w, assets/img/site/banner-1200.webp 1200w" sizes="(min-width: 81em) 1200px, (min-width: 80em) calc(100vw - 6rem), (min-width: 40em) calc(100vw - 4rem), calc(100vw - 2rem)" width="1200" height="300" alt="" fetchpriority="high" decoding="async">
+      <h1 class="visually-hidden" data-i18n="home.hero.name">Kuko Báez</h1>
       <p class="hero__tagline" data-i18n="home.hero.tagline">Watercolor illustrator — editorial, books &amp; commissions</p>
       <div class="hero__actions">
         <a class="button button--primary" href="contact.html" data-i18n="home.hero.cta">Get in touch</a>

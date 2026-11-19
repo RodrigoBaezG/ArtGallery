@@ -2,22 +2,33 @@
    pages/home.css — index.html: hero breve + galería
    ========================================================================== */
 
-/* Hero: nombre, posicionamiento y CTA. Breve para que la obra asome
-   ya en la primera pantalla del móvil. */
+/* Hero: banner de marca (excepción de Rodrigo, 2026-11-19), posicionamiento
+   y CTA. El <h1> está oculto a la vista (.visually-hidden). Composición
+   centrada, alineada con la firma centrada del banner. Breve para que la
+   obra asome ya en la primera pantalla del móvil. */
 .hero {
-  padding-top: var(--space-6);
+  padding-top: var(--space-3);
   padding-bottom: var(--space-5);
+  text-align: center;
 }
 
-.hero__name {
-  font-size: var(--font-size-xxl);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-tight);
+/* Banner: como mucho a su ancho nativo (no se pixela), centrado, sin efectos.
+   El fondo azul evita un hueco blanco mientras carga. */
+.hero__banner {
+  display: block;
+  width: 100%;
+  max-width: var(--banner-max-width);
+  height: auto;
+  aspect-ratio: var(--banner-aspect);
+  margin-inline: auto;
+  background-color: var(--color-banner);
+  border-radius: var(--radius-sm);
 }
 
 .hero__tagline {
   max-width: var(--measure);
-  margin-top: var(--space-1);
+  margin-top: var(--space-3);
+  margin-inline: auto;
   color: var(--color-ink-soft);
   font-family: var(--font-serif);
   font-size: var(--font-size-lg);
@@ -29,8 +40,9 @@
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-2);
-  margin-top: var(--space-4);
+  margin-top: var(--space-3);
 }
 
 /* Galería de la home */
@@ -40,8 +52,16 @@
 
 @media (min-width: 60em) {
   .hero {
-    padding-top: var(--space-10);
+    padding-top: var(--space-6);
     padding-bottom: var(--space-8);
+  }
+
+  .hero__tagline {
+    margin-top: var(--space-4);
+  }
+
+  .hero__actions {
+    margin-top: var(--space-4);
   }
 
   .gallery {
