@@ -4,8 +4,8 @@
 // (id, order, featured, image.base/widths/width/height, source). Nunca toca los campos de texto.
 //
 // Uso (desde la raíz):  node tools/images/build.mjs [--force]
-// Idempotente: si los derivados ya existen y son más recientes que el original y el manifest,
-// no se regeneran (usa --force para rehacerlos).
+// Idempotente: si los derivados ya existen, son más recientes que el original y su entrada del
+// manifest no ha cambiado, no se regeneran (usa --force para rehacerlos).
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -47,7 +47,21 @@ fs.mkdirSync(SITE_DIR, { recursive: true });
 fs.mkdirSync(path.dirname(DATA_FILE), { recursive: true });
 
 const mtime = (p) => (fs.existsSync(p) ? fs.statSync(p).mtimeMs : 0);
-const manifestTime = mtime(MANIFEST);
+
+// Frescura por entrada: cada derivado se regenera si falta, si el original es más reciente,
+// o si cambia la parte del manifest que le afecta (firma guardada en node_modules/.cache,
+// ignorado por git). Así editar una entrada del manifest no reprocesa todas las demás.
+// Sin caché (clon nuevo), se aceptan los derivados existentes más recientes que su original.
+const CACHE_FILE = path.join(HERE, 'node_modules', '.cache', 'artgallery-images.json');
+const cache = fs.existsSync(CACHE_FILE) ? JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8')) : {};
+const sig = (obj) => JSON.stringify(obj);
+function isFresh(key, signature, outs, src) {
+  if (FORCE) return false;
+  if (!outs.every((o) => mtime(o) > mtime(src))) return false;
+  if (key in cache) return cache[key] === signature;
+  cache[key] = signature; // primera ejecución con caché: se adopta el estado actual
+  return true;
+}
 
 /** Pipeline base: orientación EXIF aplicada, recorte opcional, sRGB. Sin metadatos en la salida. */
 function basePipeline(w) {
@@ -61,7 +75,9 @@ const results = new Map();
 for (const w of works) {
   const src = path.join(sourceDir, w.source);
   const outs = widths.map((n) => path.join(WORKS_DIR, `${w.id}-${n}.webp`));
-  const fresh = !FORCE && outs.every((o) => mtime(o) > Math.max(mtime(src), manifestTime));
+  const key = `work:${w.id}`, signature = sig({ w, widths, quality });
+  const fresh = isFresh(key, signature, outs, src);
+  cache[key] = signature;
 
   if (fresh) {
     const meta = await sharp(outs[outs.length - 1]).metadata();
@@ -95,7 +111,10 @@ if (cover) {
   const w = works.find((x) => x.id === cover);
   const ogPath = path.join(SITE_DIR, `og-${cover}.jpg`);
   const src = path.join(sourceDir, w.source);
-  if (FORCE || mtime(ogPath) <= Math.max(mtime(src), manifestTime)) {
+  const key = 'og', signature = sig({ w, OG_W, OG_H });
+  const ogFresh = isFresh(key, signature, [ogPath], src);
+  cache[key] = signature;
+  if (!ogFresh) {
     // Banda horizontal 1200:630 a todo el ancho, centrada en ogFocusY (por defecto 0.5).
     const { data, info } = await basePipeline(w)
       .resize(2400, 2400, { fit: 'inside', withoutEnlargement: true })
@@ -118,22 +137,42 @@ if (cover) {
   }
 }
 
-// ---------- imágenes del sitio (retrato, etc.): tamaño nativo, sin recorte ni ampliación ----------
+// ---------- imágenes del sitio (retrato, banner...): sin recorte ni ampliación ----------
+// Cada entrada: { out: "x.webp" } -> tamaño nativo, o { base: "x", widths: [..] } -> x-{w}.webp
+// (ancho = w, alto proporcional; nunca se amplía por encima del original).
+// 'source' puede ser absoluta o relativa a tools/images/.
+const siteOuts = new Set();
 for (const s of manifest.site || []) {
-  if (!/^[a-z0-9-]+\.webp$/.test(s.out)) throw new Error(`site.out no válido: ${s.out}`);
-  if (!fs.existsSync(s.source)) throw new Error(`No existe el original: ${s.source}`);
-  const outPath = path.join(SITE_DIR, s.out);
-  if (!FORCE && mtime(outPath) > Math.max(mtime(s.source), manifestTime)) {
-    console.log(`= site/${s.out} (sin cambios)`);
-    continue;
+  const srcPath = path.resolve(HERE, s.source);
+  if (!fs.existsSync(srcPath)) throw new Error(`No existe el original: ${srcPath}`);
+  let targets;
+  if (s.widths) {
+    if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(s.base || '')) throw new Error(`site.base no válido: ${s.base}`);
+    targets = s.widths.map((n) => ({ file: `${s.base}-${n}.webp`, width: n }));
+  } else {
+    if (!/^[a-z0-9-]+\.webp$/.test(s.out)) throw new Error(`site.out no válido: ${s.out}`);
+    targets = [{ file: s.out, width: null }];
   }
-  await sharp(s.source, { limitInputPixels: false })
-    .rotate()
-    .toColourspace('srgb')
-    .webp({ quality: s.quality ?? quality, effort: 5, smartSubsample: true })
-    .toFile(outPath);
-  const m = await sharp(outPath).metadata();
-  console.log(`+ site/${s.out}  ${m.width}x${m.height}`);
+  for (const t of targets) {
+    siteOuts.add(t.file);
+    const outPath = path.join(SITE_DIR, t.file);
+    const key = `site:${t.file}`, signature = sig({ s, t, quality });
+    const siteFresh = isFresh(key, signature, [outPath], srcPath);
+    cache[key] = signature;
+    if (siteFresh) {
+      console.log(`= site/${t.file} (sin cambios)`);
+      continue;
+    }
+    let img = sharp(srcPath, { limitInputPixels: false }).rotate().toColourspace('srgb');
+    if (s.removeAlpha) img = img.removeAlpha(); // solo si el alfa es 100 % opaco (ver manifest)
+    if (t.width) img = img.resize({ width: t.width, withoutEnlargement: true, kernel: 'lanczos3' });
+    await img
+      .webp({ quality: s.quality ?? quality, effort: 5, smartSubsample: true })
+      .toFile(outPath); // sin withMetadata(): no se copian EXIF/XMP/ICC
+    const m = await sharp(outPath).metadata();
+    if (t.width && m.width !== t.width) console.warn(`! site/${t.file}: el original es menor que ${t.width}px (${m.width}x${m.height})`);
+    console.log(`+ site/${t.file}  ${m.width}x${m.height}`);
+  }
 }
 
 // ---------- artworks.json ----------
@@ -185,5 +224,8 @@ for (const f of fs.readdirSync(SITE_DIR)) {
     console.log(`- site/${f} (huérfano)`);
   }
 }
+
+fs.mkdirSync(path.dirname(CACHE_FILE), { recursive: true });
+fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2) + '\n');
 
 console.log(`\nOK: ${works.length} obras -> ${path.relative(ROOT, DATA_FILE)}`);
