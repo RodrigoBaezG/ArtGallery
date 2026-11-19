@@ -1,7 +1,12 @@
 // Pipeline de imágenes del portfolio.
 // Lee manifest.json, genera derivados WebP ({id}-{w}.webp, lado largo = w px),
 // el og-{cover}.jpg 1200x630 y actualiza los campos técnicos de frontend/data/artworks.json
-// (id, order, featured, image.base/widths/width/height, source). Nunca toca los campos de texto.
+// (id, category, order, featured, image.base/widths/width/height, source). Nunca toca los campos
+// de texto de las obras existentes; las nuevas reciben marcadores [[TODO]].
+//
+// Categorías: 'works' del nivel superior pertenece a manifest.category (watercolor) con origen
+// manifest.sourceDir; cada entrada de manifest.collections aporta otra categoría con su propio
+// sourceDir y su lista works. 'order' se numera 1..n dentro de cada categoría.
 //
 // Uso (desde la raíz):  node tools/images/build.mjs [--force]
 // Idempotente: si los derivados ya existen, son más recientes que el original y su entrada del
@@ -25,17 +30,33 @@ const OG_W = 1200, OG_H = 630;
 sharp.cache(false);
 
 const manifest = JSON.parse(fs.readFileSync(MANIFEST, 'utf8'));
-const { sourceDir, widths, quality, cover, works } = manifest;
+const { widths, quality, cover } = manifest;
 const maxW = Math.max(...widths);
+const CATEGORIES = ['watercolor', 'drawing'];
+
+// Grupos por categoría (el primero es el del nivel superior del manifest).
+const groups = [
+  { category: manifest.category || 'watercolor', sourceDir: manifest.sourceDir, works: manifest.works || [] },
+  ...(manifest.collections || []),
+];
+const seenCats = new Set();
+for (const g of groups) {
+  if (!CATEGORIES.includes(g.category)) throw new Error(`categoría no válida: ${g.category}`);
+  if (seenCats.has(g.category)) throw new Error(`categoría repetida en el manifest: ${g.category}`);
+  seenCats.add(g.category);
+  if (!g.sourceDir || !Array.isArray(g.works)) throw new Error(`grupo ${g.category} sin sourceDir o works`);
+}
+// Lista plana: cada obra con su carpeta de origen, su categoría y su orden dentro de la categoría.
+const works = groups.flatMap((g) => g.works.map((w, i) => ({ w, dir: g.sourceDir, category: g.category, order: i + 1 })));
 
 // ---------- validación ----------
 const ids = new Set();
-for (const w of works) {
+for (const { w, dir } of works) {
   if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(w.id)) throw new Error(`id no válido (kebab-case): ${w.id}`);
   if (ids.has(w.id)) throw new Error(`id duplicado: ${w.id}`);
   ids.add(w.id);
-  const src = path.join(sourceDir, w.source);
-  if (path.dirname(path.resolve(src)) !== path.resolve(sourceDir)) {
+  const src = path.join(dir, w.source);
+  if (path.dirname(path.resolve(src)) !== path.resolve(dir)) {
     throw new Error(`Solo se admiten archivos del nivel superior de sourceDir: ${w.source}`);
   }
   if (!fs.existsSync(src)) throw new Error(`No existe el original: ${src}`);
@@ -64,16 +85,16 @@ function isFresh(key, signature, outs, src) {
 }
 
 /** Pipeline base: orientación EXIF aplicada, recorte opcional, sRGB. Sin metadatos en la salida. */
-function basePipeline(w) {
-  let img = sharp(path.join(sourceDir, w.source), { limitInputPixels: false }).rotate();
+function basePipeline(w, dir) {
+  let img = sharp(path.join(dir, w.source), { limitInputPixels: false }).rotate();
   if (w.crop) img = img.extract(w.crop);
   return img.toColourspace('srgb');
 }
 
 const results = new Map();
 
-for (const w of works) {
-  const src = path.join(sourceDir, w.source);
+for (const { w, dir } of works) {
+  const src = path.join(dir, w.source);
   const outs = widths.map((n) => path.join(WORKS_DIR, `${w.id}-${n}.webp`));
   const key = `work:${w.id}`, signature = sig({ w, widths, quality });
   const fresh = isFresh(key, signature, outs, src);
@@ -87,7 +108,7 @@ for (const w of works) {
   }
 
   // Un único decode del original: se reduce a lado largo = maxW y de ahí salen los demás anchos.
-  const { data, info } = await basePipeline(w)
+  const { data, info } = await basePipeline(w, dir)
     .resize(maxW, maxW, { fit: 'inside', withoutEnlargement: true, kernel: 'lanczos3' })
     .raw()
     .toBuffer({ resolveWithObject: true });
@@ -108,15 +129,15 @@ for (const w of works) {
 
 // ---------- og:image de la portada ----------
 if (cover) {
-  const w = works.find((x) => x.id === cover);
+  const { w, dir } = works.find((x) => x.w.id === cover);
   const ogPath = path.join(SITE_DIR, `og-${cover}.jpg`);
-  const src = path.join(sourceDir, w.source);
+  const src = path.join(dir, w.source);
   const key = 'og', signature = sig({ w, OG_W, OG_H });
   const ogFresh = isFresh(key, signature, [ogPath], src);
   cache[key] = signature;
   if (!ogFresh) {
     // Banda horizontal 1200:630 a todo el ancho, centrada en ogFocusY (por defecto 0.5).
-    const { data, info } = await basePipeline(w)
+    const { data, info } = await basePipeline(w, dir)
       .resize(2400, 2400, { fit: 'inside', withoutEnlargement: true })
       .raw()
       .toBuffer({ resolveWithObject: true });
@@ -179,18 +200,23 @@ for (const s of manifest.site || []) {
 const existing = fs.existsSync(DATA_FILE) ? JSON.parse(fs.readFileSync(DATA_FILE, 'utf8')) : [];
 const byId = new Map(existing.map((e) => [e.id, e]));
 const bilingual = () => ({ en: TODO, es: TODO });
+// Marcadores para obras nuevas (los rellena content-writer); los mismos que ya usa el catálogo.
+const todoTitle = () => ({ en: '[[TODO: title]]', es: '[[TODO: título]]' });
+const todoAlt = () => ({ en: '[[TODO: alt text]]', es: '[[TODO: texto alternativo]]' });
+const emptyText = () => ({ en: '', es: '' });
 
-const out = works.map((w, i) => {
+const out = works.map(({ w, category, order }) => {
   const prev = byId.get(w.id) || {};
   const prevImg = prev.image || {};
   const { width, height } = results.get(w.id);
   // Orden de claves según CLAUDE.md §3; los campos de texto se conservan si ya existen.
   return {
     id: w.id,
-    order: i + 1,
+    category,
+    order,
     featured: !!w.featured,
-    title: prev.title ?? bilingual(),
-    description: prev.description ?? bilingual(),
+    title: prev.title ?? todoTitle(),
+    description: prev.description ?? emptyText(),
     year: prev.year ?? TODO,
     dimensions: prev.dimensions ?? TODO,
     medium: prev.medium ?? bilingual(),
@@ -200,7 +226,7 @@ const out = works.map((w, i) => {
       widths: [...widths],
       width,
       height,
-      alt: prevImg.alt ?? bilingual(),
+      alt: prevImg.alt ?? todoAlt(),
     },
     source: w.source,
   };
@@ -211,7 +237,7 @@ if (dropped.length) console.warn(`! Entradas eliminadas de artworks.json (ya no 
 fs.writeFileSync(DATA_FILE, JSON.stringify(out, null, 2) + '\n');
 
 // ---------- limpieza de derivados huérfanos ----------
-const wanted = new Set(works.flatMap((w) => widths.map((n) => `${w.id}-${n}.webp`)));
+const wanted = new Set(works.flatMap(({ w }) => widths.map((n) => `${w.id}-${n}.webp`)));
 for (const f of fs.readdirSync(WORKS_DIR)) {
   if (f.endsWith('.webp') && !wanted.has(f)) {
     fs.unlinkSync(path.join(WORKS_DIR, f));
