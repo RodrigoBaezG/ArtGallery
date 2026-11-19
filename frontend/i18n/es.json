@@ -57,9 +57,15 @@
   "home": {
     "hero": {
       "name": "Kuko Báez",
-      "tagline": "Ilustrador en acuarela — editorial, libros y encargos",
-      "intro": "Ilustraciones en acuarela para editoriales, autores y particulares.",
+      "tagline": "Ilustrador en acuarela y dibujo — editorial, libros y encargos",
+      "intro": "Ilustraciones en acuarela y dibujos para editoriales, autores y particulares.",
       "cta": "Escríbeme"
+    },
+    "categories": {
+      "label": "Categorías",
+      "watercolor": "Acuarela",
+      "drawing": "Dibujos",
+      "announce": "{category}: {count} obras"
     },
     "gallery": {
       "heading": "Obra seleccionada",
@@ -108,7 +114,7 @@
     },
     "bio": {
       "heading": "Hola, soy Kuko",
-      "p1": "Soy Kuko Báez (Rodrigo Báez), nacido en Jerez de la Frontera, actualmente asentado en Oxford (UK). Más de 15 años dedicados a este hermoso arte. Ilustrador en acuarela. Realizo ilustraciones para proyectos editoriales y libros. Físico o digital. Retratos, historias, paisajes. Si tienes una idea para mí, ¡démosle vida!",
+      "p1": "Soy Kuko Báez (Rodrigo Báez), nacido en Jerez de la Frontera, actualmente asentado en Oxford (UK). Más de 15 años dedicados a este hermoso arte. Ilustrador en acuarela y dibujo. Realizo ilustraciones para proyectos editoriales y libros. Físico o digital. Retratos, historias, paisajes. Si tienes una idea para mí, ¡démosle vida!",
       "p2": "[[TODO: cómo llegaste a la acuarela y tu formación]]"
     },
     "experience": {
@@ -132,7 +138,7 @@
     },
     "technique": {
       "heading": "Técnica y materiales",
-      "text": "Trabajo con acuarela sobre papel, a veces combinada con tinta.",
+      "text": "Trabajo con acuarela sobre papel, a veces combinada con tinta. También dibujo a grafito, a plumilla y con bolígrafo.",
       "materials": "[[TODO: papel, pinturas y pinceles que sueles usar; si añades tinta, gouache o lápiz; si el arte final se escanea o se fotografía]]"
     },
     "cv": {
@@ -149,9 +155,9 @@
   },
   "commissions": {
     "header": {
-      "eyebrow": "Acuarela por encargo",
+      "eyebrow": "Acuarela y dibujo por encargo",
       "heading": "Encargos",
-      "lead": "Ilustraciones en acuarela hechas para tu proyecto, desde la primera idea hasta la pieza terminada."
+      "lead": "Ilustraciones en acuarela o dibujo hechas para tu proyecto, desde la primera idea hasta la pieza terminada."
     },
     "types": {
       "heading": "Qué encargos acepto",
@@ -165,7 +171,7 @@
       },
       "personal": {
         "title": "Encargos personales",
-        "text": "Una acuarela pintada a partir de tus referencias: un retrato, un lugar, un objeto o un momento que quieras conservar."
+        "text": "Una acuarela o un dibujo a partir de tus referencias: un retrato, un lugar, un objeto o un momento que quieras conservar."
       },
       "originals": {
         "title": "Obra original",
@@ -187,8 +193,8 @@
         "text": "Te envío un boceto para que lo revises antes de empezar a pintar. [[TODO: número de rondas de cambios incluidas]]"
       },
       "step4": {
-        "title": "Pintura",
-        "text": "Con el boceto aprobado, pinto la acuarela final."
+        "title": "Obra final",
+        "text": "Con el boceto aprobado, realizo la pieza final."
       },
       "step5": {
         "title": "Entrega",
@@ -298,32 +304,32 @@
   "meta": {
     "siteName": "Kuko Báez",
     "person": {
-      "jobTitle": "Ilustrador en acuarela"
+      "jobTitle": "Ilustrador en acuarela y dibujo"
     },
     "home": {
-      "title": "Kuko Báez — Ilustrador en acuarela",
-      "description": "Ilustración en acuarela de Kuko Báez para editorial, libros y encargos particulares. Mira el portfolio y escríbeme."
+      "title": "Kuko Báez — Ilustrador en acuarela y dibujo",
+      "description": "Ilustración en acuarela y dibujo de Kuko Báez para editorial, libros y encargos particulares. Mira el portfolio y escríbeme."
     },
     "work": {
       "title": "{title} — Kuko Báez",
-      "description": "«{title}», una acuarela de Kuko Báez. Mira el portfolio completo o encarga algo similar.",
+      "description": "«{title}», de Kuko Báez. Mira el portfolio completo o encarga algo similar.",
       "notFoundTitle": "Obra no encontrada — Kuko Báez"
     },
     "about": {
-      "title": "Sobre mí — Kuko Báez, ilustrador en acuarela",
-      "description": "Kuko Báez, ilustrador en acuarela de Jerez de la Frontera, asentado en Oxford (UK). Más de 15 años de oficio. Editorial, libros, retratos y encargos."
+      "title": "Sobre mí — Kuko Báez, ilustrador en acuarela y dibujo",
+      "description": "Kuko Báez, ilustrador en acuarela y dibujo de Jerez, asentado en Oxford (UK). Más de 15 años de oficio. Editorial, libros, retratos y encargos."
     },
     "commissions": {
-      "title": "Encargos de acuarela — Kuko Báez",
-      "description": "Encarga una ilustración en acuarela a Kuko Báez: proyectos editoriales, de libro y personales. Cómo funciona y qué enviar."
+      "title": "Encargos de acuarela y dibujo — Kuko Báez",
+      "description": "Encarga una ilustración en acuarela o dibujo a Kuko Báez: proyectos editoriales, de libro y personales. Cómo funciona y qué enviar."
     },
     "contact": {
       "title": "Contacto — Kuko Báez",
-      "description": "Escribe a Kuko Báez sobre ilustración editorial, proyectos de libro, encargos en acuarela u obra original."
+      "description": "Escribe a Kuko Báez sobre ilustración editorial, proyectos de libro, encargos u obra original."
     },
     "notFound": {
       "title": "Página no encontrada — Kuko Báez",
-      "description": "Esta página no existe. Visita el portfolio de acuarela de Kuko Báez."
+      "description": "Esta página no existe. Visita el portfolio de acuarela y dibujo de Kuko Báez."
     }
   }
 }

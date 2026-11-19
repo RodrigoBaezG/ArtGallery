@@ -57,9 +57,15 @@
   "home": {
     "hero": {
       "name": "Kuko Báez",
-      "tagline": "Watercolor illustrator — editorial, books & commissions",
-      "intro": "Watercolor illustrations for publishers, authors and private clients.",
+      "tagline": "Watercolor & drawing illustrator — editorial, books & commissions",
+      "intro": "Watercolor illustrations and drawings for publishers, authors and private clients.",
       "cta": "Get in touch"
+    },
+    "categories": {
+      "label": "Categories",
+      "watercolor": "Watercolor",
+      "drawing": "Drawings",
+      "announce": "{category}: {count} works"
     },
     "gallery": {
       "heading": "Selected work",
@@ -108,7 +114,7 @@
     },
     "bio": {
       "heading": "Hi, I'm Kuko",
-      "p1": "I'm Kuko Báez (Rodrigo Báez), born in Jerez de la Frontera and now based in Oxford, UK. More than 15 years devoted to this beautiful art. Watercolor illustrator. I create illustrations for editorial projects and books. Physical originals or digital files. Portraits, stories, landscapes. If you have an idea for me, let's bring it to life!",
+      "p1": "I'm Kuko Báez (Rodrigo Báez), born in Jerez de la Frontera and now based in Oxford, UK. More than 15 years devoted to this beautiful art. Watercolor and drawing illustrator. I create illustrations for editorial projects and books. Physical originals or digital files. Portraits, stories, landscapes. If you have an idea for me, let's bring it to life!",
       "p2": "[[TODO: how you came to watercolor and your training]]"
     },
     "experience": {
@@ -132,7 +138,7 @@
     },
     "technique": {
       "heading": "Technique & materials",
-      "text": "I work in watercolor on paper, sometimes combined with ink.",
+      "text": "I work in watercolor on paper, sometimes combined with ink. I also draw in graphite, pen and ink, and ballpoint.",
       "materials": "[[TODO: paper, paints and brushes you usually use; whether you add ink, gouache or pencil; whether final art is scanned or photographed]]"
     },
     "cv": {
@@ -149,9 +155,9 @@
   },
   "commissions": {
     "header": {
-      "eyebrow": "Custom watercolor",
+      "eyebrow": "Custom watercolor & drawing",
       "heading": "Commissions",
-      "lead": "Watercolor illustrations made for your project, from first idea to finished piece."
+      "lead": "Watercolor and drawn illustrations made for your project, from first idea to finished piece."
     },
     "types": {
       "heading": "What I take on",
@@ -165,7 +171,7 @@
       },
       "personal": {
         "title": "Personal commissions",
-        "text": "A watercolor painted from your references: a portrait, a place, an object or a moment you want to keep."
+        "text": "A watercolor or drawing made from your references: a portrait, a place, an object or a moment you want to keep."
       },
       "originals": {
         "title": "Original artwork",
@@ -187,8 +193,8 @@
         "text": "I send you a sketch to review before I start painting. [[TODO: number of revision rounds included]]"
       },
       "step4": {
-        "title": "Painting",
-        "text": "Once the sketch is approved, I paint the final watercolor."
+        "title": "Final artwork",
+        "text": "Once the sketch is approved, I create the final piece."
       },
       "step5": {
         "title": "Delivery",
@@ -298,32 +304,32 @@
   "meta": {
     "siteName": "Kuko Báez",
     "person": {
-      "jobTitle": "Watercolor illustrator"
+      "jobTitle": "Watercolor and drawing illustrator"
     },
     "home": {
-      "title": "Kuko Báez — Watercolor Illustrator",
-      "description": "Watercolor illustration by Kuko Báez for editorial, books and private commissions. See the portfolio and get in touch."
+      "title": "Kuko Báez — Watercolor & Drawing Illustrator",
+      "description": "Watercolor and drawing illustration by Kuko Báez for editorial, books and private commissions. See the portfolio and get in touch."
     },
     "work": {
       "title": "{title} — Kuko Báez",
-      "description": "“{title}”, a watercolor by Kuko Báez. See the full portfolio or commission something similar.",
+      "description": "“{title}” by Kuko Báez. See the full portfolio or commission something similar.",
       "notFoundTitle": "Artwork not found — Kuko Báez"
     },
     "about": {
-      "title": "About — Kuko Báez, Watercolor Illustrator",
-      "description": "Kuko Báez, watercolor illustrator from Jerez de la Frontera, based in Oxford, UK. 15+ years of practice. Editorial, books, portraits and commissions."
+      "title": "About — Kuko Báez, Watercolor & Drawing Illustrator",
+      "description": "Kuko Báez, watercolor and drawing illustrator from Jerez, based in Oxford, UK. 15+ years of practice. Editorial, books, portraits and commissions."
     },
     "commissions": {
-      "title": "Watercolor Commissions — Kuko Báez",
-      "description": "Commission a watercolor illustration from Kuko Báez: editorial, book and personal projects. How it works and what to send."
+      "title": "Watercolor & Drawing Commissions — Kuko Báez",
+      "description": "Commission a watercolor or drawn illustration from Kuko Báez: editorial, book and personal projects. How it works and what to send."
     },
     "contact": {
       "title": "Contact — Kuko Báez",
-      "description": "Get in touch with Kuko Báez about editorial illustration, book projects, watercolor commissions or original artwork."
+      "description": "Get in touch with Kuko Báez about editorial illustration, book projects, commissions or original artwork."
     },
     "notFound": {
       "title": "Page not found — Kuko Báez",
-      "description": "This page doesn't exist. Visit the watercolor portfolio of Kuko Báez."
+      "description": "This page doesn't exist. Visit the watercolor and drawing portfolio of Kuko Báez."
     }
   }
 }

@@ -1,6 +1,7 @@
 [
   {
     "id": "moonlit-sorceress",
+    "category": "watercolor",
     "order": 1,
     "featured": true,
     "title": {
@@ -36,6 +37,7 @@
   },
   {
     "id": "woman-reading-magazine",
+    "category": "watercolor",
     "order": 2,
     "featured": true,
     "title": {
@@ -71,6 +73,7 @@
   },
   {
     "id": "flamenco-duo",
+    "category": "watercolor",
     "order": 3,
     "featured": true,
     "title": {
@@ -106,6 +109,7 @@
   },
   {
     "id": "headwrap-profile",
+    "category": "watercolor",
     "order": 4,
     "featured": true,
     "title": {
@@ -141,6 +145,7 @@
   },
   {
     "id": "father-and-child-guitar",
+    "category": "watercolor",
     "order": 5,
     "featured": true,
     "title": {
@@ -176,6 +181,7 @@
   },
   {
     "id": "peacock-headdress",
+    "category": "watercolor",
     "order": 6,
     "featured": true,
     "title": {
@@ -211,6 +217,7 @@
   },
   {
     "id": "bird-and-red-carnation",
+    "category": "watercolor",
     "order": 7,
     "featured": false,
     "title": {
@@ -246,6 +253,7 @@
   },
   {
     "id": "elven-valley",
+    "category": "watercolor",
     "order": 8,
     "featured": false,
     "title": {
@@ -281,6 +289,7 @@
   },
   {
     "id": "woman-orange-blouse",
+    "category": "watercolor",
     "order": 9,
     "featured": false,
     "title": {
@@ -316,6 +325,7 @@
   },
   {
     "id": "wolf-portrait",
+    "category": "watercolor",
     "order": 10,
     "featured": false,
     "title": {
@@ -351,6 +361,7 @@
   },
   {
     "id": "guitarist-profile",
+    "category": "watercolor",
     "order": 11,
     "featured": false,
     "title": {
@@ -386,6 +397,7 @@
   },
   {
     "id": "bandana-guitarist",
+    "category": "watercolor",
     "order": 12,
     "featured": false,
     "title": {
@@ -421,6 +433,7 @@
   },
   {
     "id": "dog-red-collar",
+    "category": "watercolor",
     "order": 13,
     "featured": false,
     "title": {
@@ -456,6 +469,7 @@
   },
   {
     "id": "two-dogs",
+    "category": "watercolor",
     "order": 14,
     "featured": false,
     "title": {
@@ -490,8 +504,45 @@
     "source": "perrosaltuna.jpg"
   },
   {
-    "id": "carnival-masked-performer",
+    "id": "carnival-gentleman-red-top-hat",
+    "category": "watercolor",
     "order": 15,
+    "featured": false,
+    "title": {
+      "en": "Carnival: Red Top Hat",
+      "es": "Carnaval: chistera roja"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/carnival-gentleman-red-top-hat",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1397,
+      "height": 2000,
+      "alt": {
+        "en": "Bearded man in a patterned red top hat, red and gold brocade waistcoat and dark blue frock coat, gloved hands on a cane.",
+        "es": "Hombre barbudo con chistera roja estampada, chaleco de brocado rojo y dorado, levita azul oscuro y guantes sobre un bastón."
+      }
+    },
+    "source": "img003.jpg"
+  },
+  {
+    "id": "carnival-masked-performer",
+    "category": "watercolor",
+    "order": 16,
     "featured": false,
     "title": {
       "en": "Carnival: Open Arms",
@@ -526,7 +577,8 @@
   },
   {
     "id": "carnival-umbrella-performer",
-    "order": 16,
+    "category": "watercolor",
+    "order": 17,
     "featured": false,
     "title": {
       "en": "Carnival: The Shout",
@@ -561,7 +613,8 @@
   },
   {
     "id": "carnival-harlequin",
-    "order": 17,
+    "category": "watercolor",
+    "order": 18,
     "featured": false,
     "title": {
       "en": "Carnival: Harlequin",
@@ -596,7 +649,8 @@
   },
   {
     "id": "carnival-singer-scarf",
-    "order": 18,
+    "category": "watercolor",
+    "order": 19,
     "featured": false,
     "title": {
       "en": "Carnival: The Singer",
@@ -630,8 +684,81 @@
     "source": "img015.jpg"
   },
   {
+    "id": "carnival-singer-reaching-out",
+    "category": "watercolor",
+    "order": 20,
+    "featured": false,
+    "title": {
+      "en": "Carnival: Reaching Out",
+      "es": "Carnaval: el brazo tendido"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/carnival-singer-reaching-out",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1335,
+      "alt": {
+        "en": "Dark-haired man with a moustache sings, mouth wide open, right arm stretched out to the left; light shirt and violet wash.",
+        "es": "Hombre moreno con bigote canta con la boca abierta y el brazo derecho extendido hacia la izquierda; camisa clara y mancha violeta."
+      }
+    },
+    "source": "img001.jpg"
+  },
+  {
+    "id": "carnival-plumed-bicorne",
+    "category": "watercolor",
+    "order": 21,
+    "featured": false,
+    "title": {
+      "en": "Carnival: Plumed Bicorne",
+      "es": "Carnaval: bicornio de plumas"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/carnival-plumed-bicorne",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1469,
+      "height": 2000,
+      "alt": {
+        "en": "Masked man in a huge plumed bicorne lettered with curves, military jacket and half smile, hand on his lapel; indigo and violet.",
+        "es": "Hombre con antifaz y enorme bicornio con pluma y letras curvas, chaqueta militar y media sonrisa, mano en la solapa; índigo y violeta."
+      }
+    },
+    "source": "img010.jpg"
+  },
+  {
     "id": "embrace-study",
-    "order": 19,
+    "category": "watercolor",
+    "order": 22,
     "featured": false,
     "title": {
       "en": "Folded",
@@ -666,7 +793,8 @@
   },
   {
     "id": "touching-hands",
-    "order": 20,
+    "category": "watercolor",
+    "order": 23,
     "featured": false,
     "title": {
       "en": "Touch",
@@ -701,7 +829,8 @@
   },
   {
     "id": "crown-of-thorns",
-    "order": 21,
+    "category": "watercolor",
+    "order": 24,
     "featured": false,
     "title": {
       "en": "Crown of Thorns",
@@ -736,7 +865,8 @@
   },
   {
     "id": "lord-with-wine-glass",
-    "order": 22,
+    "category": "watercolor",
+    "order": 25,
     "featured": false,
     "title": {
       "en": "The Wine Glass",
@@ -768,5 +898,1481 @@
       }
     },
     "source": "IMG_20180909_105944-012.jpg"
+  },
+  {
+    "id": "carnival-top-hat-red-coat-profile",
+    "category": "watercolor",
+    "order": 26,
+    "featured": false,
+    "title": {
+      "en": "Carnival: Red Coat",
+      "es": "Carnaval: levita roja"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/carnival-top-hat-red-coat-profile",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1469,
+      "height": 2000,
+      "alt": {
+        "en": "Long-haired figure in profile with a black top hat, red frock coat and white gloves, hand on chest and cane; violet wash.",
+        "es": "Figura de perfil con pelo largo negro, chistera negra, levita roja y guantes blancos, mano en el pecho y bastón; mancha violeta."
+      }
+    },
+    "source": "img005.jpg"
+  },
+  {
+    "id": "carnival-top-hat-open-arms",
+    "category": "watercolor",
+    "order": 27,
+    "featured": false,
+    "title": {
+      "en": "Carnival: Ribboned Top Hat",
+      "es": "Carnaval: chistera de cintas"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/carnival-top-hat-open-arms",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1397,
+      "alt": {
+        "en": "Bearded man with open arms in a top hat with ribbons and a green feather, blue frock coat and red and white scarf; ultramarine.",
+        "es": "Hombre barbudo con los brazos abiertos, chistera con cintas y pluma verde, levita azul y pañuelo rojo y blanco; azul ultramar."
+      }
+    },
+    "source": "img004.jpg"
+  },
+  {
+    "id": "carnival-peace-pendant-open-arms",
+    "category": "watercolor",
+    "order": 28,
+    "featured": false,
+    "title": {
+      "en": "Carnival: Peace",
+      "es": "Carnaval: paz"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/carnival-peace-pendant-open-arms",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1469,
+      "alt": {
+        "en": "Long-haired man, eyes closed and arms raised, in a yellow, green and red knitted cap and a peace-sign pendant; emerald and blue.",
+        "es": "Hombre de pelo largo con los ojos cerrados y los brazos alzados, gorro de lana amarillo, verde y rojo y colgante de la paz; esmeralda y azul."
+      }
+    },
+    "source": "img013.jpg"
+  },
+  {
+    "id": "carnival-wide-brim-hat-red-tie",
+    "category": "watercolor",
+    "order": 29,
+    "featured": false,
+    "title": {
+      "en": "Carnival: Red Tie",
+      "es": "Carnaval: corbata roja"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/carnival-wide-brim-hat-red-tie",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1469,
+      "height": 2000,
+      "alt": {
+        "en": "Man with a goatee in a wide-brimmed hat, grey frock coat and red tie, mouth open and fist clenched; pinkish red and blue-violet.",
+        "es": "Hombre con perilla, sombrero de ala ancha, levita gris y corbata roja, boca abierta y puño cerrado; rojo rosado y azul violáceo."
+      }
+    },
+    "source": "img008.jpg"
+  },
+  {
+    "id": "carnival-man-blue-tunic-rope",
+    "category": "watercolor",
+    "order": 30,
+    "featured": false,
+    "title": {
+      "en": "Carnival: The Rope",
+      "es": "Carnaval: la cuerda"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/carnival-man-blue-tunic-rope",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1469,
+      "height": 2000,
+      "alt": {
+        "en": "Man with tousled brown hair and an intense sideways look, in a blue tunic, pulling a rope taut between his hands; mauve.",
+        "es": "Hombre de pelo castaño revuelto y mirada intensa de lado, con túnica azul, tensando una cuerda entre las manos; tonos malva."
+      }
+    },
+    "source": "img012.jpg"
+  },
+  {
+    "id": "carnival-striped-shirt-boater",
+    "category": "watercolor",
+    "order": 31,
+    "featured": false,
+    "title": {
+      "en": "Carnival: Boater and Stripes",
+      "es": "Carnaval: canotier y rayas"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/carnival-striped-shirt-boater",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1469,
+      "height": 2000,
+      "alt": {
+        "en": "Man in a brown boater, mouth open, gripping a red neckerchief; blue and white striped shirt and red trousers, on white.",
+        "es": "Hombre con canotier marrón y la boca abierta sujeta un pañuelo rojo al cuello; camiseta de rayas azules y blancas y pantalón rojo."
+      }
+    },
+    "source": "img009.jpg"
+  },
+  {
+    "id": "carnival-singer-head-thrown-back",
+    "category": "watercolor",
+    "order": 32,
+    "featured": false,
+    "title": {
+      "en": "Carnival: Full Voice",
+      "es": "Carnaval: a toda voz"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/carnival-singer-head-thrown-back",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1450,
+      "height": 2000,
+      "alt": {
+        "en": "Sketchy figure with long fair hair, head thrown back, eyes closed and mouth open, hand raised, in a blue-violet cape; magenta.",
+        "es": "Figura abocetada de pelo largo rubio, cabeza hacia atrás, ojos cerrados, boca abierta y mano alzada, con capa azul violácea; magenta."
+      }
+    },
+    "source": "img002.jpg"
+  },
+  {
+    "id": "boots-hat-treble-clef",
+    "category": "watercolor",
+    "order": 33,
+    "featured": false,
+    "title": {
+      "en": "Boots, Hat and Treble Clef",
+      "es": "Botas, sombrero y clave de sol"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/boots-hat-treble-clef",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1509,
+      "height": 2000,
+      "alt": {
+        "en": "Hiking boots and a hat on a pedestal marked with a treble clef, in pen lines over dripping blue, yellow and red washes.",
+        "es": "Botas de montaña y un sombrero sobre un pedestal con una clave de sol, a plumilla sobre manchas que gotean en azul, amarillo y rojo."
+      }
+    },
+    "source": "img02200.jpg"
+  },
+  {
+    "id": "dumbledore-pensieve",
+    "category": "drawing",
+    "order": 1,
+    "featured": true,
+    "title": {
+      "en": "Dumbledore and the Pensieve",
+      "es": "Dumbledore y el pensadero"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Pen and ink on paper",
+      "es": "Tinta a plumilla sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/dumbledore-pensieve",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1732,
+      "height": 2000,
+      "alt": {
+        "en": "Dumbledore leans over the Pensieve before tall Gothic windows, drawn with dense hatching and solid blacks.",
+        "es": "Dumbledore se inclina sobre el pensadero ante altos ventanales góticos, con tramado denso y negros planos."
+      }
+    },
+    "source": "dumbledore.jpg"
+  },
+  {
+    "id": "arya-stark-portrait",
+    "category": "drawing",
+    "order": 2,
+    "featured": true,
+    "title": {
+      "en": "Arya Stark",
+      "es": "Arya Stark"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Graphite on paper",
+      "es": "Grafito sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/arya-stark-portrait",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1395,
+      "height": 2000,
+      "alt": {
+        "en": "Arya Stark crouching in a ragged cloak, holding a bowl in both hands and glancing sideways, in soft grey tones.",
+        "es": "Arya Stark en cuclillas con un manto raído y un cuenco entre las manos, mirando de reojo, en suaves tonos grises."
+      }
+    },
+    "source": "arya.jpeg"
+  },
+  {
+    "id": "paco-de-lucia-portrait",
+    "category": "drawing",
+    "order": 3,
+    "featured": true,
+    "title": {
+      "en": "Paco de Lucía",
+      "es": "Paco de Lucía"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Graphite and grey wash on paper",
+      "es": "Grafito y aguada gris sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/paco-de-lucia-portrait",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1418,
+      "alt": {
+        "en": "Paco de Lucía, palms together before his face, on grey washes; a Spanish quote reads “The belly fills fast, the spirit is insatiable”.",
+        "es": "Paco de Lucía con las palmas juntas ante la cara, sobre aguadas grises, y la cita «La barriga se llena pronto, el espíritu es insaciable»."
+      }
+    },
+    "source": "IMG_20200805_191227 (2).jpg"
+  },
+  {
+    "id": "peaky-blinders-shelby-brothers",
+    "category": "drawing",
+    "order": 4,
+    "featured": true,
+    "title": {
+      "en": "The Shelby Brothers",
+      "es": "Los hermanos Shelby"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Pen and ink on paper",
+      "es": "Tinta a plumilla sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/peaky-blinders-shelby-brothers",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1666,
+      "alt": {
+        "en": "The three Shelby brothers from Peaky Blinders in suits and flat caps, hands in their pockets, in cross-hatched ink.",
+        "es": "Los tres hermanos Shelby de Peaky Blinders con traje y gorra plana, manos en los bolsillos, en tinta con tramado cruzado."
+      }
+    },
+    "source": "peaky.jpg"
+  },
+  {
+    "id": "gandalf-and-the-nazgul",
+    "category": "drawing",
+    "order": 5,
+    "featured": true,
+    "title": {
+      "en": "Gandalf and the Nazgûl",
+      "es": "Gandalf y el Nazgûl"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Pen and ink on paper",
+      "es": "Tinta a plumilla sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/gandalf-and-the-nazgul",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1207,
+      "alt": {
+        "en": "Gandalf, with Pippin on a white horse, faces a Nazgûl on a winged beast in a stone square, in pen and ink.",
+        "es": "Gandalf, con Pippin a lomos de un caballo blanco, frente a un Nazgûl sobre una bestia alada en una plaza de piedra."
+      }
+    },
+    "source": "nazgul_gandalf.jpg"
+  },
+  {
+    "id": "triana-bridge-seville",
+    "category": "drawing",
+    "order": 6,
+    "featured": true,
+    "title": {
+      "en": "Triana Bridge by Night",
+      "es": "Puente de Triana de noche"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/triana-bridge-seville",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1907,
+      "height": 2000,
+      "alt": {
+        "en": "Triana Bridge in Seville at night, with a full moon and its reflection on the river, in blue and grey washes.",
+        "es": "El puente de Triana, en Sevilla, de noche, con la luna llena y su reflejo en el río, en aguadas azules y grises."
+      }
+    },
+    "source": "PXL_20230908_103540225.jpg"
+  },
+  {
+    "id": "crucified-christ-closeup",
+    "category": "drawing",
+    "order": 7,
+    "featured": false,
+    "title": {
+      "en": "Crucified Christ",
+      "es": "Cristo crucificado"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Graphite on paper",
+      "es": "Grafito sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/crucified-christ-closeup",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1404,
+      "alt": {
+        "en": "Close-up of a carved crucified Christ with a crown of thorns and halo rays, brightly lit against a black background.",
+        "es": "Primer plano de una talla de Cristo crucificado con corona de espinas y potencias, iluminada sobre fondo negro."
+      }
+    },
+    "source": "cristo2.jpg"
+  },
+  {
+    "id": "argonath-pillars-of-kings",
+    "category": "drawing",
+    "order": 8,
+    "featured": false,
+    "title": {
+      "en": "The Argonath",
+      "es": "Los Argonath"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and graphite on paper",
+      "es": "Tinta y grafito sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/argonath-pillars-of-kings",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1456,
+      "alt": {
+        "en": "The Argonath, two colossal stone kings, rise above three small boats on the river.",
+        "es": "Los Argonath, dos colosales reyes de piedra, se alzan sobre tres pequeñas barcas en el río."
+      }
+    },
+    "source": "IMG_20190927_084738.jpg"
+  },
+  {
+    "id": "vito-corleone-godfather",
+    "category": "drawing",
+    "order": 9,
+    "featured": false,
+    "title": {
+      "en": "Vito Corleone",
+      "es": "Vito Corleone"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Pen and ink on paper",
+      "es": "Tinta a plumilla sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/vito-corleone-godfather",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1452,
+      "alt": {
+        "en": "Vito Corleone in a tuxedo with a rose on his lapel, as a man leans in to whisper to him.",
+        "es": "Vito Corleone, de esmoquin y con una rosa en la solapa, mientras un hombre se inclina para susurrarle."
+      }
+    },
+    "source": "IMG_20190927_100925.jpg"
+  },
+  {
+    "id": "captain-alatriste",
+    "category": "drawing",
+    "order": 10,
+    "featured": false,
+    "title": {
+      "en": "Captain Alatriste",
+      "es": "El capitán Alatriste"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and grey wash on paper",
+      "es": "Tinta y aguada gris sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/captain-alatriste",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1397,
+      "height": 2000,
+      "alt": {
+        "en": "Captain Alatriste, a moustached swordsman in a cloak with a rapier, in ink and grey washes.",
+        "es": "El capitán Alatriste, espadachín con bigote, capa y espada ropera, en tinta y aguadas grises."
+      }
+    },
+    "source": "IMG_20200331_121343.jpg"
+  },
+  {
+    "id": "voldemort-duel",
+    "category": "drawing",
+    "order": 11,
+    "featured": false,
+    "title": {
+      "en": "Voldemort, Wand Raised",
+      "es": "Voldemort, varita en alto"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Graphite on paper",
+      "es": "Grafito sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/voldemort-duel",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1522,
+      "alt": {
+        "en": "Voldemort shouting as he points his wand, with Gothic architecture loosely sketched behind him.",
+        "es": "Voldemort grita mientras apunta con la varita, con arquitectura gótica esbozada al fondo."
+      }
+    },
+    "source": "IMG_20345.jpg"
+  },
+  {
+    "id": "cadiz-cathedral-seafront",
+    "category": "drawing",
+    "order": 12,
+    "featured": false,
+    "title": {
+      "en": "Cádiz Cathedral",
+      "es": "Catedral de Cádiz"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/cadiz-cathedral-seafront",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1509,
+      "height": 2000,
+      "alt": {
+        "en": "Cádiz Cathedral seen from the seafront, with breakwater rocks and a gull, in blue and ochre washes.",
+        "es": "La catedral de Cádiz vista desde el paseo marítimo, con la escollera y una gaviota, en aguadas azules y ocres."
+      }
+    },
+    "source": "PXL_20230908_103741759.jpg"
+  },
+  {
+    "id": "minas-tirith",
+    "category": "drawing",
+    "order": 13,
+    "featured": false,
+    "title": {
+      "en": "Minas Tirith",
+      "es": "Minas Tirith"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink with white highlights on paper",
+      "es": "Tinta con toques de blanco sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/minas-tirith",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1219,
+      "alt": {
+        "en": "Minas Tirith, the tiered white city, with a rider crossing the plain below.",
+        "es": "Minas Tirith, la ciudad blanca escalonada, con un jinete que cruza la llanura a sus pies."
+      }
+    },
+    "source": "minastirith.jpg"
+  },
+  {
+    "id": "voldemort-and-harry",
+    "category": "drawing",
+    "order": 14,
+    "featured": false,
+    "title": {
+      "en": "Voldemort and Harry",
+      "es": "Voldemort y Harry"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Pen and ink on paper",
+      "es": "Tinta a plumilla sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/voldemort-and-harry",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1242,
+      "alt": {
+        "en": "Voldemort grips Harry's face in an interior of stone arches, in pen and ink.",
+        "es": "Voldemort sujeta la cara de Harry en un interior con arcos de piedra, a plumilla."
+      }
+    },
+    "source": "voldemort_harry.jpg"
+  },
+  {
+    "id": "moses-michelangelo",
+    "category": "drawing",
+    "order": 15,
+    "featured": false,
+    "title": {
+      "en": "Michelangelo's Moses",
+      "es": "El Moisés de Miguel Ángel"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and white highlights on toned paper",
+      "es": "Tinta y realces en blanco sobre papel tintado"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/moses-michelangelo",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1313,
+      "height": 2000,
+      "alt": {
+        "en": "Michelangelo's Moses, seated, with a long beard and the tablets, on toned paper with white highlights and blue-green patches.",
+        "es": "El Moisés de Miguel Ángel, sentado, con larga barba y las tablas, sobre papel tostado con realces blancos y manchas verdeazuladas."
+      }
+    },
+    "source": "Moises2.jpg"
+  },
+  {
+    "id": "ned-stark-portrait",
+    "category": "drawing",
+    "order": 16,
+    "featured": false,
+    "title": {
+      "en": "Ned Stark",
+      "es": "Ned Stark"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/ned-stark-portrait",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1289,
+      "height": 2000,
+      "alt": {
+        "en": "Ned Stark in a fur cloak, gripping a sword, his figure dissolving into ink drips among turquoise strokes.",
+        "es": "Ned Stark con capa de pieles y espada en mano; la figura se deshace en chorreones de tinta entre trazos turquesa."
+      }
+    },
+    "source": "IMG_20170831_115556.jpg"
+  },
+  {
+    "id": "doctor-strange",
+    "category": "drawing",
+    "order": 17,
+    "featured": false,
+    "title": {
+      "en": "Doctor Strange",
+      "es": "Doctor Strange"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Graphite and ink on paper",
+      "es": "Grafito y tinta sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/doctor-strange",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1534,
+      "height": 2000,
+      "alt": {
+        "en": "Doctor Strange, full length, his cloak billowing amid swirling smoke.",
+        "es": "Doctor Strange de cuerpo entero, con la capa ondeando entre volutas de humo."
+      }
+    },
+    "source": "IMG_20180717_142204-01.jpeg"
+  },
+  {
+    "id": "thanos-infinity-gauntlet",
+    "category": "drawing",
+    "order": 18,
+    "featured": false,
+    "title": {
+      "en": "Thanos and the Infinity Gauntlet",
+      "es": "Thanos y el Guantelete del Infinito"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and graphite on paper",
+      "es": "Tinta y grafito sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/thanos-infinity-gauntlet",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1578,
+      "height": 2000,
+      "alt": {
+        "en": "Thanos clenches his fist in the Infinity Gauntlet, his gaze fixed on the viewer.",
+        "es": "Thanos aprieta el puño con el Guantelete del Infinito, con la mirada fija en el espectador."
+      }
+    },
+    "source": "IMG_20180717_142309-01.jpeg"
+  },
+  {
+    "id": "ragnar-and-lagertha",
+    "category": "drawing",
+    "order": 19,
+    "featured": false,
+    "title": {
+      "en": "Ragnar and Lagertha",
+      "es": "Ragnar y Lagertha"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Blue ballpoint pen on paper",
+      "es": "Bolígrafo azul sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/ragnar-and-lagertha",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1578,
+      "height": 2000,
+      "alt": {
+        "en": "Ragnar holding an axe and Lagertha with a shield and sword, drawn in blue ballpoint.",
+        "es": "Ragnar con un hacha y Lagertha con escudo y espada, dibujados con bolígrafo azul."
+      }
+    },
+    "source": "ragnar_lagertha_2.jpg"
+  },
+  {
+    "id": "dobby-studies",
+    "category": "drawing",
+    "order": 20,
+    "featured": false,
+    "title": {
+      "en": "Dobby Studies",
+      "es": "Estudios de Dobby"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Graphite on paper",
+      "es": "Grafito sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/dobby-studies",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1505,
+      "height": 2000,
+      "alt": {
+        "en": "Two studies of Dobby: one holding a sock, the other facing forward with his arms crossed.",
+        "es": "Dos estudios de Dobby: uno con un calcetín y otro de frente con los brazos cruzados."
+      }
+    },
+    "source": "doby.jpeg"
+  },
+  {
+    "id": "capitan-veneno",
+    "category": "drawing",
+    "order": 21,
+    "featured": false,
+    "title": {
+      "en": "Capitán Veneno",
+      "es": "Capitán Veneno"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Graphite and ink on paper",
+      "es": "Grafito y tinta sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/capitan-veneno",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1738,
+      "height": 2000,
+      "alt": {
+        "en": "Juan Carlos Aragón.",
+        "es": "Juan Carlos Aragón."
+      }
+    },
+    "source": "IMG_20200112_104844.jpg"
+  },
+  {
+    "id": "carnival-troupes-ensemble",
+    "category": "drawing",
+    "order": 22,
+    "featured": false,
+    "title": {
+      "en": "Carnival Troupes",
+      "es": "Agrupaciones de carnaval"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "50 × 70 cm",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/carnival-troupes-ensemble",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1429,
+      "height": 2000,
+      "alt": {
+        "en": "About fifteen costumed characters from carnival troupes crowded together, in ink with violet, blue and red washes.",
+        "es": "Unos quince personajes disfrazados de agrupaciones de carnaval, apiñados, en tinta con manchas violetas, azules y rojas."
+      }
+    },
+    "source": "Agrupaciones JC 50x70 cm.jpg"
+  },
+  {
+    "id": "reclining-lovers",
+    "category": "drawing",
+    "order": 23,
+    "featured": false,
+    "title": {
+      "en": "Reclining Lovers",
+      "es": "Amantes tendidos"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/reclining-lovers",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1400,
+      "alt": {
+        "en": "Couple lying in an embrace, in violet, green and blue watercolor with spilling ink.",
+        "es": "Pareja tumbada y abrazada, en acuarela violeta, verde y azul con tinta que se derrama."
+      }
+    },
+    "source": "2.jpg"
+  },
+  {
+    "id": "couple-embrace-red-wash",
+    "category": "drawing",
+    "order": 24,
+    "featured": false,
+    "title": {
+      "en": "Embrace in Red",
+      "es": "Abrazo en rojo"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/couple-embrace-red-wash",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1408,
+      "height": 2000,
+      "alt": {
+        "en": "Couple embracing, he bent forward and she with her head thrown back, among red, violet and ochre washes.",
+        "es": "Pareja abrazada, él encorvado y ella con la cabeza echada hacia atrás, entre manchas rojas, violetas y ocres."
+      }
+    },
+    "source": "1.jpg"
+  },
+  {
+    "id": "kissing-couple-blue-ink",
+    "category": "drawing",
+    "order": 25,
+    "featured": false,
+    "title": {
+      "en": "Kiss in Blue",
+      "es": "Beso en azul"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/kissing-couple-blue-ink",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1393,
+      "height": 2000,
+      "alt": {
+        "en": "Couple kissing, drawn in deep blue ink over blue, mauve and green watercolor.",
+        "es": "Pareja besándose, en tinta azul intensa sobre acuarela azul, malva y verde."
+      }
+    },
+    "source": "Hedone8.jpg"
+  },
+  {
+    "id": "bull-red-and-gold",
+    "category": "drawing",
+    "order": 26,
+    "featured": false,
+    "title": {
+      "en": "Bull in Red and Gold",
+      "es": "Toro en rojo y oro"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/bull-red-and-gold",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 2000,
+      "height": 1612,
+      "alt": {
+        "en": "Fighting bull in profile over red and yellow watercolor washes.",
+        "es": "Toro bravo de perfil sobre manchas de acuarela roja y amarilla."
+      }
+    },
+    "source": "toro2.jpg"
+  },
+  {
+    "id": "tabby-cat-walking",
+    "category": "drawing",
+    "order": 27,
+    "featured": false,
+    "title": {
+      "en": "Tabby Cat",
+      "es": "Gato atigrado"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/tabby-cat-walking",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1500,
+      "height": 2000,
+      "alt": {
+        "en": "Tabby cat with a white chest walking towards the viewer, over a mauve wash.",
+        "es": "Gato atigrado de pecho blanco que camina de frente, sobre una aguada malva."
+      }
+    },
+    "source": "PXL_20230503_195503777.jpg"
+  },
+  {
+    "id": "equestrian-fountain-jerez",
+    "category": "drawing",
+    "order": 28,
+    "featured": false,
+    "title": {
+      "en": "Fountain in Jerez",
+      "es": "Fuente en Jerez"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink and watercolor on paper",
+      "es": "Tinta y acuarela sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/equestrian-fountain-jerez",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1498,
+      "height": 2000,
+      "alt": {
+        "en": "Fountain with an equestrian statue and jets of water in a square in Jerez de la Frontera, in blue and grey washes.",
+        "es": "Fuente con estatua ecuestre y chorros de agua en una plaza de Jerez de la Frontera, en aguadas azules y grises."
+      }
+    },
+    "source": "PXL_20230908_103514968.jpg"
+  },
+  {
+    "id": "oxford-gothic-memorial",
+    "category": "drawing",
+    "order": 29,
+    "featured": false,
+    "title": {
+      "en": "Gothic Memorial, Oxford",
+      "es": "Monumento gótico, Oxford"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Ink on paper",
+      "es": "Tinta sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/oxford-gothic-memorial",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1460,
+      "height": 2000,
+      "alt": {
+        "en": "Gothic memorial with a spire and cross beside a leafy tree, drawn in dense ink lines.",
+        "es": "Monumento gótico con aguja y cruz junto a un árbol frondoso, dibujado con trazos densos de tinta."
+      }
+    },
+    "source": "oxford2.jpg"
+  },
+  {
+    "id": "socrates-statue",
+    "category": "drawing",
+    "order": 30,
+    "featured": false,
+    "title": {
+      "en": "Socrates",
+      "es": "Sócrates"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Pen and ink on paper",
+      "es": "Tinta a plumilla sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/socrates-statue",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1400,
+      "height": 1752,
+      "alt": {
+        "en": "Seated statue of Socrates, hand on his chin, seen from below.",
+        "es": "Estatua sedente de Sócrates con la mano en la barbilla, vista en contrapicado."
+      }
+    },
+    "source": "SOCRATES.jpg"
+  },
+  {
+    "id": "venus-de-milo",
+    "category": "drawing",
+    "order": 31,
+    "featured": false,
+    "title": {
+      "en": "Venus de Milo",
+      "es": "Venus de Milo"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Pen and ink on paper",
+      "es": "Tinta a plumilla sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/venus-de-milo",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1368,
+      "height": 2000,
+      "alt": {
+        "en": "The Venus de Milo, full length, in fine pen hatching, signed “K.B.”.",
+        "es": "La Venus de Milo de cuerpo entero, con fino tramado a plumilla, firmada «K.B.»."
+      }
+    },
+    "source": "2026-02-22_195449.jpg"
+  },
+  {
+    "id": "sculpted-torso-looking-up",
+    "category": "drawing",
+    "order": 32,
+    "featured": false,
+    "title": {
+      "en": "Looking Up",
+      "es": "Mirando al cielo"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Graphite on paper",
+      "es": "Grafito sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/sculpted-torso-looking-up",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1332,
+      "height": 1705,
+      "alt": {
+        "en": "Bare-chested bearded man looking upward, modelled like a classical sculpture against a dark background.",
+        "es": "Torso desnudo de un hombre barbado que mira hacia arriba, modelado como una escultura clásica sobre fondo oscuro."
+      }
+    },
+    "source": "0033.jpg"
+  },
+  {
+    "id": "superman-flight",
+    "category": "drawing",
+    "order": 33,
+    "featured": false,
+    "title": {
+      "en": "Superman",
+      "es": "Superman"
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    },
+    "year": "[[TODO]]",
+    "dimensions": "[[TODO]]",
+    "medium": {
+      "en": "Graphite and ink on paper",
+      "es": "Grafito y tinta sobre papel"
+    },
+    "status": "[[TODO]]",
+    "image": {
+      "base": "assets/img/works/superman-flight",
+      "widths": [
+        640,
+        1280,
+        2000
+      ],
+      "width": 1494,
+      "height": 2000,
+      "alt": {
+        "en": "Superman hovering in mid-air with his cape spread wide.",
+        "es": "Superman suspendido en el aire con la capa desplegada."
+      }
+    },
+    "source": "superman3.jpg"
   }
 ]
