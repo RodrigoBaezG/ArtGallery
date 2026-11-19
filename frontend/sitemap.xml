@@ -7,6 +7,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/"/>
   </url>
   <url>
+    <loc>https://kukobaezgallery.netlify.app/?category=drawing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/?category=drawing&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/?category=drawing&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/?category=drawing"/>
+  </url>
+  <url>
     <loc>https://kukobaezgallery.netlify.app/about.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/about.html?lang=en"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/about.html?lang=es"/>
@@ -109,6 +115,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=two-dogs"/>
   </url>
   <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=carnival-gentleman-red-top-hat</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-gentleman-red-top-hat&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-gentleman-red-top-hat&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-gentleman-red-top-hat"/>
+  </url>
+  <url>
     <loc>https://kukobaezgallery.netlify.app/work.html?id=carnival-masked-performer</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-masked-performer&amp;lang=en"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-masked-performer&amp;lang=es"/>
@@ -133,6 +145,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-singer-scarf"/>
   </url>
   <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=carnival-singer-reaching-out</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-singer-reaching-out&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-singer-reaching-out&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-singer-reaching-out"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=carnival-plumed-bicorne</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-plumed-bicorne&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-plumed-bicorne&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-plumed-bicorne"/>
+  </url>
+  <url>
     <loc>https://kukobaezgallery.netlify.app/work.html?id=embrace-study</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=embrace-study&amp;lang=en"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=embrace-study&amp;lang=es"/>
@@ -155,5 +179,251 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=lord-with-wine-glass&amp;lang=en"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=lord-with-wine-glass&amp;lang=es"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=lord-with-wine-glass"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=carnival-top-hat-red-coat-profile</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-top-hat-red-coat-profile&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-top-hat-red-coat-profile&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-top-hat-red-coat-profile"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=carnival-top-hat-open-arms</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-top-hat-open-arms&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-top-hat-open-arms&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-top-hat-open-arms"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=carnival-peace-pendant-open-arms</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-peace-pendant-open-arms&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-peace-pendant-open-arms&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-peace-pendant-open-arms"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=carnival-wide-brim-hat-red-tie</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-wide-brim-hat-red-tie&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-wide-brim-hat-red-tie&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-wide-brim-hat-red-tie"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=carnival-man-blue-tunic-rope</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-man-blue-tunic-rope&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-man-blue-tunic-rope&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-man-blue-tunic-rope"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=carnival-striped-shirt-boater</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-striped-shirt-boater&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-striped-shirt-boater&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-striped-shirt-boater"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=carnival-singer-head-thrown-back</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-singer-head-thrown-back&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-singer-head-thrown-back&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-singer-head-thrown-back"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=boots-hat-treble-clef</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=boots-hat-treble-clef&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=boots-hat-treble-clef&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=boots-hat-treble-clef"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=dumbledore-pensieve</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=dumbledore-pensieve&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=dumbledore-pensieve&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=dumbledore-pensieve"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=arya-stark-portrait</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=arya-stark-portrait&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=arya-stark-portrait&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=arya-stark-portrait"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=paco-de-lucia-portrait</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=paco-de-lucia-portrait&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=paco-de-lucia-portrait&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=paco-de-lucia-portrait"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=peaky-blinders-shelby-brothers</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=peaky-blinders-shelby-brothers&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=peaky-blinders-shelby-brothers&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=peaky-blinders-shelby-brothers"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=gandalf-and-the-nazgul</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=gandalf-and-the-nazgul&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=gandalf-and-the-nazgul&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=gandalf-and-the-nazgul"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=triana-bridge-seville</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=triana-bridge-seville&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=triana-bridge-seville&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=triana-bridge-seville"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=crucified-christ-closeup</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=crucified-christ-closeup&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=crucified-christ-closeup&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=crucified-christ-closeup"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=argonath-pillars-of-kings</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=argonath-pillars-of-kings&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=argonath-pillars-of-kings&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=argonath-pillars-of-kings"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=vito-corleone-godfather</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=vito-corleone-godfather&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=vito-corleone-godfather&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=vito-corleone-godfather"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=captain-alatriste</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=captain-alatriste&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=captain-alatriste&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=captain-alatriste"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=voldemort-duel</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=voldemort-duel&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=voldemort-duel&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=voldemort-duel"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=cadiz-cathedral-seafront</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=cadiz-cathedral-seafront&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=cadiz-cathedral-seafront&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=cadiz-cathedral-seafront"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=minas-tirith</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=minas-tirith&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=minas-tirith&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=minas-tirith"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=voldemort-and-harry</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=voldemort-and-harry&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=voldemort-and-harry&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=voldemort-and-harry"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=moses-michelangelo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=moses-michelangelo&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=moses-michelangelo&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=moses-michelangelo"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=ned-stark-portrait</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=ned-stark-portrait&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=ned-stark-portrait&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=ned-stark-portrait"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=doctor-strange</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=doctor-strange&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=doctor-strange&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=doctor-strange"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=thanos-infinity-gauntlet</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=thanos-infinity-gauntlet&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=thanos-infinity-gauntlet&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=thanos-infinity-gauntlet"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=ragnar-and-lagertha</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=ragnar-and-lagertha&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=ragnar-and-lagertha&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=ragnar-and-lagertha"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=dobby-studies</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=dobby-studies&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=dobby-studies&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=dobby-studies"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=capitan-veneno</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=capitan-veneno&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=capitan-veneno&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=capitan-veneno"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=carnival-troupes-ensemble</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-troupes-ensemble&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-troupes-ensemble&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=carnival-troupes-ensemble"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=reclining-lovers</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=reclining-lovers&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=reclining-lovers&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=reclining-lovers"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=couple-embrace-red-wash</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=couple-embrace-red-wash&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=couple-embrace-red-wash&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=couple-embrace-red-wash"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=kissing-couple-blue-ink</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=kissing-couple-blue-ink&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=kissing-couple-blue-ink&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=kissing-couple-blue-ink"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=bull-red-and-gold</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=bull-red-and-gold&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=bull-red-and-gold&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=bull-red-and-gold"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=tabby-cat-walking</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=tabby-cat-walking&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=tabby-cat-walking&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=tabby-cat-walking"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=equestrian-fountain-jerez</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=equestrian-fountain-jerez&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=equestrian-fountain-jerez&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=equestrian-fountain-jerez"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=oxford-gothic-memorial</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=oxford-gothic-memorial&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=oxford-gothic-memorial&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=oxford-gothic-memorial"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=socrates-statue</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=socrates-statue&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=socrates-statue&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=socrates-statue"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=venus-de-milo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=venus-de-milo&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=venus-de-milo&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=venus-de-milo"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=sculpted-torso-looking-up</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=sculpted-torso-looking-up&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=sculpted-torso-looking-up&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=sculpted-torso-looking-up"/>
+  </url>
+  <url>
+    <loc>https://kukobaezgallery.netlify.app/work.html?id=superman-flight</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/work.html?id=superman-flight&amp;lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/work.html?id=superman-flight&amp;lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/work.html?id=superman-flight"/>
   </url>
 </urlset>

@@ -242,6 +242,30 @@ Breve: en móvil la primera obra debe asomar en la primera pantalla. Banner de m
 </section>
 ```
 
+### 7.3b Pestañas de categoría (home)
+
+Dos categorías, Watercolor / Drawings (CLAUDE.md §3), entre el hero y la galería. Mismo lenguaje que `nav__link`: solo texto, sin cajas, fondos ni pastillas.
+
+- Centradas (como el hero), en una línea: «Watercolor · Drawings» / «Acuarela · Dibujos» (~170 px, cabe de sobra a 320 px; `flex-wrap` como red de seguridad, `white-space: nowrap` por palabra).
+- Texto `--font-size-base`, sans, `--color-ink-soft`; hover y activa en `--color-ink`.
+- **Activa** (`aria-current="page"`): subrayado fino de 1 px (`--border-width`) con `--underline-offset-loose`, idéntico a la nav.
+- Separador «·» generado en CSS (`li + li::before`), color `--color-line-strong`, decorativo (texto alternativo vacío: `content: "·" / ""`). Hueco de 16 px (`--space-2`) a cada lado.
+- Área táctil ≥ 44 × 44 px: `min-width`/`min-height: var(--tap-target)` y relleno lateral `--tap-bleed` compensado con margen negativo, como en nav y pie.
+- Foco: anillo general de `:focus-visible` (índigo 2 px, offset 3 px).
+- Movimiento: solo `color`, `--duration-fast` (150 ms) `--ease-out`; con `prefers-reduced-motion` la duración se anula vía tokens.
+- Espaciado (`home.css`): el hero deja 40 px (móvil) / 64 px (≥ 960 px) encima; debajo, 16 / 24 px hasta la galería (+ ~12 px ópticos del área táctil). Así las pestañas se leen como cabecera de la galería.
+
+```html
+<nav class="category-tabs container container--wide" aria-label="Categories" data-i18n-aria-label="home.categories.label">
+  <ul class="category-tabs__list" role="list">
+    <li><a class="category-tabs__link" href="?category=watercolor" aria-current="page" data-category="watercolor" data-i18n="home.categories.watercolor">Watercolor</a></li>
+    <li><a class="category-tabs__link" href="?category=drawing" data-category="drawing" data-i18n="home.categories.drawing">Drawings</a></li>
+  </ul>
+</nav>
+```
+
+`aria-current="page"` debe estar en una sola pestaña y moverse al cambiar de categoría (JS). No se añade separador en el HTML.
+
 ### 7.4 Galería + tarjeta de obra
 
 - Variante `--rows` por debajo de 640 px: una obra por fila a ancho completo (`flex: 1 1 100%`), para que las verticales solas en su fila no queden más estrechas (QA I2).
@@ -601,6 +625,7 @@ Escritorio: formulario 3/5, datos de contacto 2/5 separados por una línea verti
 - Idioma: `lang-switch`, `lang-switch__option`, `lang-switch__sep` (+ `aria-pressed`)
 - Cabecera de página: `page-header`, `page-header__title`, `page-header__lead`, `page-header__actions`
 - Aviso de carga/error: `notice`, `notice--error`
+- Pestañas de categoría: `category-tabs`, `category-tabs__list`, `category-tabs__link` (+ `aria-current="page"`)
 - Galería: `gallery__grid`, `gallery__grid--rows`, `gallery__item`, `gallery__link`, `gallery__figure`, `gallery__media`, `gallery__image`, `gallery__caption`, `gallery__title`, `gallery__meta`
 - Estado: `status`, `status--available`, `status--sold`, `status--private`, `status--commissioned`
 - Botones/enlaces: `button`, `button--primary`, `button--secondary`, `button--block`, `quiet-link`
@@ -610,7 +635,7 @@ Escritorio: formulario 3/5, datos de contacto 2/5 separados por una línea verti
 - Pie: `site-footer`, `site-footer__inner`, `site-footer__name`, `site-footer__links`, `site-footer__link`, `site-footer__link--icon`, `site-footer__icon`, `site-footer__copy`
 
 **Páginas**:
-- `home.css`: `hero`, `hero__banner`, `hero__tagline`, `hero__actions`, `gallery`
+- `home.css`: `hero`, `hero__banner`, `hero__tagline`, `hero__actions`, `gallery` (+ espaciado vertical de `category-tabs`)
 - `work.css`: `work`, `work__position`, `work__figure`, `work__image`, `work__body`, `work__title`, `work__meta`, `work__meta-row`, `work__meta-term`, `work__meta-value`, `work__status`, `work__description`, `work__cta`, `work-nav`, `work-nav__link`, `work-nav__link--prev`, `work-nav__link--next`, `work-nav__label`, `work-nav__title`, `work-nav__back`
 - `about.css`: `about__intro`, `about__portrait`, `about__bio`, `about__downloads`, `about__section`, `about__section-title`, `cv-list`, `cv-list__item`, `cv-list__year`, `cv-list__text`, `cv-list__detail`
 - `commissions.css`: `commission-types`, `commission-type`, `commission-type__title`, `commission-type__text`, `steps`, `steps__item`, `steps__title`, `steps__text`, `facts`, `facts__item`, `facts__term`, `facts__value`, `checklist`

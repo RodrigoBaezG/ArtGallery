@@ -45,12 +45,23 @@
   margin-top: var(--space-3);
 }
 
+/* Pestañas de categoría entre hero y galería: el hero ya deja 40/64 px
+   encima; debajo, 16/24 px hasta la primera fila (más 12 px ópticos del
+   área táctil), así las pestañas se leen como cabecera de la galería. */
+.category-tabs {
+  padding-bottom: var(--space-2);
+}
+
 /* Galería de la home */
 .gallery {
   padding-bottom: var(--space-8);
 }
 
 @media (min-width: 60em) {
+  .category-tabs {
+    padding-bottom: var(--space-3);
+  }
+
   .hero {
     padding-top: var(--space-6);
     padding-bottom: var(--space-8);

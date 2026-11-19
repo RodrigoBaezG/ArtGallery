@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="assets/js/js-class.js"></script>
-  <title>Kuko Báez — Watercolor Illustrator</title>
-  <meta name="description" content="Watercolor illustration by Kuko Báez for editorial, books and private commissions. See the portfolio and get in touch.">
+  <title>Kuko Báez — Watercolor &amp; Drawing Illustrator</title>
+  <meta name="description" content="Watercolor and drawing illustration by Kuko Báez for editorial, books and private commissions. See the portfolio and get in touch.">
   <link rel="canonical" href="https://kukobaezgallery.netlify.app/">
   <link rel="alternate" hreflang="en" href="https://kukobaezgallery.netlify.app/?lang=en">
   <link rel="alternate" hreflang="es" href="https://kukobaezgallery.netlify.app/?lang=es">
   <link rel="alternate" hreflang="x-default" href="https://kukobaezgallery.netlify.app/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Kuko Báez">
-  <meta property="og:title" content="Kuko Báez — Watercolor Illustrator">
-  <meta property="og:description" content="Watercolor illustration by Kuko Báez for editorial, books and private commissions. See the portfolio and get in touch.">
+  <meta property="og:title" content="Kuko Báez — Watercolor &amp; Drawing Illustrator">
+  <meta property="og:description" content="Watercolor and drawing illustration by Kuko Báez for editorial, books and private commissions. See the portfolio and get in touch.">
   <meta property="og:url" content="https://kukobaezgallery.netlify.app/">
   <meta property="og:image" content="https://kukobaezgallery.netlify.app/assets/img/site/og-moonlit-sorceress.jpg">
   <meta property="og:image:width" content="1200">
@@ -22,8 +22,8 @@
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="es_ES">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Kuko Báez — Watercolor Illustrator">
-  <meta name="twitter:description" content="Watercolor illustration by Kuko Báez for editorial, books and private commissions. See the portfolio and get in touch.">
+  <meta name="twitter:title" content="Kuko Báez — Watercolor &amp; Drawing Illustrator">
+  <meta name="twitter:description" content="Watercolor and drawing illustration by Kuko Báez for editorial, books and private commissions. See the portfolio and get in touch.">
   <meta name="twitter:image" content="https://kukobaezgallery.netlify.app/assets/img/site/og-moonlit-sorceress.jpg">
   <meta name="twitter:image:alt" content="Woman in a white robe and diadem walks through the sea at night with a twisted staff, under a full moon in deep blue.">
   <link rel="icon" href="data:,">
@@ -36,15 +36,15 @@
   <link rel="stylesheet" href="assets/css/pages/home.css">
   <!-- Banner de la home (LCP en escritorio). sizes = min(1200px, ancho del .container--wide menos gutter: 16/32/48 px en <40em / 40–80em / ≥80em) -->
   <link rel="preload" as="image" href="assets/img/site/banner-1200.webp" imagesrcset="assets/img/site/banner-640.webp 640w, assets/img/site/banner-1200.webp 1200w" imagesizes="(min-width: 81em) 1200px, (min-width: 80em) calc(100vw - 6rem), (min-width: 40em) calc(100vw - 4rem), calc(100vw - 2rem)" fetchpriority="high">
-  <!-- Primera obra de la galería (LCP en móvil): actualizar si cambia el orden de artworks.json -->
-  <link rel="preload" as="image" href="assets/img/works/moonlit-sorceress-640.webp" imagesrcset="assets/img/works/moonlit-sorceress-640.webp 490w, assets/img/works/moonlit-sorceress-1280.webp 980w, assets/img/works/moonlit-sorceress-2000.webp 1532w" imagesizes="(min-width: 80em) 310px, (min-width: 40em) 254px, calc(100vw - 2rem)" fetchpriority="high">
+  <!-- Primera obra de la categoría activa (LCP en móvil): la precarga home-preload.js según ?category -->
+  <script src="assets/js/home-preload.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Kuko Báez",
     "alternateName": "Rodrigo Báez",
-    "jobTitle": "Watercolor illustrator",
+    "jobTitle": "Watercolor and drawing illustrator",
     "url": "https://kukobaezgallery.netlify.app/",
     "image": "https://kukobaezgallery.netlify.app/assets/img/site/og-moonlit-sorceress.jpg",
     "email": "mailto:rkbaezgarcia@gmail.com",
@@ -82,16 +82,24 @@
     <section class="hero container container--wide">
       <img class="hero__banner" src="assets/img/site/banner-1200.webp" srcset="assets/img/site/banner-640.webp 640w, assets/img/site/banner-1200.webp 1200w" sizes="(min-width: 81em) 1200px, (min-width: 80em) calc(100vw - 6rem), (min-width: 40em) calc(100vw - 4rem), calc(100vw - 2rem)" width="1200" height="300" alt="" fetchpriority="high" decoding="async">
       <h1 class="visually-hidden" data-i18n="home.hero.name">Kuko Báez</h1>
-      <p class="hero__tagline" data-i18n="home.hero.tagline">Watercolor illustrator — editorial, books &amp; commissions</p>
+      <p class="hero__tagline" data-i18n="home.hero.tagline">Watercolor &amp; drawing illustrator — editorial, books &amp; commissions</p>
       <div class="hero__actions">
         <a class="button button--primary" href="contact.html" data-i18n="home.hero.cta">Get in touch</a>
         <a class="button button--secondary" href="commissions.html" data-i18n="common.nav.commissions">Commissions</a>
       </div>
     </section>
 
+    <nav class="category-tabs container container--wide" aria-label="Categories" data-i18n-attr="aria-label:home.categories.label" data-category-tabs>
+      <ul class="category-tabs__list" role="list">
+        <li><a class="category-tabs__link" href="index.html?category=watercolor" data-category="watercolor" aria-current="page" data-i18n="home.categories.watercolor">Watercolor</a></li>
+        <li><a class="category-tabs__link" href="index.html?category=drawing" data-category="drawing" data-i18n="home.categories.drawing">Drawings</a></li>
+      </ul>
+    </nav>
+
     <section class="gallery container container--wide" id="gallery" aria-labelledby="gallery-title" data-gallery>
       <h2 class="visually-hidden" data-i18n="home.gallery.heading" id="gallery-title">Selected work</h2>
       <p class="notice" role="status" data-gallery-status hidden></p>
+      <p class="visually-hidden" role="status" data-gallery-announce></p>
       <noscript>
         <p>I take on editorial and book illustration, as well as private commissions. <a href="contact.html">Get in touch</a> · <a href="https://www.instagram.com/kuko.baez/" rel="me noopener">Instagram</a></p>
       </noscript>

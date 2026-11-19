@@ -1,7 +1,8 @@
 /* ==========================================================================
    work.js — detalle de obra (work.html?id=slug)
    Imagen grande con srcset, metadatos (sin los TODO), estado, CTA de encargo,
-   anterior/siguiente en el orden de la galería y teclado (← → Esc).
+   anterior/siguiente en el orden de la galería, solo dentro de la categoría
+   de la obra, y teclado (← → Esc). «Volver» lleva a la home con esa categoría.
    Actualiza title, meta description, Open Graph, canonical/hreflang y el
    JSON-LD VisualArtwork en cada cambio de idioma.
    ========================================================================== */
@@ -16,8 +17,16 @@
   var id = new URLSearchParams(location.search).get('id') || '';
   var SITE = I18n.site;
   var STATUSES = ['available', 'sold', 'private', 'commissioned'];
+  var ARTFORMS = {
+    watercolor: { en: 'Painting', es: 'Pintura' },
+    drawing: { en: 'Drawing', es: 'Dibujo' }
+  };
 
-  var state = { list: [], index: -1, image: null };
+  function galleryUrl() {
+    return Artworks.categoryUrl(state.category) + '#gallery';
+  }
+
+  var state = { list: [], index: -1, image: null, category: 'watercolor' };
 
   /* ---- Utilidades DOM --------------------------------------------------- */
   function el(tag, className, text) {
@@ -97,7 +106,9 @@
       name: I18n.artworkText(art.title),
       url: pageUrl,
       image: absolute(Artworks.file(img, 2000)),
-      artform: I18n.lang === 'es' ? 'Pintura' : 'Painting',
+      // schema.org artform: valores tipo Painting, Drawing… La acuarela es
+      // pintura; el medio concreto (Watercolor…) va en artMedium.
+      artform: ARTFORMS[Artworks.categoryOf(art)][I18n.lang === 'es' ? 'es' : 'en'],
       artMedium: I18n.artworkText(art.medium),
       inLanguage: I18n.lang,
       creator: {
@@ -216,7 +227,7 @@
     var nav = el('nav', 'work-nav');
     nav.setAttribute('aria-label', I18n.t('work.nav.label'));
     if (index > 0) nav.appendChild(navLink(list[index - 1], 'prev'));
-    nav.appendChild(link('work-nav__back', 'index.html#gallery', I18n.t('work.nav.back')));
+    nav.appendChild(link('work-nav__back', galleryUrl(), I18n.t('work.nav.back')));
     if (index < list.length - 1) nav.appendChild(navLink(list[index + 1], 'next'));
     nav.appendChild(el('p', 'visually-hidden', I18n.t('work.nav.keyboardHint')));
 
@@ -255,8 +266,13 @@
   });
 
   Promise.all([I18n.ready, Artworks.load()]).then(function (res) {
-    state.list = res[1];
-    state.index = state.list.findIndex(function (art) { return art.id === id; });
+    var all = res[1];
+    var found = all.filter(function (art) { return art.id === id; })[0];
+    if (found) {
+      state.category = Artworks.categoryOf(found);
+      state.list = Artworks.inCategory(all, state.category);
+      state.index = state.list.indexOf(found);
+    }
     var draw = state.index === -1 ? renderNotFound : render;
     drawn = true;
     draw();
