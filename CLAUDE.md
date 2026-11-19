@@ -155,7 +155,7 @@ El hilo principal (Claude) coordina, resuelve conflictos entre agentes y es el �
 - [x] Fase 3 — QA y correcciones (2 rondas, ver `docs/qa/`).
 - [x] Fase 4 — Limpieza: imágenes y CSS antiguos borrados; `backend/` eliminado (conservado en el tag `v1-api`). Pendiente: Rodrigo apaga el servicio en Render.
 - [ ] Fase 5 — `README.md` actualizado. Pendiente: desplegar y verificar el formulario de Netlify en producción.
-- [x] Fase 6 — Tests automatizados y endurecimiento de seguridad (ver §12). 2026-11-18: `npm test` en verde (unit, security, e2e, perf). Pendiente: `npm run test:prod` tras desplegar.
+- [x] Fase 6 — Tests automatizados y endurecimiento de seguridad (ver §12). 2026-11-18: `npm test` en verde (unit, security, e2e, perf). 2026-11-19: `npm run test:prod` 17/17 en `kukobaezgallery.netlify.app` (cabeceras, 404 reales, honeypot). Detección de formularios de Netlify activada.
 
 ### Datos pendientes de Rodrigo
 Se centralizan en `docs/content-todo.md`: títulos/años/medidas/estado de cada obra, bio, experiencia y clientes, condiciones de encargo, retrato, dominio propio (si lo hay).
