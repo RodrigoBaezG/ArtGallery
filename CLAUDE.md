@@ -1,8 +1,8 @@
-# CLAUDE.md — Portfolio de acuarela de Kuko Báez
+# CLAUDE.md — Portfolio de acuarela y dibujo de Kuko Báez
 
-Este repositorio es el **portfolio profesional de acuarela** de Rodrigo "Kuko" Báez. Su función principal es **conseguir trabajo**: encargos de ilustración editorial y de libros, y encargos/venta directa a particulares. Cada decisión se evalúa con una pregunta: *¿ayuda a que un director de arte, editor o cliente vea la obra y contacte en menos de un minuto?*
+Este repositorio es el **portfolio profesional de acuarela y dibujo** de Rodrigo "Kuko" Báez. Su función principal es **conseguir trabajo**: encargos de ilustración editorial y de libros, y encargos/venta directa a particulares. Cada decisión se evalúa con una pregunta: *¿ayuda a que un director de arte, editor o cliente vea la obra y contacte en menos de un minuto?*
 
-> Estado: en migración desde la galería anterior (pinturas / dibujos / digital + API en Render) a un **sitio estático, bilingüe y exclusivamente de acuarela**. Ver [Plan de migración](#plan-de-migración).
+> Estado: en migración desde la galería anterior (pinturas / dibujos / digital + API en Render) a un **sitio estático y bilingüe**, centrado en la acuarela y, desde el 2026-11-19, también en el dibujo (dos categorías). Ver [Plan de migración](#plan-de-migración).
 
 ---
 
@@ -10,7 +10,7 @@ Este repositorio es el **portfolio profesional de acuarela** de Rodrigo "Kuko" B
 
 1. **La obra es la protagonista.** La interfaz se retira: nada compite en color, movimiento o tamaño con las acuarelas.
 2. **Suave y minimalista.** Papel cálido, tinta suave, mucho aire. Sin sombras duras, sin bordes gruesos, sin gradientes llamativos, sin "manchas de acuarela" decorativas falsas.
-3. **Curaduría antes que cantidad.** 12–24 obras, las mejores primero. Mejor dejar fuera una obra floja que diluir el conjunto.
+3. **Curaduría antes que cantidad.** 12–40 obras **por categoría** (ampliado por decisión de Rodrigo, 2026-11-19), las mejores primero. Mejor dejar fuera una obra floja que diluir el conjunto.
 4. **Contacto a un clic** desde cualquier página.
 5. **Rápido.** Sin servidor que despertar. Imágenes optimizadas. Objetivo: LCP < 2,5 s en móvil 4G.
 6. **Sin inventar datos.** Títulos, fechas, medidas, clientes o biografía que no haya dado Rodrigo se marcan como `[[TODO: …]]`, nunca se rellenan con ficción.
@@ -43,14 +43,20 @@ frontend/
     ├── img/site/       # retrato, og-image, favicon
     └── docs/           # cv-en.pdf, cv-es.pdf
 tools/images/           # script de procesado de imágenes
+tools/site/             # build.mjs: genera sitemap.xml y la primera obra por categoría de home-preload.js
 docs/                   # design.md, content-todo.md, qa/
 ```
 
 ## 3. Galería
 
-- **Una sola galería**, sin categorías ni filtros. Orden manual por el campo `order`; las obras con `featured: true` van primero.
+- **Dos categorías** (decisión de Rodrigo, 2026-11-19): `watercolor` (Acuarela) y `drawing` (Dibujos). No hay más filtros.
+  - En la home, debajo del hero, unas **pestañas** `Watercolor · Drawings` filtran la galería en la misma página. Son enlaces `<a>` a `?category=watercolor|drawing` con `aria-current="page"` en la activa, no un tablist ARIA. Al cambiar de pestaña con JS se actualiza la URL con `history.replaceState` (conservando `lang`), sin recargar.
+  - Por defecto (o con un valor inválido) se muestra `watercolor`.
+  - Orden manual por `order` **dentro de cada categoría**; las obras con `featured: true` van primero.
+  - Detalle de obra: anterior/siguiente recorren **solo su categoría**, y «volver a la galería» lleva a la home con esa categoría.
 - Galería en **filas justificadas** (`gallery__grid--rows`, decisión de Rodrigo 2026-11-17): mantiene el orden curado de izquierda a derecha y respeta la proporción de cada acuarela sin recortarla.
-- Se publican las 22 obras seleccionadas, incluido el fan art y los retratos (decisión de Rodrigo).
+- Acuarela: 33 obras (22 de la selección inicial, incluido el fan art y los retratos, y 11 de la serie de tinta y acuarela añadidas el 2026-11-19).
+- Dibujos: todos los archivos de `C:/Users/Kbaez/Desktop/drawings` salvo duplicados (decisión de Rodrigo). A 2026-11-19 son 33 dibujos: se excluyó `jc_img010.jpg`, que es otro escaneo de la acuarela `carnival-plumed-bicorne`. Las piezas de tinta y acuarela de esa carpeta van en `drawing`.
 - Detalle de obra: imagen grande sobre fondo papel, título, año, técnica, medidas, estado y un enlace “Encargar algo similar / Commission something similar”.
 - Navegación anterior/siguiente entre obras y con teclado (← →, Esc).
 
@@ -59,6 +65,7 @@ docs/                   # design.md, content-todo.md, qa/
 ```json
 {
   "id": "paco-disco",
+  "category": "watercolor | drawing",
   "order": 1,
   "featured": true,
   "title":       { "en": "…", "es": "…" },
@@ -77,7 +84,8 @@ docs/                   # design.md, content-todo.md, qa/
 }
 ```
 
-- `id` = slug en inglés, kebab-case, estable (forma parte de la URL).
+- `id` = slug en inglés, kebab-case, estable (forma parte de la URL) y **único en todo el catálogo**, no solo en su categoría.
+- `category` (obligatorio): `watercolor` o `drawing`. `order` es correlativo dentro de cada categoría (1..n).
 - `source` = nombre del archivo original, solo para trazabilidad.
 - Sin precios públicos: `available` se muestra como “Original disponible — consultar”.
 
@@ -138,6 +146,7 @@ Hay 5 agentes de proyecto en `.claude/agents/`. **Cada uno es dueño exclusivo d
 **Contratos entre agentes** (si cambian, se actualiza esta sección):
 - Esquema de `artworks.json` → §3.
 - Claves i18n: notación `pagina.seccion.elemento` (ej. `home.hero.tagline`), compartidas en `common.*`.
+- Categorías: valores `watercolor` | `drawing` en `artworks.json` y en `?category=`. Claves i18n `home.categories.label` (nombre accesible del `<nav>`), `home.categories.watercolor`, `home.categories.drawing` y `home.categories.announce` (aviso para lectores de pantalla al cambiar de categoría). Clases `.category-tabs`, `.category-tabs__list`, `.category-tabs__link` (activo = `[aria-current="page"]`).
 - Clases CSS: BEM ligero (`gallery__item`, `work__meta`). `frontend-dev` usa las clases que define `docs/design.md`; si necesita una nueva, la pide a `art-director`.
 
 **Orden de trabajo**:
@@ -170,6 +179,9 @@ npm run verify                    # comprueba que no hay EXIF/GPS
 
 # Servir el sitio en local
 npx serve frontend
+
+# Regenerar sitemap.xml y el preload de la home (tras cambiar obras, orden o featured)
+node tools/site/build.mjs
 ```
 
 ## 11. Reglas de trabajo
@@ -188,7 +200,10 @@ npx serve frontend
 
 - Los tests viven en `tests/`, **fuera de `frontend/`** (nunca se publican). Tienen su propio `package.json`, igual que `tools/images/`. El sitio sigue sin dependencias ni build step.
 - **Unitarios y estáticos**: el runner nativo de Node 22 (`node --test`) + `jsdom` para cargar los scripts del navegador sin servidor.
-- **Integración / E2E**: `@playwright/test` (Chromium + WebKit), contra `npx serve frontend` arrancado por la propia config (`webServer`).
+- **Integración / E2E**: `@playwright/test` (Chromium + WebKit), contra `npx serve frontend
+
+# Regenerar sitemap.xml y el preload de la home (tras cambiar obras, orden o featured)
+node tools/site/build.mjs` arrancado por la propia config (`webServer`).
 - **Accesibilidad**: `@axe-core/playwright`.
 - Los resultados de cada ejecución que se haga a mano se resumen en `docs/qa/AAAA-MM-DD-tests.md`.
 
@@ -216,7 +231,7 @@ npm run test:prod       # BASE_URL=https://kukobaezgallery.netlify.app — cabec
 
 **Datos — `artworks.json`**
 - Es JSON válido y cada obra cumple el esquema de §3: campos obligatorios, tipos, `status` ∈ {available, sold, private, commissioned}.
-- `id` único, kebab-case (`^[a-z0-9]+(-[a-z0-9]+)*$`). `order` único y entero. Hay entre 12 y 24 obras (ahora mismo 22).
+- `id` único, kebab-case (`^[a-z0-9]+(-[a-z0-9]+)*$`). `id` único en todo el catálogo. `order` entero y correlativo 1..n **dentro de cada categoría** (no es único global). `category` ∈ {watercolor, drawing}. Hay entre 12 y 40 obras por categoría (a 2026-11-19: 33 acuarelas y 33 dibujos). `order` es correlativo dentro de cada categoría.
 - `title`, `description`, `medium` y `image.alt` tienen `en` y `es`, sin vacíos.
 - `image.widths` ⊆ {640, 1280, 2000}, y cada `{base}-{w}.webp` existe en disco. `width` y `height` son > 0.
 - Ningún `source` sale de `fotos para pintar/` ni de `mockups/`.
@@ -262,13 +277,13 @@ npm run test:prod       # BASE_URL=https://kukobaezgallery.netlify.app — cabec
 - Todas las `<img>` tienen `alt`, `width` y `height`.
 - No hay enlaces internos rotos (`href`/`src` → archivo existente).
 - `404.html` tiene `noindex` y rutas absolutas.
-- Las URLs de `sitemap.xml` coinciden con las páginas publicables. `robots.txt` apunta al sitemap.
+- Las URLs de `sitemap.xml` coinciden con las páginas publicables, incluidas `/?category=drawing` y todas las obras de las dos categorías. `robots.txt` apunta al sitemap.
 
 **CSS**: fuera de `tokens.css` no hay colores, tamaños ni tiempos sueltos (regex sobre `#hex`, `rgb(`, `px`/`ms` en propiedades de diseño, con una lista blanca justificada).
 
 ### 12.3 Tests de integración / E2E (Playwright)
 
-Se ejecutan con una matriz de **320, 375, 768 y 1440 px × EN/ES × Chromium/WebKit**, sobre las 8 URLs de QA: index, primera obra, última obra, obra inválida, about, commissions, contact y 404.
+Se ejecutan con una matriz de **320, 375, 768 y 1440 px × EN/ES × Chromium/WebKit**, sobre las 10 URLs de QA: index, index `?category=drawing`, primera y última acuarela, un dibujo (id tomado de `artworks.json`), obra inválida, about, commissions, contact y 404.
 
 - **Consola limpia**: 0 errores y 0 avisos. Ninguna petición con estado ≥ 400, salvo la 404 esperada.
 - **Sin scroll horizontal** (`scrollWidth <= clientWidth`) y **áreas táctiles ≥ 44 px**.
@@ -277,8 +292,9 @@ Se ejecutan con una matriz de **320, 375, 768 y 1440 px × EN/ES × Chromium/Web
 - **Idioma**: el conmutador EN/ES cambia todos los textos, `lang`, `<title>` y la URL. La elección persiste al navegar y al recargar.
 - **Formulario**: con la ruta `POST /` interceptada (200 y 500), se comprueba el estado de éxito y el de error. El honeypot no se ve ni se puede enfocar.
 - **Sin JS** (`javaScriptEnabled: false`): navegación, enlaces y formulario nativo siguen usables.
-- **Lazy loading**: con el contexto recién abierto a 375 px se cargan como máximo las imágenes `eager`. Al hacer scroll llegan las 22, sin descargas duplicadas.
-- **Rendimiento** (Chromium, 4G simulado + CPU ×4): LCP < 2,5 s en la home y en el detalle. El peso total de la home en la primera vista es < 1,5 MB.
+- **Lazy loading**: con el contexto recién abierto a 375 px se cargan como máximo las imágenes `eager`. Al hacer scroll llegan todas las obras de la categoría visible y ninguna de la otra, sin descargas duplicadas.
+- **Rendimiento** (Chromium, 4G simulado + CPU ×4): LCP < 2,5 s en la home (las dos categorías) y en el detalle (una acuarela y un dibujo). El peso de la home en la primera vista es < 1,5 MB en cada categoría.
+- **Pestañas de categoría** (`e2e/categories.spec.mjs`): el `<nav>` tiene nombre accesible y las pestañas miden ≥ 44 px con `aria-current` correcto. Se usan con teclado. Al cambiar de pestaña no se recarga la página, la URL conserva `category` y `lang` con `replaceState`, y no se descarga nada dos veces. La recarga directa y la navegación sin JS funcionan, un valor inválido muestra las acuarelas y axe no da violaciones tras cambiar de pestaña. En el detalle, ← → recorren solo la categoría de la obra y Esc vuelve a esa categoría.
 - **`prefers-reduced-motion: reduce`**: no hay transiciones con duración > 0.
 - **SEO**: el JSON-LD de home y detalle parsea, y no aparece ningún `[[TODO`/`[[PROPUESTA` visible (texto, `alt`, `title`, `aria-label`, `placeholder`, `<meta>`, JSON-LD).
 
