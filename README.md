@@ -2,7 +2,7 @@
 
 Portfolio de acuarela de Kuko Báez (Rodrigo Báez), orientado a ilustración editorial, libros y encargos. Sitio estático y bilingüe (EN/ES).
 
-**Web:** https://kukobaezartgallery.netlify.app/
+**Web:** https://kukobaezgallery.netlify.app/
 
 ## Stack
 

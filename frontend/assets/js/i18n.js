@@ -18,7 +18,7 @@
 
   var LANGS = ['en', 'es'];
   var STORAGE_KEY = 'lang';
-  var SITE_URL = 'https://kukobaezartgallery.netlify.app/';
+  var SITE_URL = 'https://kukobaezgallery.netlify.app/';
   var BASE = new URL('../../', document.currentScript ? document.currentScript.src : location.href);
 
   var dicts = {};
