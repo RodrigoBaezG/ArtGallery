@@ -1,17 +1,33 @@
 // Utilidades compartidas por los specs de Playwright.
-import { artworks, sorted } from './paths.mjs';
+import { artworks, inCategory } from './paths.mjs';
 
-export const LIST = sorted(artworks());
-export const FIRST = LIST[0];
-export const LAST = LIST[LIST.length - 1];
+// Dos categorías (§3). LIST = la galería que se ve por defecto (watercolor);
+// DRAWINGS = la de ?category=drawing. Los ids se eligen siempre de artworks.json.
+export const ALL = artworks();
+export const LIST = inCategory(ALL, 'watercolor');
+export const DRAWINGS = inCategory(ALL, 'drawing');
+export const BY_CATEGORY = { watercolor: LIST, drawing: DRAWINGS };
+// Si una categoría aún está vacía (catálogo sin `category`), se usa un id
+// inexistente: los tests fallan con un mensaje claro en vez de romper la carga
+// del módulo (y con ella toda la suite).
+const missing = (category) => ({ id: `missing-${category}`, missing: true, title: {}, image: { alt: {} } });
+export const FIRST = LIST[0] || missing('watercolor');
+export const LAST = LIST[LIST.length - 1] || missing('watercolor');
+export const DRAWING = DRAWINGS[0] || missing('drawing');
 export const WIDTHS = [320, 375, 768, 1440];
 export const LANGS = ['en', 'es'];
 
-/** Las 8 URLs de QA. `status` = estado HTTP esperado del documento. */
+/**
+ * Las URLs de QA (8 originales + home de dibujos + detalle de dibujo).
+ * `status` = estado HTTP esperado del documento.
+ * `gallery` = categoría que debe pintar la home; `work` = obra que debe pintar el detalle.
+ */
 export const QA_URLS = [
-  { name: 'index', path: '/index.html', status: 200 },
-  { name: 'work-first', path: `/work.html?id=${FIRST.id}`, status: 200 },
-  { name: 'work-last', path: `/work.html?id=${LAST.id}`, status: 200 },
+  { name: 'index', path: '/index.html', status: 200, gallery: 'watercolor' },
+  { name: 'index-drawing', path: '/index.html?category=drawing', status: 200, gallery: 'drawing' },
+  { name: 'work-first', path: `/work.html?id=${FIRST.id}`, status: 200, work: FIRST },
+  { name: 'work-last', path: `/work.html?id=${LAST.id}`, status: 200, work: LAST },
+  { name: 'work-drawing', path: `/work.html?id=${DRAWING.id}`, status: 200, work: DRAWING },
   { name: 'work-invalid', path: '/work.html?id=does-not-exist', status: 200 },
   { name: 'about', path: '/about.html', status: 200 },
   { name: 'commissions', path: '/commissions.html', status: 200 },

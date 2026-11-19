@@ -1,9 +1,13 @@
-// §12.3 Matriz 320/375/768/1440 × EN/ES × (Chromium/WebKit, por proyecto) × 8 URLs de QA:
+// §12.3 Matriz 320/375/768/1440 × EN/ES × (Chromium/WebKit, por proyecto) × 10 URLs de QA
+// (las 8 originales + home ?category=drawing + detalle de un dibujo):
 // consola limpia, sin respuestas ≥ 400 (salvo la 404 esperada), sin scroll
 // horizontal, áreas táctiles ≥ 44 px y axe sin violaciones serious/critical.
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import { LANGS, QA_URLS, WIDTHS, collect, horizontalOverflow, ready, smallTargets, withLang } from '../helpers/e2e.mjs';
+import { BY_CATEGORY, LANGS, QA_URLS, WIDTHS, collect, horizontalOverflow, ready, smallTargets, withLang } from '../helpers/e2e.mjs';
+
+// Como I18n.clean: sin [[PROPUESTA]] ni [[TODO…]] (un título solo-TODO no se exige).
+const cleanText = (v) => String(v || '').replace(/^\s*\[\[PROPUESTA\]\]\s*/, '').replace(/\s*\[\[TODO[^\]]*\]\]/g, '').trim();
 
 for (const width of WIDTHS) {
   test.describe(`${width}px`, () => {
@@ -19,6 +23,18 @@ for (const width of WIDTHS) {
 
           await expect(page.locator('html')).toHaveAttribute('lang', lang);
           await expect(page.locator('h1'), 'un único h1').toHaveCount(1);
+
+          // Contenido esperado: la home pinta su categoría; el detalle, su obra.
+          if (qa.gallery) {
+            const list = BY_CATEGORY[qa.gallery];
+            expect(list.length, `${qa.gallery}: sin obras en artworks.json`).toBeGreaterThan(0);
+            await expect(page.locator('.gallery__item'), `galería ${qa.gallery}`).toHaveCount(list.length);
+            await expect(page.locator(`.category-tabs__link[aria-current="page"][href*="category=${qa.gallery}"]`), 'pestaña activa').toHaveCount(1);
+          }
+          if (qa.work) {
+            expect(qa.work.missing, `${qa.name}: no hay obra de esa categoría en artworks.json`).toBeFalsy();
+            await expect(page.locator('.work__title')).toHaveText(cleanText(qa.work.title[lang]) || /\S/);
+          }
 
           // Consola y red
           const expected404 = (s) => qa.status === 404 && s.includes('404') && (s.includes(qa.path) || /Failed to load resource/.test(s));
@@ -67,7 +83,7 @@ for (const width of WIDTHS) {
 // Avisos diferidos: algunos navegadores avisan segundos después de load
 // (p. ej. WebKit con <link rel="preload"> no usado). Se espera 5 s.
 test.describe('consola limpia también 5 s después de cargar', () => {
-  for (const qa of QA_URLS.filter((q) => ['index', 'work-first', 'contact'].includes(q.name))) {
+  for (const qa of QA_URLS.filter((q) => ['index', 'index-drawing', 'work-first', 'work-drawing', 'contact'].includes(q.name))) {
     test(qa.name, async ({ page }) => {
       const log = collect(page);
       const requests = [];

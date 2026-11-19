@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { FRONTEND, readText, isTodoMarker } from '../helpers/paths.mjs';
+import { CATEGORIES, FRONTEND, readText, isTodoMarker } from '../helpers/paths.mjs';
 
 const RAW = readText('frontend/data/artworks.json');
 const STATUSES = ['available', 'sold', 'private', 'commissioned'];
@@ -17,9 +17,26 @@ test('artworks.json es JSON válido y es un array', () => {
   assert.ok(Array.isArray(list));
 });
 
-test('hay entre 12 y 24 obras', () => {
-  assert.ok(list.length >= 12 && list.length <= 24, `hay ${list.length}`);
+// §3 (2026-11-19): dos categorías; el límite 12–40 es por categoría, no global.
+test('category obligatorio y ∈ {watercolor, drawing}', () => {
+  const bad = list.filter((a) => !CATEGORIES.includes(a.category)).map((a) => `${a.id}: ${JSON.stringify(a.category)}`);
+  assert.deepEqual(bad, []);
 });
+
+for (const category of CATEGORIES) {
+  test(`${category}: entre 12 y 40 obras`, (t) => {
+    const n = list.filter((a) => a.category === category).length;
+    t.diagnostic(`${category}: ${n} obras`);
+    assert.ok(n >= 12 && n <= 40, `${category}: hay ${n}`);
+  });
+
+  test(`${category}: order entero y correlativo 1..n dentro de la categoría`, () => {
+    const orders = list.filter((a) => a.category === category).map((a) => a.order);
+    assert.ok(orders.every(Number.isInteger), `${category}: order no entero`);
+    const sortedOrders = orders.slice().sort((a, b) => a - b);
+    assert.deepEqual(sortedOrders, sortedOrders.map((_, i) => i + 1), `${category}: order no es 1..${orders.length} (duplicados o huecos)`);
+  });
+}
 
 test('campos obligatorios y tipos (§3)', () => {
   const problems = [];
@@ -49,12 +66,13 @@ test('campos obligatorios y tipos (§3)', () => {
   assert.deepEqual(problems, []);
 });
 
-test('id único y kebab-case; order único y entero', () => {
+// id único en TODO el catálogo (work.html?id= no lleva categoría). `order` ya
+// no es único global: se repite entre categorías (1..n en cada una, arriba).
+test('id único en todo el catálogo y kebab-case', () => {
   const ids = list.map((a) => a.id);
-  const orders = list.map((a) => a.order);
   assert.deepEqual(ids.filter((id) => !KEBAB.test(id)), [], 'ids no kebab-case');
-  assert.equal(new Set(ids).size, ids.length, 'ids duplicados');
-  assert.equal(new Set(orders).size, orders.length, 'order duplicado');
+  const dup = ids.filter((id, i) => ids.indexOf(id) !== i);
+  assert.deepEqual(dup, [], 'ids duplicados');
 });
 
 test('title, medium e image.alt tienen en y es sin vacíos', () => {
@@ -66,7 +84,7 @@ test('title, medium e image.alt tienen en y es sin vacíos', () => {
   assert.deepEqual(empty, []);
 });
 
-// Ajuste razonado de la especificación: `description` está vacía en las 22 obras
+// Ajuste razonado de la especificación: `description` está vacía en las obras
 // porque Rodrigo no ha dado textos y §1.6 prohíbe inventarlos; work.js la omite
 // si está vacía. Se exige coherencia (las dos vacías o las dos con texto) y se
 // avisa del número de obras sin descripción.

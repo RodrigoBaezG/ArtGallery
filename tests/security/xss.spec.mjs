@@ -1,7 +1,7 @@
 // §12.4 Seguridad en navegador: XSS, CSP (simulada con las cabeceras de netlify.toml),
 // terceros en red y disponibilidad (404 reales) en local.
 import { test, expect } from '@playwright/test';
-import { FIRST, QA_URLS, ready } from '../helpers/e2e.mjs';
+import { FIRST, LIST, QA_URLS, ready } from '../helpers/e2e.mjs';
 import { headersFor, readNetlifyToml } from '../helpers/headers.mjs';
 import { dict, flatten } from '../helpers/paths.mjs';
 
@@ -68,6 +68,26 @@ test.describe('XSS', () => {
       await page.goto(`/work.html?id=${FIRST.id}&lang=${encodeURIComponent(p)}`);
       await ready(page);
       await expect(page.locator('h1')).toHaveText(/\S/);
+    }
+    expect(dialogs).toEqual([]);
+    expect((await snapshot(page)).flag).toBe(false);
+  });
+
+  test('?category= con cargas maliciosas → acuarelas, sin diálogos ni nodos peligrosos', async ({ page }) => {
+    const dialogs = await guard(page);
+    for (const p of PAYLOADS) {
+      await page.goto(`/index.html?category=${encodeURIComponent(p)}&lang=es`);
+      await ready(page);
+      await expect(page.locator('.gallery__item')).toHaveCount(LIST.length);
+      await expect(page.locator('.category-tabs__link[aria-current="page"]')).toHaveCount(1);
+      const s = await page.evaluate(() => ({
+        dangerous: document.querySelectorAll('iframe, object, embed, svg[onload], [onerror], [onload], a[href^="javascript:"]').length,
+        // El valor inválido no debe reflejarse en los enlaces (pestañas, galería, canonical)
+        // (se excluyen los enlaces solo de fragmento, como el skip link `#main`: el navegador los resuelve con la URL actual)
+        reflected: [...document.querySelectorAll('a[href], link[href]')].filter((a) => !a.getAttribute('href').startsWith('#')).map((a) => a.href).filter((h) => { const c = new URL(h, location.href).searchParams.get('category'); return c !== null && c !== 'watercolor' && c !== 'drawing'; })
+      }));
+      expect(s.dangerous, p.slice(0, 30)).toBe(0);
+      expect(s.reflected, p.slice(0, 30)).toEqual([]);
     }
     expect(dialogs).toEqual([]);
     expect((await snapshot(page)).flag).toBe(false);

@@ -90,3 +90,15 @@ test('cada data-i18n de los HTML y cada clave usada en los JS existe en EN y ES'
   }
   assert.deepEqual(missing, []);
 });
+
+/* ---- Categorías de la home (§8, 2026-11-19) -------------------------------- */
+// Falla hasta que content-writer añada las claves: es lo esperado.
+test('home.categories.{label,watercolor,drawing} existen en EN y ES, sin vacíos ni [[TODO]]', () => {
+  const missing = [];
+  for (const k of ['home.categories.label', 'home.categories.watercolor', 'home.categories.drawing']) {
+    for (const [lang, d] of [['en', en], ['es', es]]) {
+      if (typeof d[k] !== 'string' || !d[k].trim() || /\[\[TODO/.test(d[k])) missing.push(`${lang}:${k}`);
+    }
+  }
+  assert.deepEqual(missing, []);
+});

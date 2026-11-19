@@ -98,11 +98,13 @@ test('404.html: noindex y rutas absolutas', () => {
   assert.deepEqual(relative, [], 'rutas relativas en 404.html (se rompen en /a/b/c)');
 });
 
-test('sitemap.xml coincide con las páginas publicables y las obras', () => {
+test('sitemap.xml coincide con las páginas publicables, la home de dibujos y todas las obras (ambas categorías)', () => {
   const xml = readText('frontend/sitemap.xml');
   const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace(/&amp;/g, '&'));
   const expected = [
     SITE,
+    // La home de dibujos es una página propia (contenido distinto, canonical propio, §3).
+    `${SITE}?category=drawing`,
     ...INDEXABLE.filter((p) => !['index.html', 'work.html'].includes(p)).map((p) => SITE + p),
     ...artworks().map((a) => `${SITE}work.html?id=${a.id}`)
   ];
@@ -114,4 +116,32 @@ test('robots.txt apunta al sitemap', () => {
   const robots = readText('frontend/robots.txt');
   assert.match(robots, new RegExp(`^Sitemap: ${SITE}sitemap\\.xml$`, 'm'));
   assert.ok(!/^Disallow:\s*\/\s*$/m.test(robots), 'robots bloquea todo');
+});
+
+/* ---- Pestañas de categoría en index.html (§3, §8) -------------------------- */
+// Enlaces <a> reales en el HTML: sin JS siguen funcionando (llevan a ?category=).
+test('index.html: nav.category-tabs estático con un <a> por categoría y textos i18n', () => {
+  const doc = docs['index.html'];
+  const problems = [];
+  const nav = doc.querySelector('nav.category-tabs');
+  if (!nav) { assert.fail('falta <nav class="category-tabs"> en index.html'); return; }
+  const attr = nav.getAttribute('data-i18n-attr') || '';
+  if (!/aria-label:\s*home\.categories\.label/.test(attr)) problems.push('nav sin data-i18n-attr="aria-label:home.categories.label"');
+  if (!nav.getAttribute('aria-label')?.trim()) problems.push('nav sin aria-label de fallback (EN)');
+  if (nav.querySelector('[role="tablist"], [role="tab"]')) problems.push('no debe ser un tablist ARIA');
+  const links = [...nav.querySelectorAll('a.category-tabs__link')];
+  const cats = links.map((a) => new URL(a.getAttribute('href'), SITE + 'index.html').searchParams.get('category'));
+  if (JSON.stringify(cats) !== JSON.stringify(['watercolor', 'drawing'])) problems.push(`categorías de los enlaces: ${JSON.stringify(cats)}`);
+  for (const a of links) {
+    const url = new URL(a.getAttribute('href'), SITE + 'index.html');
+    if (!/^\/(index\.html)?$/.test(url.pathname)) problems.push(`${a.getAttribute('href')}: no apunta a la home`);
+    const c = url.searchParams.get('category');
+    if (a.getAttribute('data-i18n') !== `home.categories.${c}`) problems.push(`${a.getAttribute('href')}: data-i18n="${a.getAttribute('data-i18n')}"`);
+    if (!a.textContent.trim()) problems.push(`${a.getAttribute('href')}: sin texto de fallback`);
+  }
+  if (doc.querySelectorAll('.category-tabs').length !== 1) problems.push('más de un .category-tabs');
+  // Las pestañas van antes de la galería (debajo del hero)
+  const gallery = doc.querySelector('[data-gallery]');
+  if (gallery && !(nav.compareDocumentPosition(gallery) & 4) && !gallery.contains(nav)) problems.push('las pestañas van después de la galería');
+  assert.deepEqual(problems, []);
 });

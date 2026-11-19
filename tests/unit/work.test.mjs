@@ -2,12 +2,16 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { loadPage } from '../helpers/jsdom.mjs';
-import { artworks, dict, flatten, sorted } from '../helpers/paths.mjs';
+import { CATEGORIES, DEFAULT_CATEGORY, artworks, dict, flatten, inCategory } from '../helpers/paths.mjs';
 
 const SCRIPTS = ['i18n.js', 'nav.js', 'gallery.js', 'work.js'];
 const DATA = artworks();
-const LIST = sorted(DATA);
-const FIRST = LIST[0], SECOND = LIST[1], LAST = LIST[LIST.length - 1];
+// Prev/next recorren solo la categoría de la obra (§3). LIST = acuarelas.
+const BY = Object.fromEntries(CATEGORIES.map((c) => [c, inCategory(DATA, c)]));
+const LIST = BY.watercolor;
+// Respaldo si el catálogo aún no tiene `category`: los tests fallan con mensaje, el módulo no se rompe.
+const MISSING = { id: "missing-watercolor", title: {}, medium: {}, image: { alt: {} } };
+const FIRST = LIST[0] || MISSING, SECOND = LIST[1] || MISSING, LAST = LIST[LIST.length - 1] || MISSING;
 const D = { en: flatten(dict('en')), es: flatten(dict('es')) };
 
 // Copia con datos completos en la primera obra para probar el pintado de metadatos
@@ -64,16 +68,97 @@ test('id inválido, vacío o malicioso → estado «no encontrado»', async () =
   }
 });
 
-test('anterior/siguiente: límites coherentes en la primera y la última obra', async () => {
-  const first = await open(FIRST.id);
-  assert.equal(first.document.querySelector('.work-nav__link--prev'), null, 'la primera no tiene anterior');
-  assert.equal(new URL(first.document.querySelector('.work-nav__link--next').href).searchParams.get('id'), SECOND.id);
-  const last = await open(LAST.id);
-  assert.equal(last.document.querySelector('.work-nav__link--next'), null, 'la última no tiene siguiente');
-  assert.equal(new URL(last.document.querySelector('.work-nav__link--prev').href).searchParams.get('id'), LIST[LIST.length - 2].id);
-  const mid = await open(SECOND.id);
-  assert.ok(mid.document.querySelector('.work-nav__link--prev') && mid.document.querySelector('.work-nav__link--next'));
-  assert.ok(mid.document.querySelector('.work-nav__back').getAttribute('href').startsWith('index.html'));
+const navId = (document, dir) => {
+  const a = document.querySelector(`.work-nav__link--${dir}`);
+  return a && new URL(a.href).searchParams.get('id');
+};
+const position = (lang, current, total) => D[lang]['work.nav.position'].replace('{current}', current).replace('{total}', total);
+
+for (const category of CATEGORIES) {
+  test(`${category}: anterior/siguiente solo dentro de la categoría, con límites en la primera y la última`, async () => {
+    const list = BY[category];
+    assert.ok(list.length >= 3, `${category}: hacen falta ≥ 3 obras (hay ${list.length})`);
+    const [first, second, last, penultimate] = [list[0], list[1], list[list.length - 1], list[list.length - 2]];
+    const a = await open(first.id);
+    assert.equal(navId(a.document, 'prev'), null, 'la primera de la categoría no tiene anterior');
+    assert.equal(navId(a.document, 'next'), second.id);
+    const z = await open(last.id);
+    assert.equal(navId(z.document, 'next'), null, 'la última de la categoría no tiene siguiente (no salta a la otra categoría)');
+    assert.equal(navId(z.document, 'prev'), penultimate.id);
+    const m = await open(second.id, 'es');
+    assert.equal(navId(m.document, 'prev'), first.id);
+    assert.equal(navId(m.document, 'next'), list[2].id);
+    // «2 de n» cuenta solo la categoría
+    assert.equal(m.document.querySelector('.work__position')?.textContent, position('es', 2, list.length));
+  });
+
+  test(`${category}: cada obra enlaza prev/next con obras de su misma categoría`, async () => {
+    const list = BY[category];
+    const ids = new Set(list.map((x) => x.id));
+    const bad = [];
+    for (const art of list) {
+      const { document } = await open(art.id);
+      for (const dir of ['prev', 'next']) {
+        const target = navId(document, dir);
+        if (target && !ids.has(target)) bad.push(`${art.id} ${dir} → ${target}`);
+      }
+    }
+    assert.deepEqual(bad, []);
+  });
+
+  test(`${category}: «volver a la galería» lleva a la home con su categoría (y conserva lang)`, async () => {
+    const art = BY[category][1] || BY[category][0];
+    assert.ok(art, `${category}: sin obras`);
+    for (const search of [{ lang: 'en', withLang: true }, { lang: 'es', withLang: true }]) {
+      const { document, window } = await open(art.id, search.lang);
+      const back = document.querySelector('.work-nav__back');
+      assert.ok(back, 'falta .work-nav__back');
+      const url = new URL(back.getAttribute('href'), window.location.href);
+      assert.match(url.pathname, /\/(index\.html)?$/, `volver apunta a ${url.pathname}`);
+      // watercolor es la categoría por defecto: se acepta sin parámetro.
+      const got = url.searchParams.get('category') ?? DEFAULT_CATEGORY;
+      assert.equal(got, category, `volver → ${back.getAttribute('href')}`);
+      assert.equal(url.searchParams.get('lang'), search.lang, `volver pierde lang: ${back.getAttribute('href')}`);
+    }
+    // Sin ?lang en la URL no se inventa
+    const { document, window } = await loadPage('work.html', { search: `?id=${encodeURIComponent(art.id)}`, scripts: SCRIPTS });
+    const url = new URL(document.querySelector('.work-nav__back').getAttribute('href'), window.location.href);
+    assert.equal(url.searchParams.get('category') ?? DEFAULT_CATEGORY, category);
+  });
+
+  test(`${category}: Esc lleva al mismo destino que «volver a la galería»`, async () => {
+    const art = BY[category][0];
+    const { document, window } = await open(art.id, 'es');
+    const back = document.querySelector('.work-nav__back');
+    let handled = null;
+    // jsdom no navega: se comprueba que Esc se gestiona (preventDefault) y que el
+    // destino (.work-nav__back, que lee el handler) lleva la categoría.
+    const ev = new window.KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true });
+    window.addEventListener('keydown', (e) => { handled = e.defaultPrevented; });
+    document.body.dispatchEvent(ev);
+    assert.equal(handled, true, "Esc no se gestiona");
+    const url = new URL(back.href);
+    assert.equal(url.searchParams.get('category') ?? DEFAULT_CATEGORY, category);
+  });
+}
+
+test('obras de categorías distintas se encuentran por id (ids únicos en todo el catálogo)', async () => {
+  for (const category of CATEGORIES) {
+    const art = BY[category][0];
+    assert.ok(art, `${category}: sin obras`);
+    const { document } = await open(art.id, 'en');
+    assert.ok(document.querySelector('.work__title'), `${category}: ${art.id} → «no encontrado»`);
+    assert.notEqual(document.querySelector('h1')?.textContent, D.en['work.notFound.heading'], `${category}: ${art.id}`);
+  }
+});
+
+test('JSON-LD de un dibujo: artform coherente con la categoría (aviso)', async (t) => {
+  const art = BY.drawing[0];
+  if (!art) { t.skip('sin dibujos'); return; }
+  const { document } = await open(art.id, 'en');
+  const data = JSON.parse(document.getElementById('jsonld-artwork').textContent);
+  if (/paint/i.test(data.artform || '')) t.diagnostic(`AVISO: el JSON-LD de un dibujo declara artform "${data.artform}" (debería ser Drawing/Dibujo) — frontend-dev`);
+  assert.equal(data['@type'], 'VisualArtwork');
 });
 
 test('JSON-LD VisualArtwork parsea con name, artMedium e inLanguage del idioma activo', async () => {

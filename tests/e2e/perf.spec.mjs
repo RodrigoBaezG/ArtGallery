@@ -1,6 +1,12 @@
-// §12.3 Lazy loading y rendimiento.
+// §12.3 Lazy loading y rendimiento, para las dos categorías de la home
+// (index.html = acuarelas; ?category=drawing = dibujos, cuyas fotos pueden pesar más).
 import { test, expect } from '@playwright/test';
-import { FIRST, LIST, ready } from '../helpers/e2e.mjs';
+import { BY_CATEGORY, DRAWING, FIRST, ready } from '../helpers/e2e.mjs';
+
+const HOMES = [
+  { category: 'watercolor', path: '/index.html' },
+  { category: 'drawing', path: '/index.html?category=drawing' }
+];
 
 const EAGER = 4;
 const workImage = (url) => {
@@ -11,23 +17,28 @@ const workImage = (url) => {
 test.describe('lazy loading (375 px, contexto nuevo)', () => {
   test.use({ viewport: { width: 375, height: 740 } });
 
-  test('primera vista: como máximo las eager; al hacer scroll llegan las 22 sin duplicados', async ({ page }) => {
+  for (const { category, path } of HOMES) {
+  test(`${category}: primera vista como máximo las eager; al hacer scroll llegan todas las de la categoría sin duplicados`, async ({ page }) => {
+    const LIST = BY_CATEGORY[category];
+    expect(LIST.length, `${category}: sin obras`).toBeGreaterThan(0);
     const loaded = [];
     page.on('requestfinished', (req) => { const w = workImage(req.url()); if (w) loaded.push(w); });
-    await page.goto('/index.html');
+    await page.goto(path);
     await ready(page);
     await page.waitForLoadState('networkidle');
     const initial = new Set(loaded.map((w) => w.base));
     // Diagnóstico: cuántas obras quedan dentro de la ventana o cerca.
     const inView = await page.evaluate(() => [...document.querySelectorAll('.gallery__image')].filter((i) => i.getBoundingClientRect().top < innerHeight).length);
-    test.info().annotations.push({ type: 'lazy', description: `primera vista: ${initial.size} obras descargadas, ${inView} visibles en la ventana, eager=${EAGER}` });
+    test.info().annotations.push({ type: 'lazy', description: `${category} primera vista: ${initial.size} obras descargadas, ${inView} visibles en la ventana, eager=${EAGER}` });
     // Ajuste razonado: el lazy loading nativo descarga también las imágenes a
     // menos de un umbral bajo la ventana (Chromium: 1250–2500 px según la red;
     // WebKit: similar). Se exige: (a) nada fuera de eager + ese margen, y
     // (b) que las obras lejanas NO se descarguen (el lazy funciona).
     // + LAYOUT_SLACK: el navegador decide con el layout inicial y aquí se mide tras cargar
     // fuentes (font-display: swap); el hero puede desplazar la galería unas decenas de px.
-    const MARGIN = 2500;
+    // Medido 2026-11-19 (Chromium, localhost): carga lazy hasta ~3000 px bajo la ventana
+    // y no a 3134 px o más. Las obras más lejanas siguen comprobando que el lazy funciona.
+    const MARGIN = 3000;
     const LAYOUT_SLACK = 64;
     const positions = await page.evaluate(() => [...document.querySelectorAll('.gallery__image')].map((i) => ({
       base: new URL(i.currentSrc || i.src).pathname.split('/').pop().replace(/-\d+\.webp$/, ''),
@@ -49,6 +60,9 @@ test.describe('lazy loading (375 px, contexto nuevo)', () => {
     await page.waitForLoadState('networkidle');
     await page.waitForFunction(() => [...document.querySelectorAll('.gallery__image')].every((i) => i.complete && i.naturalWidth > 0), null, { timeout: 20_000 });
     const bases = new Set(loaded.map((w) => w.base));
+    // Solo las de la categoría visible: ninguna obra de la otra categoría se descarga.
+    const expected = new Set(LIST.map((a) => a.image.base.split('/').pop()));
+    expect([...bases].filter((b) => !expected.has(b)), 'obras de otra categoría descargadas').toEqual([]);
     expect(bases.size, 'obras descargadas tras el scroll').toBe(LIST.length);
     const perBase = {};
     for (const w of loaded) perBase[w.base] = (perBase[w.base] || 0) + 1;
@@ -57,6 +71,7 @@ test.describe('lazy loading (375 px, contexto nuevo)', () => {
     // A 375 px (DPR 1) no debería bajarse nunca la variante de 2000.
     expect(loaded.filter((w) => w.width === 2000).map((w) => w.base), 'variante 2000 en móvil').toEqual([]);
   });
+  }
 });
 
 test.describe('rendimiento (Chromium, 4G simulado + CPU ×4)', () => {
@@ -87,7 +102,12 @@ test.describe('rendimiento (Chromium, 4G simulado + CPU ×4)', () => {
     }));
   }
 
-  for (const [name, path] of [['home', '/index.html'], ['detalle', `/work.html?id=${FIRST.id}`]]) {
+  for (const [name, path] of [
+    ['home', '/index.html'],
+    ['detalle', `/work.html?id=${FIRST.id}`],
+    ['home dibujos', '/index.html?category=drawing'],
+    ['detalle dibujo', `/work.html?id=${DRAWING.id}`]
+  ]) {
     test(`LCP < 2,5 s en ${name} (375 px)`, async ({ page }) => {
       test.setTimeout(120_000);
       await page.setViewportSize({ width: 375, height: 740 });
@@ -101,8 +121,8 @@ test.describe('rendimiento (Chromium, 4G simulado + CPU ×4)', () => {
     });
   }
 
-  for (const width of [375, 1440]) {
-    test(`peso de la home en la primera vista < 1,5 MB (${width}px)`, async ({ page }) => {
+  for (const { category, path } of HOMES) for (const width of [375, 1440]) {
+    test(`peso de la home (${category}) en la primera vista < 1,5 MB (${width}px)`, async ({ page }) => {
       await page.setViewportSize({ width, height: width < 768 ? 740 : 900 });
       const cdp = await page.context().newCDPSession(page);
       await cdp.send('Network.enable');
@@ -116,11 +136,11 @@ test.describe('rendimiento (Chromium, 4G simulado + CPU ×4)', () => {
         const t = types.get(e.requestId) || 'Other';
         byType[t] = (byType[t] || 0) + e.encodedDataLength;
       });
-      await page.goto('/index.html');
+      await page.goto(path);
       await ready(page);
       await page.waitForLoadState('networkidle');
       const kb = Math.round(bytes / 1024);
-      test.info().annotations.push({ type: 'peso', description: `${width}px: ${kb} KB ${JSON.stringify(Object.fromEntries(Object.entries(byType).map(([k, v]) => [k, Math.round(v / 1024)])))}` });
+      test.info().annotations.push({ type: 'peso', description: `${category} ${width}px: ${kb} KB ${JSON.stringify(Object.fromEntries(Object.entries(byType).map(([k, v]) => [k, Math.round(v / 1024)])))}` });
       expect(bytes, `${kb} KB`).toBeLessThan(1.5 * 1024 * 1024);
     });
   }

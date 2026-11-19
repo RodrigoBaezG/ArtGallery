@@ -53,3 +53,13 @@ export function sorted(list) {
 }
 
 export const isTodoMarker = (v) => typeof v === 'string' && /\[\[TODO/.test(v);
+
+/* ---- Categorías (CLAUDE.md §3, 2026-11-19) -------------------------------- */
+export const CATEGORIES = ['watercolor', 'drawing'];
+export const DEFAULT_CATEGORY = 'watercolor';
+
+/** Obras de una categoría en el orden de la galería (featured → order). */
+export const inCategory = (list, category) => sorted(list.filter((a) => a.category === category));
+
+/** Categoría que debe mostrar la home para un valor de ?category (inválido → watercolor). */
+export const resolveCategory = (value) => (CATEGORIES.includes(value) ? value : DEFAULT_CATEGORY);

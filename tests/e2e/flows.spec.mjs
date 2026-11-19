@@ -31,10 +31,12 @@ test.describe('recorrido de quien contrata', () => {
       await page.waitForURL((u) => u.searchParams.get('id') === LIST[0].id);
       await ready(page);
 
-      // Esc → galería
+      // Esc → galería, en la categoría de la obra (watercolor: con o sin ?category)
       await page.keyboard.press('Escape');
-      await page.waitForURL(/index\.html#gallery/);
+      await page.waitForURL((u) => /\/(index\.html)?$/.test(u.pathname) && u.hash === '#gallery');
+      expect(new URL(page.url()).searchParams.get('category') ?? 'watercolor').toBe('watercolor');
       await ready(page);
+      await expect(page.locator('.gallery__item')).toHaveCount(LIST.length);
 
       // Obra → «Encargar algo similar»
       await page.locator('.gallery__link').nth(2).click();
